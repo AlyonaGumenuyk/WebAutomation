@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import json
 import selenium.webdriver.support.ui as ui
 from selenium.webdriver.support import expected_conditions as EC
+import platform
 
 
 # class TaskQueue(Queue):
@@ -17,8 +18,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Mainer():
     def __init__(self, **init_params):
-        # self.driver = webdriver.Chrome("chromedriver\chromedriver.exe")
-        self.driver = webdriver.Chrome()
+        if platform.system() == "Windows":
+            self.driver = webdriver.Chrome("chromedriver\chromedriver.exe")
+        else:
+            self.driver = webdriver.Chrome()
         self.driver.set_window_size(1920, 1080)
         self.skills = {"get_tournaments": self.get_tournaments,
                        "get_games": self.get_games}
