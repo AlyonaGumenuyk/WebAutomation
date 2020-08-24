@@ -1,11 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import json
-import selenium.webdriver.support.ui as ui
-from selenium.webdriver.support import expected_conditions as EC
 import platform
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 # class TaskQueue(Queue):
 #
@@ -34,12 +33,20 @@ class Mainer():
             driver.get("https://1xstavka.ru/en/")
         else:
             driver.get("https://1xstavka.ru/live/")
+
+        try:
+            wait = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "[class*='sport_menu'] [href='line/Football/']")))
+            print("Page is ready!")
+        except TimeoutException:
+            print("Loading took too much time!")
+
+        #wait = ui.WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.CSS_SELECTOR, "[class='liga_menu']")))
         driver.find_element_by_css_selector("[class*='sport_menu'] [href='line/Football/']").click()
         # wait = ui.WebDriverWait(driver, 10)
         # wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[class='liga_menu']")))
         # wait.until(driver.fi("[class='liga_menu']"))
 
-        tournaments_list = driver. \
+        tournaments_list = driver.\
             find_elements_by_css_selector("[class='liga_menu'] a")
         print(len(tournaments_list))
         for tournament in tournaments_list:
