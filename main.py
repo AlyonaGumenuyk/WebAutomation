@@ -20,7 +20,8 @@ class Mainer():
         if platform.system() == "Windows":
             self.driver = webdriver.Chrome("chromedriver\chromedriver.exe")
         else:
-            self.driver = webdriver.Chrome()
+            #self.driver = webdriver.Chrome()
+            self.driver = webdriver.Firefox()
         self.driver.set_window_size(1920, 1080)
         self.skills = {"get_tournaments": self.get_tournaments,
                        "get_games": self.get_games}
@@ -85,8 +86,8 @@ class Mainer():
             coef_elements = game.find_elements_by_css_selector('[class="c-bets"]')
 
 
+mainer = Mainer()
 try:
-    mainer = Mainer()
     print(mainer.get_tournaments(True, 'Football'))
 finally:
     mainer.driver.close()
