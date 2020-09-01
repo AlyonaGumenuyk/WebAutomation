@@ -1,14 +1,13 @@
-import copy
-import timeit
-
-from selenium import webdriver
 import json
 import platform
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC, ui
+
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException, WebDriverException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 import constants
+
 
 
 # class TaskQueue(Queue):
@@ -19,6 +18,7 @@ import constants
 #     def __init__(self, **init_params):
 #         self.task_queue = TaskQueue()
 #         self.dr 'https://1xstavka.ru/en/line/Football/118587-UEFA-Champions-League/'iver = webdriver.chrome
+
 
 class Mainer():
     def __init__(self, **init_params):
@@ -121,6 +121,18 @@ class Mainer():
 
         return json.dumps(game_desctiption)
 
+
+class Better():
+    def __init__(self, **init_params):
+        if platform.system() == "Windows":
+            self.driver = webdriver.Chrome("chromedriver\chromedriver.exe")
+        else:
+            # self.driver = webdriver.Chrome()
+            self.driver = webdriver.Firefox()
+        self.driver.set_window_size(1920, 1080)
+        self.skills = {"make_bet": self.make_bet,
+                       "get_coefs": self.get_coefs}
+
     def login(self, name: str, password: str):
         driver = self.driver
         driver.get("https://1xstavka.ru/en/")
@@ -140,11 +152,32 @@ class Mainer():
         except:
             print("Login failed")
 
+    def get_coefs(self, game_link: str):
+        driver = self.driver
+        driver.get(game_link)
+        total_cells = driver.find_elements_by_xpath("//*[normalize-space(text()) = 'Total']/../div[@class='bets "
+                                                    "betCols2']/div")
+        coefs = dict()
+        for cell in total_cells:
+            coef_name = cell.find_element_by_css_selector("[class = 'bet_type']").text
+            coef_value = cell.find_element_by_css_selector("[class = 'koeff']").text
+            coefs.update({coef_name: coef_value})
 
-mainer = Mainer()
+        return json.dumps(coefs)
+
+    def make_bet(self):
+        return 0
+
+
+#mainer = Mainer()
+#better = Better()
 try:
+    #print(constants.COEF_NAMES)
+    print(1)
     # print(mainer.get_games(True, "https://1xstavka.ru/en/line/Football/1706694-UEFA-Nations-League/"))
     # mainer.login("mrwithoutnickname@gmail.com", "h6E-qYg-FDR-7b8")
-    print(mainer.get_tournaments(True, "Basketball"))
+    #print(better.get_coefs("https://1xstavka.ru/en/live/Tennis/2130892-US-Open-2020/254093666-Vasek-Pospisil-Philipp-Kohlschreiber/"))
 finally:
-    mainer.driver.close()
+    print("123")
+    #mainer.driver.close()
+    #better.driver.close()
