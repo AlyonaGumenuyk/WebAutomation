@@ -1,13 +1,15 @@
 import json
 import platform
 
+import selenium
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.abstract_event_listener import AbstractEventListener
+from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 import constants
-
 
 
 # class TaskQueue(Queue):
@@ -155,29 +157,64 @@ class Better():
     def get_coefs(self, game_link: str):
         driver = self.driver
         driver.get(game_link)
+
+        commands_names = list(map(lambda x: x.text,
+                                  driver.find_elements_by_css_selector("[class='c-scoreboard-extend-stats__heading']")))
+        tablo_coefs = {commands_names[0]: dict(), commands_names[1]: dict()}
+
+        tablo_rows = driver.find_elements_by_css_selector("[class='c-scoreboard-extend-stats__row']")
+
+        for row in tablo_rows:
+            name_coef = row.find_element_by_css_selector(
+                "[class='c-scoreboard-extend-stats__row'] div:nth-child(2)").text
+            left_coef = row.find_element_by_css_selector(
+                "[class='c-scoreboard-extend-stats__row'] div:nth-child(1)").text
+            right_coef = row.find_element_by_css_selector(
+                "[class='c-scoreboard-extend-stats__row'] div:nth-child(3)").text
+            tablo_coefs[commands_names[0]].update({name_coef: left_coef})
+            tablo_coefs[commands_names[1]].update({name_coef: right_coef})
+
         total_cells = driver.find_elements_by_xpath("//*[normalize-space(text()) = 'Total']/../div[@class='bets "
                                                     "betCols2']/div")
-        coefs = dict()
+        print(type(total_cells[0]))
+        total_coefs = dict()
         for cell in total_cells:
-            coef_name = cell.find_element_by_css_selector("[class = 'bet_type']").text
-            coef_value = cell.find_element_by_css_selector("[class = 'koeff']").text
-            coefs.update({coef_name: coef_value})
+            try:
+                coef_name = cell.find_element_by_css_selector("[class = 'bet_type']").text
+                coef_value = cell.find_element_by_css_selector("[class = 'koeff']").text
+                total_coefs.update({coef_name: coef_value})
+            except:
+                pass
 
-        return json.dumps(coefs)
+        result = {"Tablo": tablo_coefs, "Total": total_coefs}
+
+        return json.dumps(result)
+
+    class MyListener(AbstractEventListener):
+        def before_navigate_to(self, url, driver):
+            print("Before navigate to %s" % url)
+
+        def after_navigate_to(self, url, driver):
+            print("After navigate to %s" % url)
+
+    def check_changes(self, element: selenium.webdriver.remote.webelement.WebElement):
+        driver = self.driver
+
+        EventFiringWebDriver(driver_plain, MyListener())
+        driver.after_change_value_of
+        AbstractEventListener()
 
     def make_bet(self):
         return 0
 
 
-#mainer = Mainer()
-#better = Better()
+# mainer = Mainer()
+better = Better()
 try:
-    #print(constants.COEF_NAMES)
-    print(1)
     # print(mainer.get_games(True, "https://1xstavka.ru/en/line/Football/1706694-UEFA-Nations-League/"))
     # mainer.login("mrwithoutnickname@gmail.com", "h6E-qYg-FDR-7b8")
-    #print(better.get_coefs("https://1xstavka.ru/en/live/Tennis/2130892-US-Open-2020/254093666-Vasek-Pospisil-Philipp-Kohlschreiber/"))
+    print(better.get_coefs(
+        "https://1xstavka.ru/en/live/Tennis/2130892-US-Open-2020/254093666-Vasek-Pospisil-Philipp-Kohlschreiber/"))
 finally:
-    print("123")
-    #mainer.driver.close()
-    #better.driver.close()
+    # mainer.driver.close()
+    better.driver.close()
