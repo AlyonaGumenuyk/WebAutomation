@@ -16,8 +16,8 @@ mainer_starter = MainerStarter(task_manager.task_queue)
 class IndexPage(Resource):
     @staticmethod
     def get():
-        result = task_manager.work()
-        return result
+        #task_manager.run()
+        return 0
 
 
 class CheckTaskQueue(Resource):
