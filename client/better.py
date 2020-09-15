@@ -2,6 +2,7 @@ import json
 import platform
 
 import selenium
+from flask import Response
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,6 +10,8 @@ from selenium.webdriver.support.abstract_event_listener import AbstractEventList
 from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 
+from client.pages.base_page import BasePage
+from client.pages.match_page import MatchPage
 from client.worker import Worker
 
 
@@ -38,55 +41,21 @@ class Better(Worker):
             print("Login failed")
 
     def get_coefs(self, game_link: str):
-        driver = self.driver
-        driver.get(game_link)
+        match_page = MatchPage(self.driver)
+        match_page.go_to_site(game_link)
+        match_page.sort_table()
+        command_names = match_page.get_command_names()
+        score = match_page.get_score()
+        dashboard_coefs = match_page.get_dashboard_coefs(command_names)
+        table_coefs = match_page.get_table_coefs()
 
-        commands_names = list(map(lambda x: x.text,
-                                  driver.find_elements_by_css_selector("[class*='c-tablo__team']")))
+        game_stat = dict()
+        game_stat.update({"command_names": {"command_left": command_names[0], "command_right": command_names[1]}})
+        game_stat.update({"score": {"command_left_score": score[0], "command_right_score": score[1]}})
+        game_stat.update({"dashboard_coefs": dashboard_coefs})
+        game_stat.update({"table_coefs": table_coefs})
 
-        tablo_rows = driver.find_elements_by_css_selector("[class='c-chart-stat c-tablo__chart']")
-        if tablo_rows:
-            tablo_coefs = {commands_names[0]: dict(), commands_names[1]: dict()}
-            for row in tablo_rows:
-                name_coef = row.find_element_by_css_selector(
-                    "[class='c-chart-stat__title']").text
-                left_coef = row.find_element_by_css_selector(
-                    "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(1)").text
-                right_coef = row.find_element_by_css_selector(
-                    "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(3)").text
-                tablo_coefs[commands_names[0]].update({name_coef: left_coef})
-                tablo_coefs[commands_names[1]].update({name_coef: right_coef})
-        else:
-            tablo_coefs = None
-
-        total_cells = driver.find_elements_by_xpath("//*[normalize-space(text()) = 'Total']/../div[@class='bets "
-                                                    "betCols2']/div")
-        total_coefs = dict()
-        for cell in total_cells:
-            try:
-                coef_name = cell.find_element_by_css_selector("[class = 'bet_type']").text
-                coef_value = cell.find_element_by_css_selector("[class = 'koeff']").text
-                total_coefs.update({coef_name: coef_value})
-            except:
-                pass
-
-        result = {"Tablo": tablo_coefs, "Total": total_coefs}
-
-        return result
-
-    class MyListener(AbstractEventListener):
-        def before_navigate_to(self, url, driver):
-            print("Before navigate to %s" % url)
-
-        def after_navigate_to(self, url, driver):
-            print("After navigate to %s" % url)
-
-    def check_changes(self, element: selenium.webdriver.remote.webelement.WebElement):
-        driver = self.driver
-
-        EventFiringWebDriver(driver_plain, MyListener())
-        driver.after_change_value_of
-        AbstractEventListener()
+        return game_stat
 
     def make_bet(self):
         return 0

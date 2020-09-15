@@ -38,8 +38,8 @@ class BetterGetCoefs(Resource):
         queue = TaskQueue()
         better = Better(queue)
         result = better.get_coefs(
-            'https://1xstavka.ru/en/live/Football/2103135-USSR-3x3-Division-B/256329132-Georgia-3h3-Ukraine-3h3/')
-        better.driver.close()
+            'https://1xstavka.ru/en/live/Football/28585-Uruguay-Segunda-Division/256390113-Cerrito-Tacuarembo/')
+        #better.driver.close()
         return make_response(result)
 
 
