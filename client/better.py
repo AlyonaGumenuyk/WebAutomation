@@ -43,23 +43,24 @@ class Better(Worker):
 
         commands_names = list(map(lambda x: x.text,
                                   driver.find_elements_by_css_selector("[class*='c-tablo__team']")))
-        tablo_coefs = {commands_names[0]: dict(), commands_names[1]: dict()}
 
         tablo_rows = driver.find_elements_by_css_selector("[class='c-chart-stat c-tablo__chart']")
-
-        for row in tablo_rows:
-            name_coef = row.find_element_by_css_selector(
-                "[class='c-chart-stat__title']").text
-            left_coef = row.find_element_by_css_selector(
-                "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(1)").text
-            right_coef = row.find_element_by_css_selector(
-                "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(3)").text
-            tablo_coefs[commands_names[0]].update({name_coef: left_coef})
-            tablo_coefs[commands_names[1]].update({name_coef: right_coef})
+        if tablo_rows:
+            tablo_coefs = {commands_names[0]: dict(), commands_names[1]: dict()}
+            for row in tablo_rows:
+                name_coef = row.find_element_by_css_selector(
+                    "[class='c-chart-stat__title']").text
+                left_coef = row.find_element_by_css_selector(
+                    "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(1)").text
+                right_coef = row.find_element_by_css_selector(
+                    "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(3)").text
+                tablo_coefs[commands_names[0]].update({name_coef: left_coef})
+                tablo_coefs[commands_names[1]].update({name_coef: right_coef})
+        else:
+            tablo_coefs = None
 
         total_cells = driver.find_elements_by_xpath("//*[normalize-space(text()) = 'Total']/../div[@class='bets "
                                                     "betCols2']/div")
-
         total_coefs = dict()
         for cell in total_cells:
             try:
