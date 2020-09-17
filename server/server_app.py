@@ -15,10 +15,9 @@ app.config['JSON_SORT_KEYS'] = False
 app.config['JSON_AS_ASCII'] = False
 api = Api(app)
 
-
 task_manager = BetterTaskManeger()
-mainer_starter = MainerStarter(task_manager.task_queue)
-# better_starter = BetterStarter(task_manager.task_queue)
+# mainer_starter = MainerStarter(task_manager.task_queue)
+better_starter = BetterStarter(task_manager.task_queue)
 
 
 class IndexPage(Resource):
@@ -37,6 +36,22 @@ class CheckTaskQueue(Resource):
         return make_response(jsonify(result))
 
 
+class MainerGetTournaments(Resource):
+    @staticmethod
+    def get():
+        with open('task_report/tournaments.json', 'r') as tournaments:
+            return make_response(json.load(tournaments))
+
+    @staticmethod
+    def post():
+        if request.is_json:
+            data = request.get_json()
+            with open('task_report/tournaments.json', 'w', encoding='utf8') as tournaments:
+                tournaments.seek(0)
+                tournaments.truncate()
+                json.dump(data, tournaments, indent=4)
+
+
 class BetterGetCoefs(Resource):
     @staticmethod
     def get():
@@ -47,7 +62,7 @@ class BetterGetCoefs(Resource):
     def post():
         if request.is_json:
             data = request.get_json()
-            with open('task_report/gamestat.json', 'w') as current_stat:
+            with open('task_report/gamestat.json', 'w', encoding='utf8') as current_stat:
                 current_stat.seek(0)
                 current_stat.truncate()
                 json.dump(data, current_stat, indent=4)

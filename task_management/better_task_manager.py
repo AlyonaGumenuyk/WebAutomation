@@ -16,7 +16,7 @@ class BetterTaskManeger:
         thread.start()
 
     def generate_watch_task(self):
-        task = TaskGenerator.watch_gen(self.task_queue, 'https://1xstavka.ru/en/live/Football/1794797-Portugal-Championship-U23/256665122-Famalicao-U23-Vitoria-Guimaraes-U23/')
+        task = TaskGenerator.watch_gen(self.task_queue, 'https://1xstavka.ru/en/live/Football/118593-UEFA-Europa-League/256696089-Renova-Hajduk-Split/')
 
     def run(self):
         self.generate_watch_task()

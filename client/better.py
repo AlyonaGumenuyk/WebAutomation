@@ -1,5 +1,6 @@
 import json
 import time
+
 import requests
 from jsondiff import diff
 from selenium.webdriver.common.by import By
@@ -38,14 +39,14 @@ class Better(Worker):
             result = self.work()
             if result == 'error':
                 try:
-                    report = json.dumps({"Error": "Can not find the website"})
+                    report = json.loads(json.dumps({"Error": "Can not find the website"}))
                     requests.post('http://127.0.0.1:8081/get_coefs', json=report)
                 except FileNotFoundError:
                     break
 
             elif result == 'finished':
                 try:
-                    report = json.dumps({"Info": "Match is finished"})
+                    report = json.loads(json.dumps({"Info": "Match is finished"}))
                     requests.post('http://127.0.0.1:8081/get_coefs', json=report)
                 except FileNotFoundError:
                     break
@@ -82,14 +83,21 @@ class Better(Worker):
 
         prev_game_stat = dict()
         while not match_page.match_is_finished():
-            game_stat = self.get_coefs(match_page)
+            game_stat = json.dumps(self.get_coefs(match_page))
             if game_stat == 'error':
                 return game_stat
             try:
-                changes = diff(json.dumps(prev_game_stat), json.dumps(game_stat), load=True, dump=True)
-                print(changes)
-                requests.post('http://127.0.0.1:8081/get_coefs', json=json.loads(changes))
-                prev_game_stat = game_stat
+                if prev_game_stat:
+                    changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
+                    print(changes)
+                    status_changes = changes['current_status']
+                    if len(changes) > 1 or list(status_changes.keys()) != ['time']:
+                        print('sending')
+                        requests.post('http://127.0.0.1:8081/get_coefs', json=changes)
+                    prev_game_stat = game_stat
+                else:
+                    requests.post('http://127.0.0.1:8081/get_coefs', json=json.loads(game_stat))
+                    prev_game_stat = game_stat
                 print("refreashing stats")
                 time.sleep(3)
             except FileNotFoundError:
@@ -109,7 +117,7 @@ class Better(Worker):
         game_stat = dict()
         game_stat.update({"command_names": {"command_left": command_names[0], "command_right": command_names[1]}})
         game_stat.update({"score": {"command_left_score": score[0], "command_right_score": score[1]}})
-        game_stat.update({"current status": current_status})
+        game_stat.update({"current_status": current_status})
         game_stat.update({"dashboard_coefs": dashboard_coefs})
         game_stat.update({"table_coefs": table_coefs})
 

@@ -1,5 +1,167 @@
 {
-    "current status": {
-        "time": "69:51"
+    "current_status": {
+        "time": "83:52"
+    },
+    "dashboard_coefs": {
+        "command_left": {
+            "ATTACKS": "132"
+        }
+    },
+    "table_coefs": {
+        "1x2": {
+            "Renova": "62"
+        },
+        "Double Chance": {
+            "Renova Or X": "9.63"
+        },
+        "To Qualify": {
+            "To Qualify - Renova": "20",
+            "To Qualify - Hajduk Split": "1.008"
+        },
+        "Both Teams To Score": {
+            "Yes": "8.06",
+            "No": "1.08"
+        },
+        "Total": {
+            "Total Over 1.5": "3.11",
+            "Total Under 1.5": "1.39"
+        },
+        "Asian Total": {
+            "Total Over 1.75": "4.11",
+            "Total Under 1.75": "1.25"
+        },
+        "Handicap": {
+            "Handi\u0441ap Renova (+1)": "4.11",
+            "Handi\u0441ap Hajduk Split (-1)": "1.25",
+            "Handi\u0441ap Renova (+1.5)": "1.288",
+            "Handi\u0441ap Hajduk Split (-1.5)": "3.76"
+        },
+        "Asian Handicap": {
+            "Handi\u0441ap Renova (+1.25)": "1.568",
+            "Handi\u0441ap Hajduk Split (-1.25)": "2.475",
+            "Handi\u0441ap Renova (+1.75)": "1.15",
+            "Handi\u0441ap Hajduk Split (-1.75)": "5.71",
+            "$delete": [
+                "Handi\u0441ap Renova (+0.75)",
+                "Handi\u0441ap Hajduk Split (-0.75)"
+            ]
+        },
+        "Total 1": {
+            "Individual Total 1 Over 0.5": "8.06",
+            "Individual Total 1 Under 0.5": "1.08"
+        },
+        "Total 2": {
+            "Individual Total 2 Over 1.5": "3.48",
+            "Individual Total 2 Under 1.5": "1.31",
+            "Individual Total 2 Over 2.5": "13.8"
+        },
+        "Next Goal": {
+            "Renova To Score Next Goal 2": "9.4",
+            "Hajduk Split To Score Next Goal 2": "3.77",
+            "Neither Team To Score Next Goal 2": "1.41"
+        },
+        "Correct Score": {
+            "Correct Score 0-1": "1.41",
+            "Correct Score 0-2": "4",
+            "Correct Score 1-2": "41",
+            "Correct Score 0-3": "29",
+            "Correct Score 0-4": "101",
+            "$delete": [
+                "Correct Score 2-1"
+            ]
+        },
+        "Even/Odd": {
+            "Total Even - Yes": "3.15",
+            "Total Even - No": "1.29"
+        },
+        "European Handicap": {
+            "European Handicap 1:0 X": "1.33",
+            "European Handicap 1:0 Hajduk Split": "3.52",
+            "European Handicap 2:0 Renova": "1.23",
+            "European Handicap 2:0 X": "4",
+            "European Handicap 2:0 Hajduk Split": "27",
+            "European Handicap 3:0 Renova": "1.01",
+            "European Handicap 3:0 X": "26",
+            "European Handicap 3:0 Hajduk Split": "94"
+        },
+        "Last Goal": {
+            "Renova To Score Last Goal": "9",
+            "Hajduk Split To Score Last Goal": "1.04"
+        },
+        "Method Of Qualifying": {
+            "Penalty Shootout - Yes": "19",
+            "Penalty Shootout - No": "1.02",
+            "A Team Will Qualify In Regular Time - No": "9.5",
+            "A Team Will Qualify In Extra Time - Yes": "21",
+            "A Team Will Qualify In Extra Time - No": "1.016"
+        },
+        "Individual Total 1 Exact Number Of Goals": {
+            "Individual Total Renova 0": "1.06",
+            "Individual Total Renova 1": "10",
+            "Individual Total Renova 2": "67"
+        },
+        "Individual Total 2 Exact Number Of Goals": {
+            "Individual Total Hajduk Split 1": "1.25",
+            "Team 2 Total - 3 Or More Goals": "15",
+            "Individual Total Hajduk Split 2": "4"
+        },
+        "1x2. 2 Half": {
+            "Renova": "13.9",
+            "Draw": "1.36",
+            "Hajduk Split": "4.14"
+        },
+        "Total 1. 2 Half": {
+            "Individual Total 1 Over 0.5": "8.06",
+            "Individual Total 1 Under 0.5": "1.08"
+        },
+        "Total 2. 2 Half": {
+            "Individual Total 2 Over 0.5": "3.48",
+            "Individual Total 2 Under 0.5": "1.31"
+        },
+        "1x2. Corners": {
+            "Renova": "2.9",
+            "Draw": "2.1",
+            "Hajduk Split": "4.01"
+        },
+        "Double Chance. Corners": {
+            "Renova Or X": "1.225",
+            "Renova Or Hajduk Split": "1.69",
+            "Hajduk Split Or X": "1.384"
+        },
+        "Total 1. Corners": {
+            "Individual Total 1 Over 2.5": "2.51",
+            "Individual Total 1 Under 2.5": "1.5"
+        },
+        "3Way Total. Corners": {
+            "Total Exactly 6 (3Way)": "5"
+        },
+        "Result / Teams To Score. Result + Total": {
+            "Renova To Win + Team Hajduk Split To Score": "67",
+            "Hajduk Split To Win + Team Renova Not To Score": "1.06"
+        },
+        "1x2. Yellow Cards": {
+            "Hajduk Split": "1.03"
+        },
+        "Double Chance. Yellow Cards": {
+            "Renova Or X": "9"
+        },
+        "Total. Yellow Cards": {
+            "Total Over 6.5": "1.5",
+            "Total Under 6.5": "2.59",
+            "Total Over 7.5": "3.18",
+            "Total Under 7.5": "1.32"
+        },
+        "Handicap. Yellow Cards": {
+            "Handi\u0441ap Renova (+2.5)": "1.29",
+            "Handi\u0441ap Hajduk Split (-2.5)": "3.38"
+        },
+        "Total 1. Yellow Cards": {
+            "Individual Total 1 Over 2.5": "1.96",
+            "Individual Total 1 Under 2.5": "1.8"
+        },
+        "Total 2. Yellow Cards": {
+            "Individual Total 2 Over 4.5": "2.11",
+            "Individual Total 2 Under 4.5": "1.7"
+        }
     }
 }
