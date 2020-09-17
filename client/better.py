@@ -1,16 +1,11 @@
 import json
-import platform
-
-import selenium
-from flask import Response
-from selenium import webdriver
+import time
+import requests
+from jsondiff import diff
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.abstract_event_listener import AbstractEventListener
-from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 
-from client.pages.base_page import BasePage
 from client.pages.match_page import MatchPage
 from client.worker import Worker
 
@@ -20,6 +15,40 @@ class Better(Worker):
         super().__init__(task_queue)
         self.skills = {"make_bet": self.make_bet,
                        "get_coefs": self.get_coefs}
+
+    @staticmethod
+    def get_new_tasks():
+        time_to_sleep = 10
+        print("sleeping for {} seconds while waiting for tasks".format(time_to_sleep))
+        time.sleep(time_to_sleep)
+
+    def work(self):
+        if self.task_queue.empty():
+            self.get_new_tasks()
+        task = self.task_queue.get()
+        return self.do_task(task)
+
+    def do_task(self, task):
+        if task.method == 'watch':
+            result = self.watch_match(task.params[0])
+            return result
+
+    def do_work(self):
+        while True:
+            result = self.work()
+            if result == 'error':
+                try:
+                    report = json.dumps({"Error": "Can not find the website"})
+                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                except FileNotFoundError:
+                    break
+
+            elif result == 'finished':
+                try:
+                    report = json.dumps({"Info": "Match is finished"})
+                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                except FileNotFoundError:
+                    break
 
     def login(self, name: str, password: str):
         driver = self.driver
@@ -40,18 +69,47 @@ class Better(Worker):
         except:
             print("Login failed")
 
-    def get_coefs(self, game_link: str):
+    def watch_match(self, game_link: str):
         match_page = MatchPage(self.driver)
-        match_page.go_to_site(game_link)
-        match_page.sort_table()
+
+        try:
+            match_page.go_to_site(game_link)
+            if match_page.match_is_finished():
+                return 'finished'
+            match_page.sort_table()
+        except:
+            return 'error'
+
+        prev_game_stat = dict()
+        while not match_page.match_is_finished():
+            game_stat = self.get_coefs(match_page)
+            if game_stat == 'error':
+                return game_stat
+            try:
+                changes = diff(json.dumps(prev_game_stat), json.dumps(game_stat), load=True, dump=True)
+                print(changes)
+                requests.post('http://127.0.0.1:8081/get_coefs', json=json.loads(changes))
+                prev_game_stat = game_stat
+                print("refreashing stats")
+                time.sleep(3)
+            except FileNotFoundError:
+                print("file not found")
+
+        return 'finished'
+
+    @staticmethod
+    def get_coefs(match_page: MatchPage):
+
         command_names = match_page.get_command_names()
         score = match_page.get_score()
+        current_status = match_page.get_time()
         dashboard_coefs = match_page.get_dashboard_coefs(command_names)
         table_coefs = match_page.get_table_coefs()
 
         game_stat = dict()
         game_stat.update({"command_names": {"command_left": command_names[0], "command_right": command_names[1]}})
         game_stat.update({"score": {"command_left_score": score[0], "command_right_score": score[1]}})
+        game_stat.update({"current status": current_status})
         game_stat.update({"dashboard_coefs": dashboard_coefs})
         game_stat.update({"table_coefs": table_coefs})
 

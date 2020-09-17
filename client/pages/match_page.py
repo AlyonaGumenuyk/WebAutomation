@@ -1,5 +1,7 @@
-from selenium.webdriver import ActionChains
+import re
+
 from selenium.webdriver.common.by import By
+from bs4 import BeautifulSoup as bs
 
 from client.pages.base_page import BasePage
 
@@ -12,12 +14,9 @@ class MatchPageLocators:
     TEAMS_TABLO = (By.CSS_SELECTOR, '[class*="c-tablo__team"]')
     SCORE = (By.CSS_SELECTOR, '[class*="c-tablo__main-count"] [class*="c-tablo-count"]')
     TABLO_COEFS = (By.CSS_SELECTOR, '[class="c-chart-stat c-tablo__chart"]')
-    BOX_FRAME = (By.CSS_SELECTOR, '[class="bets_content betsscroll"]')
-    TABLE_GROUPS = (By.CSS_SELECTOR, '[class="bet_group"]')
-    TABLE_GROUP_NAME = '[class*="bet-title"]'
-    TABLE_GROUP_COEFS = '[class*="bets betCols"] div:not([class*="empty-cell"])'
-    TABLE_GROUP_COEFS_NAMES = 'span:nth-child(1)'
-    TABLE_GROUP_COEFS_VALUES = 'span:nth-child(2)'
+    BOX_FRAME = (By.CSS_SELECTOR, '#allBetsTable')
+    AFTER_GAME_MSG = (By.CSS_SELECTOR, '[class="after-game-info__text"]')
+    STATUS_AND_TIMER = (By.CSS_SELECTOR, 'ul[class*="o-tablo-info-list"] [class="c-tablo__text"]')
 
 
 class MatchPage(BasePage):
@@ -35,15 +34,35 @@ class MatchPage(BasePage):
         finally:
             self.find_element(MatchPageLocators.SORT_BTN_EXPAND).click()
 
+    def get_time(self):
+        try:
+            info = self.find_elements(MatchPageLocators.STATUS_AND_TIMER)
+            info_dict = dict()
+            status = info[0].text
+            time = info[1].text
+            info_dict.update({"status": status})
+            info_dict.update({"time": time})
+            return info_dict
+        except:
+            return None
+
     def get_command_names(self):
-        return list(map(lambda x: x.text, self.find_elements(MatchPageLocators.TEAMS_TABLO)))
+        try:
+            command_names = list(map(lambda x: x.text, self.find_elements(MatchPageLocators.TEAMS_TABLO)))
+            return command_names
+        except:
+            return None
 
     def get_score(self):
-        return list(map(lambda x: x.text, self.find_elements(MatchPageLocators.SCORE)))
+        try:
+            score = list(map(lambda x: x.text, self.find_elements(MatchPageLocators.SCORE)))
+            return score
+        except:
+            return None
 
     def get_dashboard_coefs(self, commands_names):
-        tablo_rows = self.find_elements(MatchPageLocators.TABLO_COEFS)
-        if tablo_rows:
+        try:
+            tablo_rows = self.find_elements(MatchPageLocators.TABLO_COEFS)
             tablo_coefs = {"command_left": dict(), "command_right": dict()}
             for row in tablo_rows:
                 name_coef = row.find_element_by_css_selector(
@@ -54,30 +73,38 @@ class MatchPage(BasePage):
                     "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(3)").text
                 tablo_coefs["command_left"].update({name_coef: left_coef})
                 tablo_coefs["command_right"].update({name_coef: right_coef})
-        else:
-            tablo_coefs = None
-        return tablo_coefs
+            return tablo_coefs
+        except:
+            return None
 
     def get_table_coefs(self):
-        self.freeze_page()
-        group_coefs_list = self.find_elements(MatchPageLocators.TABLE_GROUPS)
-        table_coefs_dict = dict()
-        for group in group_coefs_list:
-            group_name = group.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_NAME).text
-            if not group_name:
-                self.driver.execute_script("arguments[0].scrollIntoView(false);", group)
-                group_name = group.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_NAME).text
-            coefs_in_group = group.find_elements_by_css_selector(MatchPageLocators.TABLE_GROUP_COEFS)
-            coefs_in_group_dict = dict()
-            for coef in coefs_in_group:
-                coef_name = coef.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_COEFS_NAMES).text
-                coef_value = coef.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_COEFS_VALUES).text
-                if not coef_name:
-                    self.driver.execute_script("arguments[0].scrollIntoView(false);", coef)
-                    coef_name = coef.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_COEFS_NAMES).text
-                    coef_value = coef.find_element_by_css_selector(MatchPageLocators.TABLE_GROUP_COEFS_VALUES).text
-                coefs_in_group_dict.update({coef_name: coef_value})
-            table_coefs_dict.update({group_name: coefs_in_group_dict})
-        self.unfreeze_page()
+        try:
+            table_allcoefs = bs(self.find_element(MatchPageLocators.BOX_FRAME).get_attribute('innerHTML'),
+                                features='html.parser')
+            table_coefs_dict = dict()
+            groups = table_allcoefs.select('div[class="bet_group"]')
+            for group in groups:
+                group_name = group.find('div', class_=re.compile('.*bet-title.*')).find(text=True,
+                                                                                        recursive=False).strip()
+                group_coefs = group.select('[class*="bets betCols"] div:not([class*="empty-cell"])')
+                group_dict = dict()
+                for coef in group_coefs:
+                    coef_name = coef.select_one('span:nth-of-type(1)').text.strip()
+                    coef_value = coef.select_one('span:nth-of-type(2)').text.strip()
+                    group_dict.update({coef_name: coef_value})
+                table_coefs_dict.update({group_name: group_dict})
+            return table_coefs_dict
+        except:
+            return None
 
-        return table_coefs_dict
+    def match_is_finished(self):
+        try:
+            self.driver.find_element_by_css_selector('[class="after-game-info__text"]')
+            return True
+        except:
+            try:
+                if self.get_time()["status"] == 'Game finished':
+                    return True
+            except:
+                return False
+            return False

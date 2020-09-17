@@ -7,7 +7,7 @@ from task_management.task_queue import TaskQueue
 import os
 
 
-class TaskManeger:
+class MinerTaskManeger:
     def __init__(self):
         self.task_queue = TaskQueue()
 
