@@ -3,7 +3,7 @@ import os
 from selenium import webdriver
 
 from client.better import Better
-from client.miner import Mainer
+from client.miner import Miner
 from task_management.task_queue import TaskQueue
 
 queue = TaskQueue()

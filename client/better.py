@@ -32,7 +32,9 @@ class Better(Worker):
     def do_task(self, task):
         if task.method == 'watch':
             result = self.watch_match(task.params[0])
-            return result
+        else:
+            result = 'unknown task name'
+        return result
 
     def do_work(self):
         while True:
@@ -41,14 +43,20 @@ class Better(Worker):
                 try:
                     report = json.loads(json.dumps({"Error": "Can not find the website"}))
                     requests.post('http://127.0.0.1:8081/get_coefs', json=report)
-                except FileNotFoundError:
+                except:
                     break
 
             elif result == 'finished':
                 try:
                     report = json.loads(json.dumps({"Info": "Match is finished"}))
                     requests.post('http://127.0.0.1:8081/get_coefs', json=report)
-                except FileNotFoundError:
+                except:
+                    break
+            elif result == 'unknown task name':
+                try:
+                    report = json.loads(json.dumps({"Error": "Unknown task name"}))
+                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                except:
                     break
 
     def login(self, name: str, password: str):

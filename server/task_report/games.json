@@ -1,0 +1,172 @@
+{
+    "Manchester Open. 2020": [
+        {
+            "Tournament name": "Manchester Open. 2020",
+            "Left command name": "Greg Lobban",
+            "Right command name": "Joel Makin",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135880-Manchester-Open-2020/",
+            "Coefficients": {
+                "1": "4.42",
+                "X": "-",
+                "2": "1.19",
+                "1X": "-",
+                "12": "-",
+                "2X": "-",
+                "O_TOTAL=67.5": "1.92",
+                "U_TOTAL=67.5": "1.82",
+                "O_TOTAL=70.5": "1.88",
+                "U_TOTAL=70.5": "1.83",
+                "O_TOTAL=72.5": "1.82",
+                "U_TOTAL=72.5": "1.88"
+            },
+            "Date of Match": "18.09",
+            "Time of Match": "21:15"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020",
+            "Left command name": "Gregoire Marche",
+            "Right command name": "Ali Farag",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135880-Manchester-Open-2020/",
+            "Coefficients": {
+                "1": "8.7",
+                "X": "-",
+                "2": "1.05",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "13:45"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020",
+            "Left command name": "Marwan El Shorbagy",
+            "Right command name": "Adrian Waller",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135880-Manchester-Open-2020/",
+            "Coefficients": {
+                "1": "1.144",
+                "X": "-",
+                "2": "5.05",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "16:15"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020",
+            "Left command name": "Karim Abdel Gawad",
+            "Right command name": "Declan James",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135880-Manchester-Open-2020/",
+            "Coefficients": {
+                "1": "1.08",
+                "X": "-",
+                "2": "7.1",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "18:45"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020",
+            "Left command name": "Nicolas Mueller",
+            "Right command name": "Simon Rosner",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135880-Manchester-Open-2020/",
+            "Coefficients": {
+                "1": "6.6",
+                "X": "-",
+                "2": "1.1",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "21:15"
+        }
+    ],
+    "Manchester Open. 2020. Women": [
+        {
+            "Tournament name": "Manchester Open. 2020. Women",
+            "Left command name": "Lucy Turmel",
+            "Right command name": "Joelle King",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135946-Manchester-Open-2020-Women/",
+            "Coefficients": {
+                "1": "8.6",
+                "X": "-",
+                "2": "1.04",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "18.09",
+            "Time of Match": "20:30"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020. Women",
+            "Left command name": "Amanda Sobhy",
+            "Right command name": "Tinne Gilis",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135946-Manchester-Open-2020-Women/",
+            "Coefficients": {
+                "1": "1.1",
+                "X": "-",
+                "2": "6.6",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "13:00"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020. Women",
+            "Left command name": "Donna Lobban",
+            "Right command name": "Nour El Tayeb",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135946-Manchester-Open-2020-Women/",
+            "Coefficients": {
+                "1": "8.7",
+                "X": "-",
+                "2": "1.05",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "15:30"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020. Women",
+            "Left command name": "Sarah-Jane Perry",
+            "Right command name": "Hollie Naughton",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135946-Manchester-Open-2020-Women/",
+            "Coefficients": {
+                "1": "1.05",
+                "X": "-",
+                "2": "8.7",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "18:00"
+        },
+        {
+            "Tournament name": "Manchester Open. 2020. Women",
+            "Left command name": "Alison Waters",
+            "Right command name": "Tesni Evans",
+            "Match url": "https://1xstavka.ru/en/line/Squash/2135946-Manchester-Open-2020-Women/",
+            "Coefficients": {
+                "1": "2.97",
+                "X": "-",
+                "2": "1.375",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "19.09",
+            "Time of Match": "20:30"
+        }
+    ]
+}

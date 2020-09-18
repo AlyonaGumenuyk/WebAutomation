@@ -1,8 +1,10 @@
 import json
 import time
 
+import requests
 from flask import Response
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -10,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from client.worker import Worker
 
 
-class Mainer(Worker):
+class Miner(Worker):
     def __init__(self, task_queue):
         super().__init__(task_queue)
         self.skills = {"get_tournaments": self.get_tournaments,
@@ -26,60 +28,75 @@ class Mainer(Worker):
         if self.task_queue.empty():
             self.get_new_tasks()
         task = self.task_queue.get()
-        report = self.do_task(task)
-        print(report)
+        return self.do_task(task)
 
     def do_task(self, task):
         if task.method == 'get_tournaments':
-            result = self.get_tournaments(task.params[0], task.params[1])
             try:
-                with open('task_report/tournaments.json', 'w') as current_tournaments:
-                    json.dump(result, current_tournaments, indent=4)
-                return Response(status=200)
-            except FileNotFoundError:
-                return Response("'task_report/tournaments.json', something went wrong", status=404)
+                report = self.get_tournaments(task.params[0])
+                result = dict(
+                    {"server_adress": "http://127.0.0.1:8081/tournaments", "report": report})
+            except:
+                result = dict(
+                    {"server_adress": "http://127.0.0.1:8081/report", "report": "error", "task": task.method})
         elif task.method == 'get_games':
-            result = self.get_games(task.params[0], task.params[1])
             try:
-                with open('task_report/games.json', 'a') as current_games:
-                    json.dump(result, current_games, indent=4)
-                    current_games.write('\n')
-                return Response(status=200)
-            except FileNotFoundError:
-                return Response("'task_report/games.json', something went wrong", status=404)
+                report = self.get_games(task.params[0])
+                result = dict({"server_adress": "http://127.0.0.1:8081/games", "report": report})
+            except:
+                result = dict(
+                    {"server_adress": "http://127.0.0.1:8081/report", "report": "error", "task": task.method})
+        else:
+            result = dict({"server_adress": "http://127.0.0.1:8081/report", "report": "unknown task name",
+                           "task": task.method})
+        return result
 
     def do_work(self):
         while True:
-            self.work()
+            result = self.work()
+            if result["report"] == 'error':
+                try:
+                    report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
+                    requests.post(result["server_adress"], json=report)
+                except:
+                    break
+            elif result["report"] == 'unknown task name':
+                try:
+                    report = json.loads(json.dumps({"Error": "Unknown task name"}))
+                    requests.post(result["server_adress"], json=report)
+                except:
+                    break
+            else:
+                try:
+                    report = json.loads(json.dumps(result["report"]))
+                    requests.post(result["server_adress"], json=report)
+                except:
+                    break
 
-    def get_tournaments(self, is_line: bool, sport_name: str):
+    def get_tournaments(self, sport_name: str):
         result = dict()
 
         driver = self.driver
-        if is_line:
-            driver.get("https://1xstavka.ru/line/")
-            line_or_live = "line"
-        else:
-            driver.get("https://1xstavka.ru/live/")
-            line_or_live = "live"
+        driver.get("https://1xstavka.ru/line/")
 
-        try:
-            wait = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "[class*='sport_menu'] [href='{}/{}/']"
-                                                .format(line_or_live, sport_name))))
-            # print("Page is ready!")
-        except TimeoutException:
-            print("Loading took too much time!")
+        # scroll to sport name element
+        sport_webelement = driver.find_element_by_css_selector(
+            "[class*='sport_menu'] [href='line/{}/']".format(sport_name))
 
-        driver.find_element_by_css_selector("[class*='sport_menu'] [href='{}/{}/']"
-                                            .format(line_or_live, sport_name)).click()
+        actions = ActionChains(self.driver)
+        scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
+        scrolling_number = scroll_bar.size['height'] * (sport_webelement.location['y'] - scroll_bar.location['y']) / (
+                1000 - scroll_bar.location['y']) - scroll_bar.size['height']
+        actions.move_to_element(scroll_bar).click_and_hold() \
+            .move_by_offset(0, scrolling_number).perform()
+
+        sport_webelement.click()
 
         wait = WebDriverWait(driver, 10, poll_frequency=1).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "[class='liga_menu'] a")))
 
         tournaments_list = driver. \
             find_elements_by_css_selector("[class='liga_menu'] a")
-        # print(len(tournaments_list))
         for tournament in tournaments_list:
             all_text = tournament.text
             tournament_name = all_text \
@@ -87,21 +104,18 @@ class Mainer(Worker):
             tournament_link = tournament.get_attribute("href")
             result.update({tournament_name: tournament_link})
 
-        # print(result)
-
         return result
 
-    def get_games(self, is_line: bool, tournament_url: str):
+    def get_games(self, tournament_url: str):
         driver = self.driver
         driver.get(tournament_url)
-
-        # print(coef_names)
 
         tournament_name = driver.find_element_by_css_selector('[class="c-events__liga"]').text
         # get all games in dashboard
         dash_board = driver.find_elements_by_css_selector(
             '[data-name="dashboard-champ-content"] [class="c-events__item c-events__item_col"] [class="c-events__item c-events__item_game"]')
 
+        result = dict()
         game_desctiptions_list = []
         # get each game values
         for game in dash_board:
@@ -152,6 +166,5 @@ class Mainer(Worker):
                                        tournament_url, game_coefs_dict, game_date, game_time]
             game_desctiption = dict(zip(game_desctiption_keys, game_desctiption_values))
             game_desctiptions_list.append(game_desctiption)
-
-        game_json = json.dumps(game_desctiptions_list)
-        return game_json
+        result.update({tournament_name: game_desctiptions_list})
+        return result
