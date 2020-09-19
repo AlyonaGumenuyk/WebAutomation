@@ -2,8 +2,6 @@ import json
 import time
 
 import requests
-from flask import Response
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -43,19 +41,19 @@ class Miner(Worker):
             try:
                 report = self.get_tournaments(task.params[0])
                 result = dict(
-                    {"server_adress": "http://127.0.0.1:8081/tournaments", "report": report})
+                    {"server_adress": self.server_address + "/tournaments", "report": report})
             except:
                 result = dict(
-                    {"server_adress": "http://127.0.0.1:8081/report", "report": "error", "task": task.method})
+                    {"server_adress": self.server_address + "/report", "report": "error", "task": task.method})
         elif task.method == 'get_games':
             try:
                 report = self.get_games(task.params[0])
-                result = dict({"server_adress": "http://127.0.0.1:8081/games", "report": report})
+                result = dict({"server_adress": self.server_address + "/games", "report": report})
             except:
                 result = dict(
-                    {"server_adress": "http://127.0.0.1:8081/report", "report": "error", "task": task.method})
+                    {"server_adress": self.server_address + "/report", "report": "error", "task": task.method})
         else:
-            result = dict({"server_adress": "http://127.0.0.1:8081/report", "report": "unknown task name",
+            result = dict({"server_adress": self.server_address + "/report", "report": "unknown task name",
                            "task": task.method})
         return result
 
@@ -67,19 +65,19 @@ class Miner(Worker):
                     report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
                     requests.post(result["server_adress"], json=report)
                 except:
-                    break
+                    pass
             elif result["report"] == 'unknown task name':
                 try:
                     report = json.loads(json.dumps({"Error": "Unknown task name"}))
                     requests.post(result["server_adress"], json=report)
                 except:
-                    break
+                    pass
             else:
                 try:
                     report = json.loads(json.dumps(result["report"]))
                     requests.post(result["server_adress"], json=report)
                 except:
-                    break
+                    pass
 
     def get_tournaments(self, sport_name: str):
         result = dict()

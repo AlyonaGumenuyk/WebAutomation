@@ -4,9 +4,8 @@ from client.better import Better
 
 
 class BetterStarter:
-    def __init__(self, task_queue):
-        self.task_queue = task_queue
-        self.better = Better(task_queue)
+    def __init__(self):
+        self.better = Better()
 
         thread = threading.Thread(target=self.run)
         thread.daemon = True

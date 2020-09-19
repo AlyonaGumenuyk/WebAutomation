@@ -2,26 +2,41 @@ import json
 import os
 import time
 
-from flask import Flask, jsonify, make_response, request, Response, stream_with_context
+from flask import Flask, make_response, request
 from flask_restful import Resource, Api
 
-from client.better import Better
 from server.better_starter import BetterStarter
-from task_management.better_task_manager import BetterTaskManeger
-from task_management.miner_task_manager import MinerTaskManeger
 from server.miner_starter import MinerStarter
-from task_management.task_queue import TaskQueue
+from task_management.better_task_manager import BetterTaskManager
+from task_management.miner_task_manager import MinerTaskManager
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 app.config['JSON_AS_ASCII'] = False
 api = Api(app)
 
-task_manager = MinerTaskManeger()
+
+def update_tasks(workers_list):
+    with open('task_report/tasks.json', 'r+', encoding='utf8') as current_tasks:
+        try:
+            data = json.load(current_tasks)
+            for worker in workers_list:
+                data.update({worker: []})
+                current_tasks.seek(0)
+                current_tasks.truncate()
+                json.dump(data, current_tasks, indent=4)
+        except:
+            data = dict({'miner': [], 'better': []})
+            json.dump(data, current_tasks, indent=4)
+
+
+update_tasks(['miner', 'better'])
+
+better_task_manager = BetterTaskManager()
+miner_task_manager = MinerTaskManager()
+
 miner_starter = MinerStarter()
-
-
-# better_starter = BetterStarter(task_manager.task_queue)
+# better_starter = BetterStarter()
 
 
 class IndexPage(Resource):
@@ -33,29 +48,29 @@ class IndexPage(Resource):
 class GetTasks(Resource):
     @staticmethod
     def get():
-        with open('task_report/tasks.json') as current_tasks:
+        with open('task_report/tasks.json', encoding='utf8') as current_tasks:
             return make_response(json.load(current_tasks))
 
     @staticmethod
     def post():
         if request.is_json:
             request_data = request.get_json()
-            with open('task_report/tasks.json') as current_tasks:
+            with open('task_report/tasks.json', encoding='utf8') as current_tasks:
                 data = json.load(current_tasks)
             if request_data['worker_type'] == 'miner':
                 tasks = json.loads(json.dumps(data['miner']))
-                task_manager.update_tasks('miner')
+                update_tasks(['miner'])
                 return tasks
             elif request_data['worker_type'] == 'better':
                 tasks = json.loads(json.dumps(data['better']))
-                task_manager.update_tasks('better')
+                update_tasks(['better'])
                 return tasks
 
 
 class MinerGetTournaments(Resource):
     @staticmethod
     def get():
-        with open('task_report/tournaments.json', 'r') as tournaments:
+        with open('task_report/tournaments.json', 'r', encoding='utf8') as tournaments:
             return make_response(json.load(tournaments))
 
     @staticmethod
@@ -65,7 +80,7 @@ class MinerGetTournaments(Resource):
             with open('task_report/tournaments.json', 'w', encoding='utf8') as tournaments:
                 tournaments.seek(0)
                 tournaments.truncate()
-                json.dump(data, tournaments, indent=4)
+                json.dump(data, tournaments, indent=4, ensure_ascii=False)
                 with open('task_report/games.json', 'r+', encoding='utf8') as games:
                     if os.path.getsize('task_report/games.json') > 0:
                         games.seek(0)
@@ -75,7 +90,7 @@ class MinerGetTournaments(Resource):
 class MinerGetGames(Resource):
     @staticmethod
     def get():
-        with open('task_report/games.json', 'r') as games:
+        with open('task_report/games.json', 'r', encoding='utf8') as games:
             result = json.load(games)
             return make_response(result)
 
@@ -91,15 +106,14 @@ class MinerGetGames(Resource):
                     print(data)
                     current_games.update(data)
                 else:
-                    print('fuck')
                     current_games = data
-                json.dump(current_games, games, indent=4)
+                json.dump(current_games, games, indent=4, ensure_ascii=False)
 
 
 class BetterGetCoefs(Resource):
     @staticmethod
     def get():
-        with open('task_report/gamestat.json', 'r') as gamestat:
+        with open('task_report/gamestat.json', 'r', encoding='utf8') as gamestat:
             return make_response(json.load(gamestat))
 
     @staticmethod
@@ -115,7 +129,7 @@ class BetterGetCoefs(Resource):
 class Report(Resource):
     @staticmethod
     def get():
-        with open('task_report/report.json', 'r') as report:
+        with open('task_report/report.json', 'r', encoding='utf8') as report:
             return make_response(json.load(report))
 
     @staticmethod

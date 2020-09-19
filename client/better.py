@@ -9,19 +9,27 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from client.pages.match_page import MatchPage
 from client.worker import Worker
+from task_management.task import Task
 
 
 class Better(Worker):
-    def __init__(self, task_queue):
-        super().__init__(task_queue)
+    def __init__(self):
+        super().__init__()
         self.skills = {"make_bet": self.make_bet,
                        "get_coefs": self.get_coefs}
+        self.worker_type = json.loads(json.dumps({'worker_type': 'better'}))
 
-    @staticmethod
-    def get_new_tasks():
-        time_to_sleep = 10
-        print("sleeping for {} seconds while waiting for tasks".format(time_to_sleep))
-        time.sleep(time_to_sleep)
+    def get_new_tasks(self):
+        tasks = None
+        while not tasks:
+            tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
+            if tasks:
+                for task in tasks:
+                    print(task)
+                    self.task_queue.put(Task.to_task(task))
+            else:
+                print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
+                time.sleep(self.time_to_sleep)
 
     def work(self):
         if self.task_queue.empty():
@@ -42,22 +50,22 @@ class Better(Worker):
             if result == 'error':
                 try:
                     report = json.loads(json.dumps({"Error": "Can not find the website"}))
-                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                    requests.post(self.server_address + "/get_coefs", json=report)
                 except:
-                    break
+                    pass
 
             elif result == 'finished':
                 try:
                     report = json.loads(json.dumps({"Info": "Match is finished"}))
-                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                    requests.post(self.server_address + "/get_coefs", json=report)
                 except:
-                    break
+                    pass
             elif result == 'unknown task name':
                 try:
                     report = json.loads(json.dumps({"Error": "Unknown task name"}))
-                    requests.post('http://127.0.0.1:8081/get_coefs', json=report)
+                    requests.post(self.server_address + "/get_coefs", json=report)
                 except:
-                    break
+                    pass
 
     def login(self, name: str, password: str):
         driver = self.driver
@@ -101,10 +109,10 @@ class Better(Worker):
                     status_changes = changes['current_status']
                     if len(changes) > 1 or list(status_changes.keys()) != ['time']:
                         print('sending')
-                        requests.post('http://127.0.0.1:8081/get_coefs', json=changes)
+                        requests.post(self.server_address + "/get_coefs", json=changes)
                     prev_game_stat = game_stat
                 else:
-                    requests.post('http://127.0.0.1:8081/get_coefs', json=json.loads(game_stat))
+                    requests.post(self.server_address + "/get_coefs", json=json.loads(game_stat))
                     prev_game_stat = game_stat
                 print("refreashing stats")
                 time.sleep(3)

@@ -1,167 +1,543 @@
 {
+    "command_names": {
+        "command_left": "URAL",
+        "command_right": "ZENIT SAINT PETERSBURG"
+    },
+    "score": {
+        "command_left_score": "0",
+        "command_right_score": "1"
+    },
     "current_status": {
-        "time": "83:52"
+        "status": "1 Half",
+        "time": "38:49"
     },
     "dashboard_coefs": {
         "command_left": {
-            "ATTACKS": "132"
+            "ATTACKS": "51",
+            "DANGEROUS ATTACKS": "20",
+            "POSSESSION %": "44",
+            "SHOTS ON TARGET": "1",
+            "SHOTS OFF TARGET": "3"
+        },
+        "command_right": {
+            "ATTACKS": "40",
+            "DANGEROUS ATTACKS": "19",
+            "POSSESSION %": "56",
+            "SHOTS ON TARGET": "2",
+            "SHOTS OFF TARGET": "5"
         }
     },
     "table_coefs": {
         "1x2": {
-            "Renova": "62"
+            "Ural": "26",
+            "Draw": "8.5",
+            "Zenit Saint Petersburg": "1.1"
         },
         "Double Chance": {
-            "Renova Or X": "9.63"
-        },
-        "To Qualify": {
-            "To Qualify - Renova": "20",
-            "To Qualify - Hajduk Split": "1.008"
+            "Ural Or X": "6.65",
+            "Ural Or Zenit Saint Petersburg": "1.096",
+            "Zenit Saint Petersburg Or X": "1.01"
         },
         "Both Teams To Score": {
-            "Yes": "8.06",
-            "No": "1.08"
+            "Yes": "2",
+            "No": "1.82",
+            "Each Team To Score 2 Or More - Yes": "8.41",
+            "Each Team To Score 2 Or More - No": "1.03"
         },
         "Total": {
-            "Total Over 1.5": "3.11",
-            "Total Under 1.5": "1.39"
+            "Total Over 1.5": "1.11",
+            "Total Under 1.5": "6.99",
+            "Total Over 2": "1.15",
+            "Total Under 2": "5.79",
+            "Total Over 2.5": "1.49",
+            "Total Under 2.5": "2.69",
+            "Total Over 3": "1.864",
+            "Total Under 3": "1.98",
+            "Total Over 3.5": "2.664",
+            "Total Under 3.5": "1.5",
+            "Total Over 4": "4.14",
+            "Total Under 4": "1.25",
+            "Total Over 4.5": "4.96",
+            "Total Under 4.5": "1.19",
+            "Total Over 5": "9.3",
+            "Total Under 5": "1.07",
+            "Total Over 5.5": "10",
+            "Total Under 5.5": "1.06",
+            "Total Over 6": "16.3",
+            "Total Under 6": "1.02",
+            "Total Over 6.5": "16.3",
+            "Total Under 6.5": "1.02"
         },
         "Asian Total": {
-            "Total Over 1.75": "4.11",
-            "Total Under 1.75": "1.25"
+            "Total Over 1.75": "1.11",
+            "Total Under 1.75": "7.1",
+            "Total Over 2.25": "1.32",
+            "Total Under 2.25": "3.5",
+            "Total Over 2.75": "1.62",
+            "Total Under 2.75": "2.35",
+            "Total Over 3.25": "2.14",
+            "Total Under 3.25": "1.74",
+            "Total Over 3.75": "2.848",
+            "Total Under 3.75": "1.448",
+            "Total Over 4.25": "4.5",
+            "Total Under 4.25": "1.22",
+            "Total Over 4.75": "7.1",
+            "Total Under 4.75": "1.11"
         },
         "Handicap": {
-            "Handi\u0441ap Renova (+1)": "4.11",
-            "Handi\u0441ap Hajduk Split (-1)": "1.25",
-            "Handi\u0441ap Renova (+1.5)": "1.288",
-            "Handi\u0441ap Hajduk Split (-1.5)": "3.76"
+            "Handi\u0441ap Ural (+1)": "4.76",
+            "Handi\u0441ap Zenit Saint Petersburg (-1)": "1.2",
+            "Handi\u0441ap Ural (+1.5)": "2.49",
+            "Handi\u0441ap Zenit Saint Petersburg (-1.5)": "1.56",
+            "Handi\u0441ap Ural (+2)": "1.82",
+            "Handi\u0441ap Zenit Saint Petersburg (-2)": "2.03",
+            "Handi\u0441ap Ural (+2.5)": "1.48",
+            "Handi\u0441ap Zenit Saint Petersburg (-2.5)": "2.73",
+            "Handi\u0441ap Ural (+3)": "1.19",
+            "Handi\u0441ap Zenit Saint Petersburg (-3)": "4.94",
+            "Handi\u0441ap Ural (+3.5)": "1.14",
+            "Handi\u0441ap Zenit Saint Petersburg (-3.5)": "6.1"
         },
         "Asian Handicap": {
-            "Handi\u0441ap Renova (+1.25)": "1.568",
-            "Handi\u0441ap Hajduk Split (-1.25)": "2.475",
-            "Handi\u0441ap Renova (+1.75)": "1.15",
-            "Handi\u0441ap Hajduk Split (-1.75)": "5.71",
-            "$delete": [
-                "Handi\u0441ap Renova (+0.75)",
-                "Handi\u0441ap Hajduk Split (-0.75)"
-            ]
+            "Handi\u0441ap Ural (+0.25)": "11",
+            "Handi\u0441ap Zenit Saint Petersburg (-0.25)": "1.048",
+            "Handi\u0441ap Ural (+0.75)": "6.1",
+            "Handi\u0441ap Zenit Saint Petersburg (-0.75)": "1.14",
+            "Handi\u0441ap Ural (+1.25)": "3.01",
+            "Handi\u0441ap Zenit Saint Petersburg (-1.25)": "1.41",
+            "Handi\u0441ap Ural (+1.75)": "2.144",
+            "Handi\u0441ap Zenit Saint Petersburg (-1.75)": "1.736",
+            "Handi\u0441ap Ural (+2.25)": "1.6",
+            "Handi\u0441ap Zenit Saint Petersburg (-2.25)": "2.39",
+            "Handi\u0441ap Ural (+2.75)": "1.34",
+            "Handi\u0441ap Zenit Saint Petersburg (-2.75)": "3.36",
+            "Handi\u0441ap Ural (+3.25)": "1.17",
+            "Handi\u0441ap Zenit Saint Petersburg (-3.25)": "5.35",
+            "Handi\u0441ap Ural (+3.75)": "1.075",
+            "Handi\u0441ap Zenit Saint Petersburg (-3.75)": "8.8"
         },
         "Total 1": {
-            "Individual Total 1 Over 0.5": "8.06",
-            "Individual Total 1 Under 0.5": "1.08"
+            "Individual Total 1 Over 0.5": "1.99",
+            "Individual Total 1 Under 0.5": "1.82",
+            "Individual Total 1 Over 1": "4.59",
+            "Individual Total 1 Under 1": "1.2",
+            "Individual Total 1 Over 1.5": "7.41",
+            "Individual Total 1 Under 1.5": "1.09"
+        },
+        "Asian Team Total 1": {
+            "Team 1 Total Over 0.75": "2.5",
+            "Team 1 Total Under 0.75": "1.54",
+            "Team 1 Total Over 1.25": "5.64",
+            "Team 1 Total Under 1.25": "1.15",
+            "Team 1 Total Over 1.75": "10.7",
+            "Team 1 Total Under 1.75": "1.05"
         },
         "Total 2": {
-            "Individual Total 2 Over 1.5": "3.48",
-            "Individual Total 2 Under 1.5": "1.31",
-            "Individual Total 2 Over 2.5": "13.8"
+            "Individual Total 2 Over 1.5": "1.2",
+            "Individual Total 2 Under 1.5": "4.53",
+            "Individual Total 2 Over 2": "1.4",
+            "Individual Total 2 Under 2": "2.97",
+            "Individual Total 2 Over 2.5": "1.98",
+            "Individual Total 2 Under 2.5": "1.83",
+            "Individual Total 2 Over 3": "3.06",
+            "Individual Total 2 Under 3": "1.38",
+            "Individual Total 2 Over 3.5": "4.24",
+            "Individual Total 2 Under 3.5": "1.22",
+            "Individual Total 2 Over 4": "9.47",
+            "Individual Total 2 Under 4": "1.06",
+            "Individual Total 2 Over 4.5": "10.6",
+            "Individual Total 2 Under 4.5": "1.04"
+        },
+        "Asian Team Total 2": {
+            "Team 2 Total Over 1.75": "1.28",
+            "Team 2 Total Under 1.75": "3.62",
+            "Team 2 Total Over 2.25": "1.68",
+            "Team 2 Total Under 2.25": "2.16",
+            "Team 2 Total Over 2.75": "2.26",
+            "Team 2 Total Under 2.75": "1.59"
         },
         "Next Goal": {
-            "Renova To Score Next Goal 2": "9.4",
-            "Hajduk Split To Score Next Goal 2": "3.77",
-            "Neither Team To Score Next Goal 2": "1.41"
+            "Ural To Score Next Goal 2": "3.83",
+            "Zenit Saint Petersburg To Score Next Goal 2": "1.48",
+            "Neither Team To Score Next Goal 2": "6.99",
+            "Ural To Score Next Goal 3": "4.93",
+            "Zenit Saint Petersburg To Score Next Goal 3": "1.97",
+            "Neither Team To Score Next Goal 3": "2.69",
+            "Ural To Score Next Goal 4": "7.67",
+            "Zenit Saint Petersburg To Score Next Goal 4": "3.52",
+            "Neither Team To Score Next Goal 4": "1.5",
+            "Ural To Score Next Goal 5": "14.45",
+            "Zenit Saint Petersburg To Score Next Goal 5": "5.94",
+            "Neither Team To Score Next Goal 5": "1.19"
+        },
+        "Next Goal, Handicap": {
+            "Next Goal 2, Handicap Ural 0": "3.416",
+            "Next Goal 2, Handicap Zenit Saint Petersburg 0": "1.315",
+            "Next Goal 3, Handicap Ural 0": "3.248",
+            "Next Goal 3, Handicap Zenit Saint Petersburg 0": "1.344"
         },
         "Correct Score": {
-            "Correct Score 0-1": "1.41",
-            "Correct Score 0-2": "4",
-            "Correct Score 1-2": "41",
-            "Correct Score 0-3": "29",
-            "Correct Score 0-4": "101",
-            "$delete": [
-                "Correct Score 2-1"
-            ]
+            "Correct Score 2-1": "34",
+            "Correct Score 1-1": "11",
+            "Correct Score 0-1": "6.99",
+            "Correct Score 3-1": "101",
+            "Correct Score 2-2": "23",
+            "Correct Score 0-2": "4.5",
+            "Correct Score 3-2": "67",
+            "Correct Score 3-3": "81",
+            "Correct Score 1-2": "7.5",
+            "Correct Score 4-2": "301",
+            "Correct Score 0-3": "5.5",
+            "Correct Score 4-3": "351",
+            "Correct Score 1-3": "9.5",
+            "Correct Score 2-3": "26",
+            "Correct Score 0-4": "10",
+            "Correct Score 1-4": "17",
+            "Correct Score 2-4": "41",
+            "Correct Score 3-4": "126",
+            "Correct Score 0-5": "21",
+            "Correct Score 1-5": "34",
+            "Correct Score 2-5": "67",
+            "Correct Score 3-5": "251",
+            "Correct Score 0-6": "51",
+            "Correct Score 1-6": "67",
+            "Correct Score 2-6": "151",
+            "Correct Score 0-7": "101",
+            "Correct Score 1-7": "151",
+            "Correct Score 0-8": "351"
+        },
+        "Number In The Score": {
+            "Number 0 Will Be In The Score - Yes": "1.82",
+            "Number 0 Will Be In The Score - No": "2",
+            "Number 1 Will Be In The Score - Yes": "2.03",
+            "Number 1 Will Be In The Score - No": "1.7",
+            "Number 2 Will Be In The Score - Yes": "2.2",
+            "Number 2 Will Be In The Score - No": "1.6",
+            "Number 3 Will Be In The Score - Yes": "3.35",
+            "Number 3 Will Be In The Score - No": "1.28"
         },
         "Even/Odd": {
-            "Total Even - Yes": "3.15",
-            "Total Even - No": "1.29"
+            "Total Even - Yes": "1.83",
+            "Total Even - No": "1.83"
+        },
+        "Goal Up To Minute": {
+            "Goal 2 Will Be Scored Up To 44 Minute - Yes": "4.76",
+            "Goal 2 Will Be Scored Up To 44 Minute - No": "1.19",
+            "Goal 2 Will Be Scored Up To 46 Minute - Yes": "3.36",
+            "Goal 2 Will Be Scored Up To 46 Minute - No": "1.32",
+            "Goal 2 Will Be Scored Up To 47 Minute - Yes": "3.2",
+            "Goal 2 Will Be Scored Up To 47 Minute - No": "1.35",
+            "Goal 2 Will Be Scored Up To 48 Minute - Yes": "2.88",
+            "Goal 2 Will Be Scored Up To 48 Minute - No": "1.42",
+            "Goal 2 Will Be Scored Up To 49 Minute - Yes": "2.72",
+            "Goal 2 Will Be Scored Up To 49 Minute - No": "1.46",
+            "Goal 2 Will Be Scored Up To 50 Minute - Yes": "2.52",
+            "Goal 2 Will Be Scored Up To 50 Minute - No": "1.52",
+            "Goal 2 Will Be Scored Up To 51 Minute - Yes": "2.41",
+            "Goal 2 Will Be Scored Up To 51 Minute - No": "1.57",
+            "Goal 2 Will Be Scored Up To 52 Minute - Yes": "2.3",
+            "Goal 2 Will Be Scored Up To 52 Minute - No": "1.62",
+            "Goal 2 Will Be Scored Up To 53 Minute - Yes": "2.16",
+            "Goal 2 Will Be Scored Up To 53 Minute - No": "1.7",
+            "Goal 2 Will Be Scored Up To 54 Minute - Yes": "2.05",
+            "Goal 2 Will Be Scored Up To 54 Minute - No": "1.77",
+            "Goal 2 Will Be Scored Up To 60 Minute - Yes": "1.67",
+            "Goal 2 Will Be Scored Up To 60 Minute - No": "2.2"
+        },
+        "Penalty Awarded And Sending Off": {
+            "Penalty Awarded And Sending Off - Yes": "10.1",
+            "Penalty Awarded And Sending Off - No": "1.05"
+        },
+        "HT-FT": {
+            "HT-FT W Ural W Ural": "201",
+            "HT-FT XW Ural": "41",
+            "HT-FT W Zenit Saint Petersburg W Ural": "26",
+            "HT-FT W Ural X": "201",
+            "HT-FT XX": "26",
+            "HT-FT W Zenit Saint Petersburg X": "8.5",
+            "HT-FT W Ural W Zenit Saint Petersburg": "151",
+            "HT-FT XW Zenit Saint Petersburg": "13",
+            "HT-FT W Zenit Saint Petersburg W Zenit Saint Petersburg": "1.144"
         },
         "European Handicap": {
-            "European Handicap 1:0 X": "1.33",
-            "European Handicap 1:0 Hajduk Split": "3.52",
-            "European Handicap 2:0 Renova": "1.23",
-            "European Handicap 2:0 X": "4",
-            "European Handicap 2:0 Hajduk Split": "27",
-            "European Handicap 3:0 Renova": "1.01",
-            "European Handicap 3:0 X": "26",
-            "European Handicap 3:0 Hajduk Split": "94"
+            "European Handicap 0:1 Ural": "67",
+            "European Handicap 0:1 X": "26",
+            "European Handicap 0:1 Zenit Saint Petersburg": "1.01",
+            "European Handicap 1:0 Ural": "7",
+            "European Handicap 1:0 X": "3.4",
+            "European Handicap 1:0 Zenit Saint Petersburg": "1.5",
+            "European Handicap 2:0 Ural": "2.375",
+            "European Handicap 2:0 X": "3.2",
+            "European Handicap 2:0 Zenit Saint Petersburg": "2.625",
+            "European Handicap 3:0 Ural": "1.445",
+            "European Handicap 3:0 X": "4.33",
+            "European Handicap 3:0 Zenit Saint Petersburg": "5.5",
+            "European Handicap 4:0 Ural": "1.1",
+            "European Handicap 4:0 X": "8",
+            "European Handicap 4:0 Zenit Saint Petersburg": "13"
+        },
+        "Team 1 To Win Either Half": {
+            "Ural To Win At Least One Half - Yes": "5.8",
+            "Ural To Win At Least One Half - No": "1.1"
+        },
+        "Draw In At Least One Half": {
+            "Draw In At Least One Half - Yes": "2.79",
+            "Draw In At Least One Half - No": "1.44"
+        },
+        "3Way Total": {
+            "Total Over 2 (3Way)": "1.49",
+            "Total Exactly 2 (3Way)": "3.79",
+            "Total Under 2 (3Way)": "6.99",
+            "Total Over 3 (3Way)": "2.664",
+            "Total Exactly 3 (3Way)": "3.53",
+            "Total Under 3 (3Way)": "2.69",
+            "Total Over 4 (3Way)": "4.97",
+            "Total Exactly 4 (3Way)": "4.93",
+            "Total Under 4 (3Way)": "1.5",
+            "Total Over 5 (3Way)": "10.2",
+            "Total Exactly 5 (3Way)": "9.17",
+            "Total Under 5 (3Way)": "1.19",
+            "Total Over 6 (3Way)": "16.3",
+            "Total Exactly 6 (3Way)": "27",
+            "Total Under 6 (3Way)": "1.06"
+        },
+        "Individual 3Way Total 1": {
+            "Ural Total (3Way) Over 1": "7.41",
+            "Ural Total (3Way) Exact 1": "2.72",
+            "Ural Total (3Way) Under 1": "1.82"
+        },
+        "Individual 3Way Total 2": {
+            "Zenit Saint Petersburg Total (3Way) Over 2": "1.98",
+            "Zenit Saint Petersburg Total (3Way) Exact 2": "3.06",
+            "Zenit Saint Petersburg Total (3Way) Under 2": "4.53",
+            "Zenit Saint Petersburg Total (3Way) Over 3": "4.24",
+            "Zenit Saint Petersburg Total (3Way) Exact 3": "3.7",
+            "Zenit Saint Petersburg Total (3Way) Under 3": "1.83",
+            "Zenit Saint Petersburg Total (3Way) Over 4": "10.6",
+            "Zenit Saint Petersburg Total (3Way) Exact 4": "7.1",
+            "Zenit Saint Petersburg Total (3Way) Under 4": "1.22",
+            "Zenit Saint Petersburg Total (3Way) Over 5": "25",
+            "Zenit Saint Petersburg Total (3Way) Exact 5": "18.7",
+            "Zenit Saint Petersburg Total (3Way) Under 5": "1.04"
+        },
+        "Individual Total 1 Even/Odd": {
+            "Ural Total Even": "1.4",
+            "Ural Total Odd": "2.7"
+        },
+        "Individual Total 2 Even/Odd": {
+            "Zenit Saint Petersburg Total Even": "1.92",
+            "Zenit Saint Petersburg Total Odd": "1.78"
+        },
+        "Total Goal Minutes": {
+            "Total Goal Minutes 137.5 Or Fewer": "1.85",
+            "Total Goal Minutes 137.5 Or More": "1.85"
         },
         "Last Goal": {
-            "Renova To Score Last Goal": "9",
-            "Hajduk Split To Score Last Goal": "1.04"
+            "Ural To Score Last Goal": "4",
+            "Zenit Saint Petersburg To Score Last Goal": "1.22"
         },
-        "Method Of Qualifying": {
-            "Penalty Shootout - Yes": "19",
-            "Penalty Shootout - No": "1.02",
-            "A Team Will Qualify In Regular Time - No": "9.5",
-            "A Team Will Qualify In Extra Time - Yes": "21",
-            "A Team Will Qualify In Extra Time - No": "1.016"
+        "Any Team To Win By": {
+            "Any Team To Win With Difference Of 1 Goal(s) - Yes": "3.32",
+            "Any Team To Win With Difference Of 1 Goal(s) - No": "1.33",
+            "Any Team To Win With Difference Of 2 Goal(s) - Yes": "3.26",
+            "Any Team To Win With Difference Of 2 Goal(s) - No": "1.34",
+            "Any Team To Win With Difference Of 3 Goal(s) - Yes": "4.55",
+            "Any Team To Win With Difference Of 3 Goal(s) - No": "1.2",
+            "Any Team To Win With Difference Of 4 Goal(s) - Yes": "8.2",
+            "Any Team To Win With Difference Of 4 Goal(s) - No": "1.075"
+        },
+        "Total Each Team Will Score Under/Over": {
+            "Each Team Will Score Under 1.5 - Yes": "4.4",
+            "Each Team Will Score Under 1.5 - No": "1.17",
+            "Each Team Will Score Over 1.5 - Yes": "8.5",
+            "Each Team Will Score Over 1.5 - No": "1.05"
+        },
+        "Total Number Of Penalties": {
+            "Total Penalties Over 0.5": "3.15",
+            "Total Penalties Under 0.5": "1.31"
+        },
+        "Win To Nil": {
+            "Any Team To Win To Nil - Yes": "1.66",
+            "Any Team To Win To Nil - No": "2.22"
+        },
+        "Both Teams To Score + Total": {
+            "Both Teams To Score + Total Over 1.5 - Yes": "2.22",
+            "Both Teams To Score + Total Over 1.5 - No": "1.66",
+            "Both Teams To Score + Total Over 2.5 - Yes": "2.59",
+            "Both Teams To Score + Total Over 2.5 - No": "1.5",
+            "Both Teams To Score + Total Over 3.5 - Yes": "3.76",
+            "Both Teams To Score + Total Over 3.5 - No": "1.27",
+            "Both Teams To Score + Total Under 4.5 - Yes": "3.04",
+            "Both Teams To Score + Total Under 4.5 - No": "1.38",
+            "Both Teams To Score + Total Over 4.5 - Yes": "6.8",
+            "Both Teams To Score + Total Over 4.5 - No": "1.104",
+            "Both Teams To Score + Total Under 5.5 - Yes": "2.5",
+            "Both Teams To Score + Total Under 5.5 - No": "1.53",
+            "Both Teams To Score + Total Under 6.5 - Yes": "2.32",
+            "Both Teams To Score + Total Under 6.5 - No": "1.61",
+            "Both Teams To Score + Total Under 7.5 - Yes": "2.24",
+            "Both Teams To Score + Total Under 7.5 - No": "1.65"
+        },
+        "Win By": {
+            "Zenit Saint Petersburg To Win By 1 Goals - Yes": "3.6",
+            "Zenit Saint Petersburg To Win By 1 Goals - No": "1.29",
+            "Zenit Saint Petersburg To Win By 2 Goals - Yes": "3.32",
+            "Zenit Saint Petersburg To Win By 2 Goals - No": "1.33",
+            "Zenit Saint Petersburg To Win By 3 Goals - Yes": "4.55",
+            "Zenit Saint Petersburg To Win By 3 Goals - No": "1.2",
+            "Zenit Saint Petersburg To Win By 4 Goals - Yes": "8.2",
+            "Zenit Saint Petersburg To Win By 4 Goals - No": "1.075"
+        },
+        "Team 1 Scores In Halves": {
+            "Ural - 1st Half > 2nd Half": "12.5",
+            "Ural - 1st Half = 2nd Half": "1.55",
+            "Ural - 1st Half < 2nd Half": "2.55"
+        },
+        "Team 2 Scores In Halves": {
+            "Zenit Saint Petersburg - 1st Half > 2nd Half": "2.75",
+            "Zenit Saint Petersburg - 1st Half = 2nd Half": "2.75",
+            "Zenit Saint Petersburg - 1st Half < 2nd Half": "2.55"
+        },
+        "Remaining Time Outcome": {
+            "W Ural After Score 0-1": "7.49",
+            "X After Score 0-1": "3.64",
+            "W Zenit Saint Petersburg After Score 0-1": "1.61"
+        },
+        "Remaining Time Double Chance": {
+            "Ural X After Score 0-1": "2.448",
+            "Ural Zenit Saint Petersburg After Score 0-1": "1.325",
+            "Zenit Saint Petersburg X After Score 0-1": "1.115"
+        },
+        "Team 2 Win To Nil": {
+            "Zenit Saint Petersburg To Win To Nil - Yes": "1.66",
+            "Zenit Saint Petersburg To Win To Nil - No": "2.22"
+        },
+        "Team 1 To Score Goal N From Minute To Minute": {
+            "Ural To Score Its Goal 1 Up To 60 Minute - Yes": "4.43",
+            "Ural To Score Its Goal 1 Up To 60 Minute - No": "1.21"
+        },
+        "Team 2 To Score Goal N From Minute To Minute": {
+            "Zenit Saint Petersburg To Score Its Goal 2 Up To 60 Minute - Yes": "2.05",
+            "Zenit Saint Petersburg To Score Its Goal 2 Up To 60 Minute - No": "1.77"
         },
         "Individual Total 1 Exact Number Of Goals": {
-            "Individual Total Renova 0": "1.06",
-            "Individual Total Renova 1": "10",
-            "Individual Total Renova 2": "67"
+            "Individual Total Ural 0": "1.616",
+            "Team 1 Total - 3 Or More Goals": "29",
+            "Individual Total Ural 1": "2.625",
+            "Individual Total Ural 2": "9"
         },
         "Individual Total 2 Exact Number Of Goals": {
-            "Individual Total Hajduk Split 1": "1.25",
-            "Team 2 Total - 3 Or More Goals": "15",
-            "Individual Total Hajduk Split 2": "4"
+            "Individual Total Zenit Saint Petersburg 1": "4.33",
+            "Team 2 Total - 3 Or More Goals": "2",
+            "Individual Total Zenit Saint Petersburg 2": "2.75"
         },
-        "1x2. 2 Half": {
-            "Renova": "13.9",
-            "Draw": "1.36",
-            "Hajduk Split": "4.14"
+        "Win Or Draw": {
+            "X Or Zenit Saint Petersburg (Home Win - Refund) - Zenit Saint Petersburg": "1.075",
+            "X Or Zenit Saint Petersburg (Home Win - Refund) - X": "8.29",
+            "Ural Or X (Away Win - Refund) - Ural": "3.86",
+            "Ural Or X (Away Win - Refund) - X": "1.26"
         },
-        "Total 1. 2 Half": {
-            "Individual Total 1 Over 0.5": "8.06",
-            "Individual Total 1 Under 0.5": "1.08"
+        "Multi Goal": {
+            "Multi Goal 1-2": "2.5",
+            "Multi Goal 1-3": "1.445",
+            "Multi Goal 1-4": "1.168",
+            "Multi Goal 1-5": "1.05",
+            "Multi Goal 2-3": "1.54",
+            "Multi Goal 2-4": "1.12",
+            "Multi Goal 3-4": "1.73",
+            "Multi Goal 3-5": "1.416",
+            "Multi Goal 4-5": "2.7",
+            "Multi Goal 5-6": "5.4"
         },
-        "Total 2. 2 Half": {
-            "Individual Total 2 Over 0.5": "3.48",
-            "Individual Total 2 Under 0.5": "1.31"
+        "Team 1, Multi Goal": {
+            "Team Ural, Multi Goal 0-1": "1.085",
+            "Team Ural, Multi Goal 1-2": "1.9",
+            "Team Ural, Multi Goal 2-3": "7.03"
         },
-        "1x2. Corners": {
-            "Renova": "2.9",
-            "Draw": "2.1",
-            "Hajduk Split": "4.01"
+        "Team 2, Multi Goal": {
+            "Team Zenit Saint Petersburg, Multi Goal 1-2": "1.725",
+            "Team Zenit Saint Petersburg, Multi Goal 1-3": "1.2",
+            "Team Zenit Saint Petersburg, Multi Goal 1-4": "1.05",
+            "Team Zenit Saint Petersburg, Multi Goal 2-3": "1.37",
+            "Team Zenit Saint Petersburg, Multi Goal 2-4": "1.115",
+            "Team Zenit Saint Petersburg, Multi Goal 2-5": "1.04",
+            "Team Zenit Saint Petersburg, Multi Goal 3-4": "2.056",
+            "Team Zenit Saint Petersburg, Multi Goal 3-5": "1.81",
+            "Team Zenit Saint Petersburg, Multi Goal 4-5": "4.31"
         },
-        "Double Chance. Corners": {
-            "Renova Or X": "1.225",
-            "Renova Or Hajduk Split": "1.69",
-            "Hajduk Split Or X": "1.384"
+        "Team 1 To Score Specified Goal + Outcome": {
+            "Team Ural To Score 2 Goal(s) + X - Yes": "7.5",
+            "Team Ural To Score 2 Goal(s) + X - No": "1.06",
+            "Team Ural To Score 2 Goal(s) + W Zenit Saint Petersburg - Yes": "6.5",
+            "Team Ural To Score 2 Goal(s) + W Zenit Saint Petersburg - No": "1.08"
         },
-        "Total 1. Corners": {
-            "Individual Total 1 Over 2.5": "2.51",
-            "Individual Total 1 Under 2.5": "1.5"
+        "Team 2 To Score Specified Goal + Outcome": {
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + W Zenit Saint Petersburg - Yes": "1.48",
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + W Zenit Saint Petersburg - No": "2.45"
         },
-        "3Way Total. Corners": {
-            "Total Exactly 6 (3Way)": "5"
+        "Team 1 To Score Specified Goal + Double Chance": {
+            "Team Ural To Score 2 Goal(s) + Ural X - Yes": "6.1",
+            "Team Ural To Score 2 Goal(s) + Ural X - No": "1.09",
+            "Team Ural To Score 2 Goal(s) + Ural Zenit Saint Petersburg - Yes": "5.4",
+            "Team Ural To Score 2 Goal(s) + Ural Zenit Saint Petersburg - No": "1.11",
+            "Team Ural To Score 2 Goal(s) + Zenit Saint Petersburg X - Yes": "4.1",
+            "Team Ural To Score 2 Goal(s) + Zenit Saint Petersburg X - No": "1.2"
         },
-        "Result / Teams To Score. Result + Total": {
-            "Renova To Win + Team Hajduk Split To Score": "67",
-            "Hajduk Split To Win + Team Renova Not To Score": "1.06"
+        "Team 2 To Score Specified Goal + Double Chance": {
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + Ural Zenit Saint Petersburg - Yes": "1.48",
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + Ural Zenit Saint Petersburg - No": "2.5",
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + Zenit Saint Petersburg X - Yes": "1.45",
+            "Team Zenit Saint Petersburg To Score 2 Goal(s) + Zenit Saint Petersburg X - No": "2.5"
         },
-        "1x2. Yellow Cards": {
-            "Hajduk Split": "1.03"
+        "Both Teams, Total In Time Interval": {
+            "From 31 To 60 Minute, Each Team TO 0.5 - Yes": "7.1",
+            "From 31 To 60 Minute, Each Team TO 0.5 - No": "1.04"
         },
-        "Double Chance. Yellow Cards": {
-            "Renova Or X": "9"
+        "Team 1, Intermediate Total": {
+            "Team Ural, From 31 To 60 Minute TO 0.5": "4.1",
+            "Team Ural, From 31 To 60 Minute TU 0.5": "1.19"
         },
-        "Total. Yellow Cards": {
-            "Total Over 6.5": "1.5",
-            "Total Under 6.5": "2.59",
-            "Total Over 7.5": "3.18",
-            "Total Under 7.5": "1.32"
+        "Team 2, Intermediate Total": {
+            "Team Zenit Saint Petersburg, From 31 To 60 Minute TO 0.5": "2",
+            "Team Zenit Saint Petersburg, From 31 To 60 Minute TU 0.5": "1.72"
         },
-        "Handicap. Yellow Cards": {
-            "Handi\u0441ap Renova (+2.5)": "1.29",
-            "Handi\u0441ap Hajduk Split (-2.5)": "3.38"
+        "Team 1, Total Penalties": {
+            "Team Ural Total Penalties Over 0.5": "5.5",
+            "Team Ural Total Penalties Under 0.5": "1.11"
         },
-        "Total 1. Yellow Cards": {
-            "Individual Total 1 Over 2.5": "1.96",
-            "Individual Total 1 Under 2.5": "1.8"
+        "Exact Number": {
+            "Total 1 - Yes": "6.5",
+            "Total 1 - No": "1.11",
+            "Total 2 - Yes": "3.79",
+            "Total 2 - No": "1.27",
+            "Total 3 - Yes": "3.53",
+            "Total 3 - No": "1.3",
+            "Total 4 - Yes": "4.93",
+            "Total 4 - No": "1.175",
+            "Total 5 - Yes": "9.17",
+            "Total 5 - No": "1.06",
+            "Total 6 Or More - Yes": "11",
+            "Total 6 Or More - No": "1.05"
         },
-        "Total 2. Yellow Cards": {
-            "Individual Total 2 Over 4.5": "2.11",
-            "Individual Total 2 Under 4.5": "1.7"
+        "Team 1 To Score A Goal In Both Halves": {
+            "Ural To Score A Goal In Both Halves - Yes": "23",
+            "Ural To Score A Goal In Both Halves - No": "1.01"
+        },
+        "Team 2 To Win Both Halves": {
+            "Zenit Saint Petersburg To Win Both Halves - Yes": "1.725",
+            "Zenit Saint Petersburg To Win Both Halves - No": "2.11"
+        },
+        "Team 2, Total Penalties": {
+            "Team Zenit Saint Petersburg Total Penalties Over 0.5": "5.5",
+            "Team Zenit Saint Petersburg Total Penalties Under 0.5": "1.11"
+        },
+        "Sending Off": {
+            "Sending Off - Yes": "4.65",
+            "Sending Off - No": "1.19"
+        },
+        "Result After A Specific Number Of Goals": {
+            "Team Ural To Win After 3 Goals": "8",
+            "Team Zenit Saint Petersburg To Win After 3 Goals": "1.05"
         }
     }
 }

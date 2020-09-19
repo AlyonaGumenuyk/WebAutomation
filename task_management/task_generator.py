@@ -11,6 +11,5 @@ class TaskGenerator:
         return Task('get_games', [tournament_url])
 
     @classmethod
-    def watch_gen(cls, task_queue, game_url):
-        task = Task('watch', [game_url])
-        task_queue.put(task)
+    def watch_gen(cls, game_url):
+        return Task('watch', [game_url])

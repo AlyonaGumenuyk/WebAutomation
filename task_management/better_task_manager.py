@@ -1,22 +1,25 @@
-import json
 import threading
 import time
 
 from task_management.task_generator import TaskGenerator
-from task_management.task_queue import TaskQueue
-import os
+from task_management.task_manager import TaskManager
 
 
-class BetterTaskManeger:
+class BetterTaskManager(TaskManager):
     def __init__(self):
-        self.task_queue = TaskQueue()
-
+        super().__init__()
+        self.worker_type = 'better'
         thread = threading.Thread(target=self.run)
         thread.daemon = True
         thread.start()
 
     def generate_watch_task(self):
-        task = TaskGenerator.watch_gen(self.task_queue, 'https://1xstavka.ru/en/live/Football/118593-UEFA-Europa-League/256696089-Renova-Hajduk-Split/')
+        watch_task = TaskGenerator.watch_gen(
+            'https://1xstavka.ru/en/live/Football/225733-Russia-Premier-League/257066226-Ural-Zenit-Saint-Petersburg/')
+        self.insert_tasks_file(watch_task, self.worker_type)
 
     def run(self):
-        self.generate_watch_task()
+        while True:
+            self.generate_watch_task()
+            time.sleep(3600)
+
