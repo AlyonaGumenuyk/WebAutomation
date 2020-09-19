@@ -3,14 +3,12 @@ from task_management.task import Task
 
 class TaskGenerator:
     @classmethod
-    def get_tournaments_gen(cls, task_queue):
-        task = Task('get_tournaments', ['Squash'])
-        task_queue.put(task)
+    def get_tournaments_gen(cls, sport_name):
+        return Task('get_tournaments', [sport_name])
 
     @classmethod
-    def get_games_gen(cls, task_queue, tournament_url):
-        task = Task('get_games', [tournament_url])
-        task_queue.put(task)
+    def get_games_gen(cls, tournament_url):
+        return Task('get_games', [tournament_url])
 
     @classmethod
     def watch_gen(cls, task_queue, game_url):

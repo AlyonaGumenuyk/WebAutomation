@@ -10,19 +10,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from client.worker import Worker
+from task_management.task import Task
 
 
 class Miner(Worker):
-    def __init__(self, task_queue):
-        super().__init__(task_queue)
+    def __init__(self):
+        super().__init__()
         self.skills = {"get_tournaments": self.get_tournaments,
                        "get_games": self.get_games}
+        self.worker_type = json.loads(json.dumps({'worker_type': 'miner'}))
 
-    @staticmethod
-    def get_new_tasks():
-        time_to_sleep = 10
-        print("sleeping for {} seconds while waiting for tasks".format(time_to_sleep))
-        time.sleep(time_to_sleep)
+    def get_new_tasks(self):
+        tasks = None
+        while not tasks:
+            tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
+            if tasks:
+                for task in tasks:
+                    print(task)
+                    self.task_queue.put(Task.to_task(task))
+            else:
+                print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
+                time.sleep(self.time_to_sleep)
 
     def work(self):
         if self.task_queue.empty():
@@ -80,12 +88,12 @@ class Miner(Worker):
         driver.get("https://1xstavka.ru/line/")
 
         # scroll to sport name element
-        sport_webelement = driver.find_element_by_css_selector(
-            "[class*='sport_menu'] [href='line/{}/']".format(sport_name))
+        sport_webelement = driver.find_element_by_xpath(
+            "//span[contains(text(), '{}')]".format(sport_name))
 
         actions = ActionChains(self.driver)
         scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
-        scrolling_number = scroll_bar.size['height'] * (sport_webelement.location['y'] - scroll_bar.location['y']) / (
+        scrolling_number = (1.1 * scroll_bar.size['height']) * (sport_webelement.location['y'] - scroll_bar.location['y']) / (
                 1000 - scroll_bar.location['y']) - scroll_bar.size['height']
         actions.move_to_element(scroll_bar).click_and_hold() \
             .move_by_offset(0, scrolling_number).perform()
@@ -131,7 +139,7 @@ class Miner(Worker):
                 command_left = command_left.text
                 command_right = command_right.text
             except:
-                return json.dumps(dict({tournament_name: "Not valid command names"}))
+                return dict({tournament_name: "Not valid command names"})
             # get coefs values untill "O"
             game_coefs = []
 
