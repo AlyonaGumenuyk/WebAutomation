@@ -10,9 +10,10 @@ class Worker:
     def __init__(self):
         self.task_queue = TaskQueue()
         if platform.system() == "Windows":
-            print("Initializing Browser")
+            options = Options()
+            options.headless = True
             self.driver = webdriver.Firefox(executable_path='drivers/firefoxdriver/geckodriver.exe',
-                                            log_path='logs/geckodriver.log')
+                                            log_path='logs/geckodriver.log', options=options)
             self.server_address = 'http://127.0.0.1:8000/'
         else:
             options = Options()

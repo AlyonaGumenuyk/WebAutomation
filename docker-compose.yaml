@@ -19,13 +19,13 @@ services:
     depends_on:
       - server
     container_name: miner
-  better:
-    build:
-      context: .
-      dockerfile: client/Dockerfile
-    environment:
-      - WORKER=better
-    network_mode: host
-    depends_on:
-      - server
-    container_name: better
+#  better:
+#    build:
+#      context: .
+#      dockerfile: client/Dockerfile
+#    environment:
+#      - WORKER=better
+#    network_mode: host
+#    depends_on:
+#      - server
+#    container_name: better
