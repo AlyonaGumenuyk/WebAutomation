@@ -59,25 +59,29 @@ class Miner(Worker):
 
     def do_work(self):
         while True:
-            result = self.work()
-            if result["report"] == 'error':
-                try:
-                    report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
-                    requests.post(result["server_adress"], json=report)
-                except:
-                    pass
-            elif result["report"] == 'unknown task name':
-                try:
-                    report = json.loads(json.dumps({"Error": "Unknown task name"}))
-                    requests.post(result["server_adress"], json=report)
-                except:
-                    pass
-            else:
-                try:
-                    report = json.loads(json.dumps(result["report"]))
-                    requests.post(result["server_adress"], json=report)
-                except:
-                    pass
+            try:
+                result = self.work()
+                if result["report"] == 'error':
+                    try:
+                        report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
+                        requests.post(result["server_adress"], json=report)
+                    except:
+                        pass
+                elif result["report"] == 'unknown task name':
+                    try:
+                        report = json.loads(json.dumps({"Error": "Unknown task name"}))
+                        requests.post(result["server_adress"], json=report)
+                    except:
+                        pass
+                else:
+                    try:
+                        report = json.loads(json.dumps(result["report"]))
+                        requests.post(result["server_adress"], json=report)
+                    except:
+                        pass
+            except:
+                print("Sleeping")
+                time.sleep(10)
 
     def get_tournaments(self, sport_name: str):
         result = dict()

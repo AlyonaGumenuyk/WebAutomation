@@ -1,12 +1,9 @@
 import json
 import os
-import time
 
 from flask import Flask, make_response, request
 from flask_restful import Resource, Api
 
-from server.better_starter import BetterStarter
-from server.miner_starter import MinerStarter
 from task_management.better_task_manager import BetterTaskManager
 from task_management.miner_task_manager import MinerTaskManager
 
@@ -26,16 +23,16 @@ def update_tasks(workers_list):
                 current_tasks.truncate()
                 json.dump(data, current_tasks, indent=4)
         except:
-            data = dict({'miner': [], 'better': []})
+            data = dict({'miner': [], 'client': []})
             json.dump(data, current_tasks, indent=4)
 
 
-update_tasks(['miner', 'better'])
+update_tasks(['miner', 'client'])
 
 better_task_manager = BetterTaskManager()
 miner_task_manager = MinerTaskManager()
 
-miner_starter = MinerStarter()
+# miner_starter = MinerStarter()
 # better_starter = BetterStarter()
 
 
@@ -61,9 +58,9 @@ class GetTasks(Resource):
                 tasks = json.loads(json.dumps(data['miner']))
                 update_tasks(['miner'])
                 return tasks
-            elif request_data['worker_type'] == 'better':
-                tasks = json.loads(json.dumps(data['better']))
-                update_tasks(['better'])
+            elif request_data['worker_type'] == 'client':
+                tasks = json.loads(json.dumps(data['client']))
+                update_tasks(['client'])
                 return tasks
 
 

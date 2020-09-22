@@ -8,7 +8,7 @@ from task_management.task_manager import TaskManager
 class BetterTaskManager(TaskManager):
     def __init__(self):
         super().__init__()
-        self.worker_type = 'better'
+        self.worker_type = 'client'
         thread = threading.Thread(target=self.run)
         thread.daemon = True
         thread.start()

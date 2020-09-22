@@ -13,7 +13,7 @@ class TaskManager:
             try:
                 template = json.load(current_tasks)
             except:
-                template = dict({'miner': [], 'better': []})
+                template = dict({'miner': [], 'client': []})
                 json.dump(template, current_tasks, indent=4)
 
     def insert_tasks_file(self, task, worker_type):

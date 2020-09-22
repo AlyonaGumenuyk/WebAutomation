@@ -13,5 +13,8 @@
     },
     {
         "Error": "Something went wrong in get_games"
+    },
+    {
+        "Error": "Something went wrong in get_tournaments"
     }
 ]

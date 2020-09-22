@@ -17,7 +17,7 @@ class Better(Worker):
         super().__init__()
         self.skills = {"make_bet": self.make_bet,
                        "get_coefs": self.get_coefs}
-        self.worker_type = json.loads(json.dumps({'worker_type': 'better'}))
+        self.worker_type = json.loads(json.dumps({'worker_type': 'client'}))
 
     def get_new_tasks(self):
         tasks = None
@@ -46,26 +46,30 @@ class Better(Worker):
 
     def do_work(self):
         while True:
-            result = self.work()
-            if result == 'error':
-                try:
-                    report = json.loads(json.dumps({"Error": "Can not find the website"}))
-                    requests.post(self.server_address + "/get_coefs", json=report)
-                except:
-                    pass
+            try:
+                result = self.work()
+                if result == 'error':
+                    try:
+                        report = json.loads(json.dumps({"Error": "Can not find the website"}))
+                        requests.post(self.server_address + "/get_coefs", json=report)
+                    except:
+                        pass
 
-            elif result == 'finished':
-                try:
-                    report = json.loads(json.dumps({"Info": "Match is finished"}))
-                    requests.post(self.server_address + "/get_coefs", json=report)
-                except:
-                    pass
-            elif result == 'unknown task name':
-                try:
-                    report = json.loads(json.dumps({"Error": "Unknown task name"}))
-                    requests.post(self.server_address + "/get_coefs", json=report)
-                except:
-                    pass
+                elif result == 'finished':
+                    try:
+                        report = json.loads(json.dumps({"Info": "Match is finished"}))
+                        requests.post(self.server_address + "/get_coefs", json=report)
+                    except:
+                        pass
+                elif result == 'unknown task name':
+                    try:
+                        report = json.loads(json.dumps({"Error": "Unknown task name"}))
+                        requests.post(self.server_address + "/get_coefs", json=report)
+                    except:
+                        pass
+            except:
+                print("Sleeping")
+                time.sleep(10)
 
     def login(self, name: str, password: str):
         driver = self.driver
