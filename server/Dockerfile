@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY ./server /usr/src/app
 COPY ./task_management /usr/src/app/task_management
 
-EXPOSE 80
+EXPOSE 8080
 
 # install dependencies
 RUN pip install --upgrade pip

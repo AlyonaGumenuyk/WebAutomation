@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - 8080:8080
+  miner:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    environment:
+      - WORKER=miner
+    network_mode: host
+    depends_on:
+      - server
+  better:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    environment:
+      - WORKER=better
+    network_mode: host
+    depends_on:
+      - server

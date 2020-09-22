@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     curl unzip wget \
     xvfb
 
-
 # install geckodriver and firefox
 
 RUN GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
@@ -32,13 +31,13 @@ RUN FIREFOX_SETUP=firefox-setup.tar.bz2 && \
 COPY ./client /usr/src/app/client
 COPY ./task_management /usr/src/app/task_management
 
-EXPOSE 80
+EXPOSE 8080
 
 # install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ARG worker_type
-ENV worker=$worker_type
 
-ENTRYPOINT python ${worker}_start.py
+#ENV worker=$worker_type
+
+ENTRYPOINT python ${WORKER}_start.py
