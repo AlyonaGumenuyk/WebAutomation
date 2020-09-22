@@ -8,6 +8,7 @@ services:
       dockerfile: server/Dockerfile
     ports:
       - 8080:8080
+    container_name: server
   miner:
     build:
       context: .
@@ -17,6 +18,7 @@ services:
     network_mode: host
     depends_on:
       - server
+    container_name: miner
   better:
     build:
       context: .
@@ -26,3 +28,4 @@ services:
     network_mode: host
     depends_on:
       - server
+    container_name: better
