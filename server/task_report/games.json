@@ -1,84 +1,19 @@
 {
-    "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game": [
-        {
-            "Tournament name": "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game",
-            "Left command name": "Alexander Grischuk",
-            "Right command name": "Ian Nepomniachtchi",
-            "Match url": "https://1xstavka.ru/en/line/Chess/2137513-Saint-Louis-Rapid-and-Blitz-Chess-2020-Blitz-Chess-10th-Game/",
-            "Coefficients": {
-                "1": "2.955",
-                "X": "2.184",
-                "2": "3.48",
-                "1X": "-",
-                "12": "-",
-                "2X": "-"
-            },
-            "Date of Match": "19.09",
-            "Time of Match": "21:00"
-        },
-        {
-            "Tournament name": "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game",
-            "Left command name": "Alireza Firouzja",
-            "Right command name": "Levon Aronian",
-            "Match url": "https://1xstavka.ru/en/line/Chess/2137513-Saint-Louis-Rapid-and-Blitz-Chess-2020-Blitz-Chess-10th-Game/",
-            "Coefficients": {
-                "1": "2.625",
-                "X": "2.25",
-                "2": "3.98",
-                "1X": "-",
-                "12": "-",
-                "2X": "-"
-            },
-            "Date of Match": "19.09",
-            "Time of Match": "21:00"
-        },
-        {
-            "Tournament name": "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game",
-            "Left command name": "Hikaru Nakamura",
-            "Right command name": "Magnus Carlsen",
-            "Match url": "https://1xstavka.ru/en/line/Chess/2137513-Saint-Louis-Rapid-and-Blitz-Chess-2020-Blitz-Chess-10th-Game/",
-            "Coefficients": {
-                "1": "2.925",
-                "X": "2.3",
-                "2": "3.3",
-                "1X": "-",
-                "12": "-",
-                "2X": "-"
-            },
-            "Date of Match": "19.09",
-            "Time of Match": "21:00"
-        },
-        {
-            "Tournament name": "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game",
-            "Left command name": "Leinier Domínguez",
-            "Right command name": "Pentala Harikrishna",
-            "Match url": "https://1xstavka.ru/en/line/Chess/2137513-Saint-Louis-Rapid-and-Blitz-Chess-2020-Blitz-Chess-10th-Game/",
-            "Coefficients": {
-                "1": "2.72",
-                "X": "2.104",
-                "2": "4.22",
-                "1X": "-",
-                "12": "-",
-                "2X": "-"
-            },
-            "Date of Match": "19.09",
-            "Time of Match": "21:00"
-        },
-        {
-            "Tournament name": "Saint Louis Rapid and Blitz Chess. 2020. Blitz Chess. 10th Game",
-            "Left command name": "Wesley So",
-            "Right command name": "Jeffery Xiong",
-            "Match url": "https://1xstavka.ru/en/line/Chess/2137513-Saint-Louis-Rapid-and-Blitz-Chess-2020-Blitz-Chess-10th-Game/",
-            "Coefficients": {
-                "1": "2.17",
-                "X": "2.395",
-                "2": "4.96",
-                "1X": "-",
-                "12": "-",
-                "2X": "-"
-            },
-            "Date of Match": "19.09",
-            "Time of Match": "21:00"
-        }
-    ]
+    "Corales Puntacana Resort and Club Championship. 2020. Results": "Not valid command names",
+    "Corales Puntacana Resort and Club Championship. 2020. Round 1": "Not valid command names",
+    "Irish Open. 2020. Results": "Not valid command names",
+    "Irish Open. 2020. Round 1": "Not valid command names",
+    "Irish Open. 2020. Round 2": "Not valid command names",
+    "Irish Open. 2020. Round 3": "Not valid command names",
+    "Irish Open. 2020. Round 4": "Not valid command names",
+    "Vodacom Championship Unlocked. 2020. Results": "Not valid command names",
+    "KJ Choi Invitational. 2020. Results": "Not valid command names",
+    "KLPGA Fantom Classic. 2020. Results": "Not valid command names",
+    "Alps de Andalucia. 2020. Results": "Not valid command names",
+    "Colbert Charity Classic. 2020. Results": "Not valid command names",
+    "LocaliQ Series. 2020. Jacksonville Championship. Results": "Not valid command names",
+    "Payne’s Valley Cup. 2020. Results": "Not valid command names",
+    "USA Open. 2021. Results": "Not valid command names",
+    "Wichita Open. 2020. 1st Round": "Not valid command names",
+    "Wichita Open. 2020. Results": "Not valid command names"
 }

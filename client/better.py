@@ -17,7 +17,7 @@ class Better(Worker):
         super().__init__()
         self.skills = {"make_bet": self.make_bet,
                        "get_coefs": self.get_coefs}
-        self.worker_type = json.loads(json.dumps({'worker_type': 'client'}))
+        self.worker_type = json.loads(json.dumps({'worker_type': 'better'}))
 
     def get_new_tasks(self):
         tasks = None
@@ -46,6 +46,7 @@ class Better(Worker):
 
     def do_work(self):
         while True:
+            print('better started')
             try:
                 result = self.work()
                 if result == 'error':

@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 from flask import Flask, make_response, request
 from flask_restful import Resource, Api
@@ -23,13 +24,16 @@ def update_tasks(workers_list):
                 current_tasks.truncate()
                 json.dump(data, current_tasks, indent=4)
         except:
-            data = dict({'miner': [], 'client': []})
+            data = dict({'miner': [], 'better': []})
+            current_tasks.seek(0)
+            current_tasks.truncate()
             json.dump(data, current_tasks, indent=4)
 
 
-update_tasks(['miner', 'client'])
+update_tasks(['miner', 'better'])
 
 better_task_manager = BetterTaskManager()
+time.sleep(1)
 miner_task_manager = MinerTaskManager()
 
 # miner_starter = MinerStarter()
@@ -58,9 +62,9 @@ class GetTasks(Resource):
                 tasks = json.loads(json.dumps(data['miner']))
                 update_tasks(['miner'])
                 return tasks
-            elif request_data['worker_type'] == 'client':
-                tasks = json.loads(json.dumps(data['client']))
-                update_tasks(['client'])
+            elif request_data['worker_type'] == 'better':
+                tasks = json.loads(json.dumps(data['better']))
+                update_tasks(['better'])
                 return tasks
 
 
@@ -152,4 +156,4 @@ api.add_resource(BetterGetCoefs, '/get_coefs')
 api.add_resource(Report, '/report')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True, use_reloader=False)
+    app.run(host='127.0.0.1', port=8000, debug=True, use_reloader=False)

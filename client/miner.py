@@ -59,6 +59,7 @@ class Miner(Worker):
 
     def do_work(self):
         while True:
+            print('miner started')
             try:
                 result = self.work()
                 if result["report"] == 'error':
