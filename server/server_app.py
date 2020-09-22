@@ -1,5 +1,6 @@
 import json
 import os
+import platform
 import time
 
 from flask import Flask, make_response, request
@@ -156,4 +157,10 @@ api.add_resource(BetterGetCoefs, '/get_coefs')
 api.add_resource(Report, '/report')
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000, debug=True, use_reloader=False)
+    if platform.system() == "Windows":
+        host = '127.0.0.1'
+        port = 8000
+    else:
+        host = '0.0.0.0'
+        port = 80
+    app.run(host=host, port=8000, debug=True, use_reloader=False)
