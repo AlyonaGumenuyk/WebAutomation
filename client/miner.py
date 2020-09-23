@@ -1,7 +1,8 @@
 import json
 import time
-
 import requests
+
+from datetime import datetime
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,7 +46,8 @@ class Miner(Worker):
             except Exception as er:
                 result = dict(
                     {"server_adress": self.server_address + "/report", "report": "error",
-                     "error_description": str(er).strip(), "task": task.method})
+                     "error_description": str(er).strip(),
+                     "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f"), "task": task.method})
         elif task.method == 'get_games':
             try:
                 report = self.get_games(task.params[0])
@@ -53,10 +55,11 @@ class Miner(Worker):
             except Exception as er:
                 result = dict(
                     {"server_adress": self.server_address + "/report", "report": "error",
-                     "error_description": str(er).strip(), "task": task.method})
+                     "error_description": str(er).strip(),
+                     "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f"), "task": task.method})
         else:
             result = dict({"server_adress": self.server_address + "/report", "report": "unknown task name",
-                           "task": task.method})
+                           "task": task.method, "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f")})
         return result
 
     def do_work(self):
@@ -65,13 +68,15 @@ class Miner(Worker):
                 result = self.work()
                 if result["report"] == 'error':
                     try:
-                        report = json.loads(json.dumps({"Error in " + result["task"]: result["error_description"]}))
+                        report = json.loads(json.dumps({"Error in " + result["task"]: result["error_description"],
+                                                        "Time": result["time"]}))
                         requests.post(result["server_adress"], json=report)
                     except Exception as er:
                         print(er, "in 'error' handling")
                 elif result["report"] == 'unknown task name':
                     try:
-                        report = json.loads(json.dumps({"Error": "Unknown task name"}))
+                        report = json.loads(json.dumps({"Error": "Unknown task name",
+                                                        "Time": result["time"]}))
                         requests.post(result["server_adress"], json=report)
                     except Exception as er:
                         print(er, "in 'unknown task name' handling")

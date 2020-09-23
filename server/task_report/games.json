@@ -1,9 +1,156 @@
 {
-    "Corales Puntacana Resort and Club Championship. 2020. Results": "Not valid command names",
-    "Corales Puntacana Resort and Club Championship. 2020. Round 1. 3 members. Match-Ups": "Not valid command names",
-    "Irish Open. 2020. Results": "Not valid command names",
-    "Irish Open. 2020. Round 1": "Not valid command names",
-    "Irish Open. 2020. Round 1. 3 members. Match-Ups": "Not valid command names",
-    "Irish Open. 2020. Round 2": "Not valid command names",
-    "Irish Open. 2020. Round 3": "Not valid command names"
+    "Rachael Heyhoe Flint Trophy. 2020. Women": [
+        {
+            "Tournament name": "Rachael Heyhoe Flint Trophy. 2020. Women",
+            "Left command name": "Southern Vipers (Women)",
+            "Right command name": "Northern Diamonds (Women)",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/2129279-Rachael-Heyhoe-Flint-Trophy-2020-Women/",
+            "Coefficients": {
+                "1": "1.805",
+                "X": "0",
+                "2": "2.005",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "27.09",
+            "Time of Match": "12:30"
+        }
+    ],
+    "Ireland. Inter Provincial Cup": [
+        {
+            "Tournament name": "Ireland. Inter Provincial Cup",
+            "Left command name": "Northern Knights",
+            "Right command name": "Leinster Lightning",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1759868-Ireland-Inter-Provincial-Cup/",
+            "Coefficients": {
+                "1": "2.8",
+                "X": "0",
+                "2": "1.4",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "26.09",
+            "Time of Match": "12:15"
+        }
+    ],
+    "Pakistan SuperLeague": [
+        {
+            "Tournament name": "Pakistan SuperLeague",
+            "Left command name": "Multan Sultans",
+            "Right command name": "Karachi Kings",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1138819-Pakistan-SuperLeague/",
+            "Coefficients": {
+                "1": "1.8",
+                "X": "0",
+                "2": "2",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "14.11",
+            "Time of Match": "12:00"
+        },
+        {
+            "Tournament name": "Pakistan SuperLeague",
+            "Left command name": "Lahore Qalandars",
+            "Right command name": "Peshawar Zalmi",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1138819-Pakistan-SuperLeague/",
+            "Coefficients": {
+                "1": "1.8",
+                "X": "0",
+                "2": "2",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "14.11",
+            "Time of Match": "17:00"
+        }
+    ],
+    "Twenty20. Blast": [
+        {
+            "Tournament name": "Twenty20. Blast",
+            "Left command name": "Gloucestershire County",
+            "Right command name": "Northamptonshire Steelbacks",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1980700-Twenty20-Blast/",
+            "Coefficients": {
+                "1": "1.73",
+                "X": "0",
+                "2": "2.104",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "01.10",
+            "Time of Match": "20:30"
+        },
+        {
+            "Tournament name": "Twenty20. Blast",
+            "Left command name": "Nottinghamshire County",
+            "Right command name": "Leicestershire Foxes",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1980700-Twenty20-Blast/",
+            "Coefficients": {
+                "1": "1.3",
+                "X": "0",
+                "2": "3.5",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "01.10",
+            "Time of Match": "20:30"
+        },
+        {
+            "Tournament name": "Twenty20. Blast",
+            "Left command name": "Surrey County",
+            "Right command name": "Kent Spitfires",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1980700-Twenty20-Blast/",
+            "Coefficients": {
+                "1": "1.67",
+                "X": "0",
+                "2": "2.208",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "01.10",
+            "Time of Match": "20:30"
+        },
+        {
+            "Tournament name": "Twenty20. Blast",
+            "Left command name": "Sussex Sharks",
+            "Right command name": "Lancashire Lightning",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1980700-Twenty20-Blast/",
+            "Coefficients": {
+                "1": "1.73",
+                "X": "0",
+                "2": "2.104",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "01.10",
+            "Time of Match": "20:30"
+        }
+    ],
+    "European Series. T10": [
+        {
+            "Tournament name": "European Series. T10",
+            "Left command name": "Royal CC Lisbon",
+            "Right command name": "Malo Vilamoura",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/2104578-European-Series-T10/",
+            "Coefficients": {
+                "1": "2.81",
+                "X": "0",
+                "2": "1.4",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "23.09",
+            "Time of Match": "18:00"
+        }
+    ]
 }

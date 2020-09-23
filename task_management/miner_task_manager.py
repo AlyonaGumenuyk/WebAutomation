@@ -18,7 +18,7 @@ class MinerTaskManager(TaskManager):
         with open('task_report/tournaments.json', 'r+', encoding='utf8') as tournaments:
             tournaments.seek(0)
             tournaments.truncate()
-        tournament_task = TaskGenerator.get_tournaments_gen('Golf')
+        tournament_task = TaskGenerator.get_tournaments_gen('Cricket')
         self.insert_tasks_file(tournament_task, self.worker_type)
 
     def generate_get_games_task(self):

@@ -158,7 +158,7 @@ class Report(Resource):
                     report_dict = json.load(report)
                     report.seek(0)
                     report.truncate()
-                    report_dict["report"].append(data)
+                    report_dict["report"].insert(0, data)
                 except json.decoder.JSONDecodeError:
                     report_dict = dict({"report": [data]})
                 json.dump(report_dict, report, indent=4)
