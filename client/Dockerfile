@@ -5,7 +5,7 @@ WORKDIR /usr/src/app/client
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/usr/src/app
 
-RUN sudo apt install firefox
+RUN apt install firefox
 RUN apt-get update && apt-get install -y
 
 COPY ./client /usr/src/app/client
