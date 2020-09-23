@@ -42,4 +42,4 @@ RUN pip3 install pyvirtualdisplay
 
 #ENV worker=$worker_type
 
-ENTRYPOINT python ${WORKER}_start.py
+ENTRYPOINT python3 ${WORKER}_start.py
