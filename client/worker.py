@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 from task_management.task_queue import TaskQueue
+from pyvirtualdisplay import Display
 
 
 class Worker:
@@ -16,10 +17,9 @@ class Worker:
                                             log_path='logs/geckodriver.log', options=options)
             self.server_address = 'http://127.0.0.1:8000/'
         else:
-            options = Options()
-            options.headless = True
-            self.driver = webdriver.Firefox(executable_path='drivers/firefoxdriver/geckodriver.exe',
-                                            log_path='logs/geckodriver.log', options=options)
+            display = Display(visible=0, size=(1920, 1080))
+            display.start()
+            self.driver = webdriver.Firefox()
             self.server_address = 'http://0.0.0.0:8080/'
         self.driver.set_window_size(1920, 1080)
         self.time_to_sleep = 10

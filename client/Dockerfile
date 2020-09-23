@@ -1,19 +1,32 @@
-FROM python:3.8
+FROM ubuntu:bionic
+
+RUN apt-get update && apt-get install -y \
+    python3 python3-pip \
+    fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 \
+    libnspr4 libnss3 lsb-release xdg-utils libxss1 libdbus-glib-1-2 \
+    curl unzip wget \
+    xvfb
+
+# install geckodriver and firefox
+RUN GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
+    wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
+    tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -C /usr/local/bin && \
+    chmod +x /usr/local/bin/geckodriver && \
+    rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
+
+RUN FIREFOX_SETUP=firefox-setup.tar.bz2 && \
+    apt-get purge firefox && \
+    wget -O $FIREFOX_SETUP "https://download.mozilla.org/?product=firefox-latest&os=linux64" && \
+    tar xjf $FIREFOX_SETUP -C /opt/ && \
+    ln -s /opt/firefox/firefox /usr/bin/firefox && \
+    rm $FIREFOX_SETUP
+
+
 
 WORKDIR /usr/src/app/client
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/usr/src/app
-
-RUN apt-get update && apt-get install -y
-
-ARG FIREFOX_VERSION=79.0
-RUN wget --no-verbose -O /tmp/firefox.tar.bz2 https://download-installer.cdn.mozilla.net/pub/firefox/releases/$FIREFOX_VERSION/linux-x86_64/en-US/firefox-$FIREFOX_VERSION.tar.bz2 \
-   && rm -rf /opt/firefox \
-   && tar -C /opt -xjf /tmp/firefox.tar.bz2 \
-   && rm /tmp/firefox.tar.bz2 \
-   && mv /opt/firefox /opt/firefox-$FIREFOX_VERSION \
-   && ln -fs /opt/firefox-$FIREFOX_VERSION/firefox /usr/bin/firefox
 
 COPY ./client /usr/src/app/client
 COPY ./task_management /usr/src/app/task_management
@@ -23,6 +36,7 @@ EXPOSE 8080
 # install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip install pyvirtualdisplay
 
 
 #ENV worker=$worker_type
