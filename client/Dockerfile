@@ -34,9 +34,9 @@ COPY ./task_management /usr/src/app/task_management
 EXPOSE 8080
 
 # install dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-RUN pip install pyvirtualdisplay
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
+RUN pip3 install pyvirtualdisplay
 
 
 #ENV worker=$worker_type
