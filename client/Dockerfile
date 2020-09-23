@@ -1,10 +1,12 @@
-FROM python:3.8
+FROM ubuntu:bionic
 
 RUN apt-get update && apt-get install -y \
+    python3 python3-pip \
     fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 \
     libnspr4 libnss3 lsb-release xdg-utils libxss1 libdbus-glib-1-2 \
     curl unzip wget \
     xvfb
+
 
 # install geckodriver and firefox
 RUN GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
