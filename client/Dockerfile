@@ -1,7 +1,6 @@
-FROM ubuntu:bionic
+FROM python:3.8
 
 RUN apt-get update && apt-get install -y \
-    python3.8.5 python3-pip \
     fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 \
     libnspr4 libnss3 lsb-release xdg-utils libxss1 libdbus-glib-1-2 \
     curl unzip wget \
@@ -35,11 +34,11 @@ COPY ./task_management /usr/src/app/task_management
 EXPOSE 8080
 
 # install dependencies
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
-RUN pip3 install pyvirtualdisplay
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+RUN pip install pyvirtualdisplay
 
 
 #ENV worker=$worker_type
 
-ENTRYPOINT python3 ${WORKER}_start.py
+ENTRYPOINT python ${WORKER}_start.py
