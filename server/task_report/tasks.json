@@ -1,12 +1,20 @@
 {
-    "miner": [],
+    "miner": [
+        {
+            "method": "get_tournaments",
+            "params": [
+                "Golf"
+            ],
+            "birth_timestamp": "09/22/2020, 21:01:51:836393"
+        }
+    ],
     "better": [
         {
             "method": "watch",
             "params": [
                 "https://1xstavka.ru/en/live/Football/225733-Russia-Premier-League/257066226-Ural-Zenit-Saint-Petersburg/"
             ],
-            "birth_timestamp": "09/22/2020, 20:51:54:158423"
+            "birth_timestamp": "09/22/2020, 21:01:50:827396"
         }
     ]
 }

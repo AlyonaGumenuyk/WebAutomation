@@ -66,20 +66,20 @@ class Miner(Worker):
                     try:
                         report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
                         requests.post(result["server_adress"], json=report)
-                    except:
-                        pass
+                    except Exception as er:
+                        print(er, "in 'error' handling")
                 elif result["report"] == 'unknown task name':
                     try:
                         report = json.loads(json.dumps({"Error": "Unknown task name"}))
                         requests.post(result["server_adress"], json=report)
-                    except:
-                        pass
+                    except Exception as er:
+                        print(er, "in 'unknown task name' handling")
                 else:
                     try:
                         report = json.loads(json.dumps(result["report"]))
                         requests.post(result["server_adress"], json=report)
-                    except:
-                        pass
+                    except Exception as er:
+                        print(er, "in normal work")
             except:
                 print("Sleeping")
                 time.sleep(10)
