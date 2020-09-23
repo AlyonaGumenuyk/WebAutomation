@@ -19,6 +19,7 @@ class Worker:
         else:
             display = Display(visible=0, size=(1920, 1080))
             display.start()
+            print('Initialized virtual display..')
             self.driver = webdriver.Firefox()
             self.server_address = 'http://0.0.0.0:8080/'
         self.driver.set_window_size(1920, 1080)
