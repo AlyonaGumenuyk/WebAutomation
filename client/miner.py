@@ -42,16 +42,18 @@ class Miner(Worker):
                 report = self.get_tournaments(task.params[0])
                 result = dict(
                     {"server_adress": self.server_address + "/tournaments", "report": report})
-            except:
+            except Exception as er:
                 result = dict(
-                    {"server_adress": self.server_address + "/report", "report": "error", "task": task.method})
+                    {"server_adress": self.server_address + "/report", "report": "error",
+                     "error_description": str(er).strip(), "task": task.method})
         elif task.method == 'get_games':
             try:
                 report = self.get_games(task.params[0])
                 result = dict({"server_adress": self.server_address + "/games", "report": report})
-            except:
+            except Exception as er:
                 result = dict(
-                    {"server_adress": self.server_address + "/report", "report": "error", "task": task.method})
+                    {"server_adress": self.server_address + "/report", "report": "error",
+                     "error_description": str(er).strip(), "task": task.method})
         else:
             result = dict({"server_adress": self.server_address + "/report", "report": "unknown task name",
                            "task": task.method})
@@ -59,12 +61,11 @@ class Miner(Worker):
 
     def do_work(self):
         while True:
-            print('miner started')
             try:
                 result = self.work()
                 if result["report"] == 'error':
                     try:
-                        report = json.loads(json.dumps({"Error": "Something went wrong in " + result["task"]}))
+                        report = json.loads(json.dumps({"Error in " + result["task"]: result["error_description"]}))
                         requests.post(result["server_adress"], json=report)
                     except Exception as er:
                         print(er, "in 'error' handling")
@@ -96,8 +97,9 @@ class Miner(Worker):
 
         actions = ActionChains(self.driver)
         scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
-        scrolling_number = (1.1 * scroll_bar.size['height']) * (sport_webelement.location['y'] - scroll_bar.location['y']) / (
-                1000 - scroll_bar.location['y']) - scroll_bar.size['height']
+        scrolling_number = (1.1 * scroll_bar.size['height']) * (
+                sport_webelement.location['y'] - scroll_bar.location['y']) / (
+                                   1000 - scroll_bar.location['y']) - scroll_bar.size['height']
         actions.move_to_element(scroll_bar).click_and_hold() \
             .move_by_offset(0, scrolling_number).perform()
 

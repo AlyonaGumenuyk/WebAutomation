@@ -1,20 +1,13 @@
-[
-    {
-        "Error": "Something went wrong in get_games"
-    },
-    {
-        "Error": "Something went wrong in get_games"
-    },
-    {
-        "Error": "Something went wrong in get_games"
-    },
-    {
-        "Error": "Something went wrong in get_games"
-    },
-    {
-        "Error": "Something went wrong in get_games"
-    },
-    {
-        "Error": "Something went wrong in get_tournaments"
-    }
-]
+{
+    "report": [
+        {
+            "Error in get_tournaments": "Message: Unable to locate element: //span[contains(text(), 'Golf1')]\n"
+        },
+        {
+            "Error in get_tournaments": "NoSuchElementException(\"Unable to locate element: //span[contains(text(), 'Golf1')]\", None, None)"
+        },
+        {
+            "Error in get_tournaments": "Message: Unable to locate element: //span[contains(text(), 'Golf1')]"
+        }
+    ]
+}

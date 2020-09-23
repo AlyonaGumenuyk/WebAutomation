@@ -51,7 +51,10 @@ class GetTasks(Resource):
     @staticmethod
     def get():
         with open('task_report/tasks.json', encoding='utf8') as current_tasks:
-            return make_response(json.load(current_tasks))
+            try:
+                return make_response(json.load(current_tasks))
+            except json.decoder.JSONDecodeError:
+                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
 
     @staticmethod
     def post():
@@ -73,7 +76,10 @@ class MinerGetTournaments(Resource):
     @staticmethod
     def get():
         with open('task_report/tournaments.json', 'r', encoding='utf8') as tournaments:
-            return make_response(json.load(tournaments))
+            try:
+                return make_response(json.load(tournaments))
+            except json.decoder.JSONDecodeError:
+                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
 
     @staticmethod
     def post():
@@ -93,8 +99,11 @@ class MinerGetGames(Resource):
     @staticmethod
     def get():
         with open('task_report/games.json', 'r', encoding='utf8') as games:
-            result = json.load(games)
-            return make_response(result)
+            try:
+                result = json.load(games)
+                return make_response(result)
+            except json.decoder.JSONDecodeError:
+                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
 
     @staticmethod
     def post():
@@ -116,7 +125,10 @@ class BetterGetCoefs(Resource):
     @staticmethod
     def get():
         with open('task_report/gamestat.json', 'r', encoding='utf8') as gamestat:
-            return make_response(json.load(gamestat))
+            try:
+                return make_response(json.load(gamestat))
+            except json.decoder.JSONDecodeError:
+                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
 
     @staticmethod
     def post():
@@ -132,21 +144,24 @@ class Report(Resource):
     @staticmethod
     def get():
         with open('task_report/report.json', 'r', encoding='utf8') as report:
-            return make_response(json.load(report))
+            try:
+                return make_response(json.load(report))
+            except json.decoder.JSONDecodeError:
+                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
 
     @staticmethod
     def post():
         if request.is_json:
             data = request.get_json()
             with open('task_report/report.json', 'r+', encoding='utf8') as report:
-                if os.path.getsize('task_report/report.json') > 0:
-                    current_games = json.load(report)
+                try:
+                    report_dict = json.load(report)
                     report.seek(0)
                     report.truncate()
-                    current_games.append(data)
-                else:
-                    current_games = [data]
-                json.dump(current_games, report, indent=4)
+                    report_dict["report"].append(data)
+                except json.decoder.JSONDecodeError:
+                    report_dict = dict({"report": [data]})
+                json.dump(report_dict, report, indent=4)
 
 
 api.add_resource(IndexPage, '/')
