@@ -142,15 +142,215 @@
             "Right command name": "Malo Vilamoura",
             "Match url": "https://1xstavka.ru/en/line/Cricket/2104578-European-Series-T10/",
             "Coefficients": {
-                "1": "2.81",
+                "1": "2.768",
                 "X": "0",
-                "2": "1.4",
+                "2": "1.41",
                 "1X": "-",
                 "12": "-",
                 "2X": "-"
             },
             "Date of Match": "23.09",
             "Time of Match": "18:00"
+        }
+    ],
+    "Twenty20. 1st series Twenty20. Women": [
+        {
+            "Tournament name": "Twenty20. 1st series Twenty20. Women",
+            "Left command name": "Australia (Women)",
+            "Right command name": "New Zealand (Women)",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1146041-Twenty20-1st-series-Twenty20-Women/",
+            "Coefficients": {
+                "1": "1.44",
+                "X": "0",
+                "2": "2.66",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "26.09",
+            "Time of Match": "12:00"
+        }
+    ],
+    "Twenty20. 2nd series Twenty20. Women": [
+        {
+            "Tournament name": "Twenty20. 2nd series Twenty20. Women",
+            "Left command name": "England (Women)",
+            "Right command name": "West Indies (Women)",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1257459-Twenty20-2nd-series-Twenty20-Women/",
+            "Coefficients": {
+                "1": "1.096",
+                "X": "0",
+                "2": "6.4",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "23.09",
+            "Time of Match": "20:00"
+        }
+    ],
+    "Twenty20. Series. Women": [
+        {
+            "Tournament name": "Twenty20. Series. Women",
+            "Left command name": "England (Women)",
+            "Right command name": "West Indies (Women)",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1812841-Twenty20-Series-Women/",
+            "Coefficients": {
+                "1": "-",
+                "X": "-",
+                "2": "-",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "23.09",
+            "Time of Match": "20:00"
+        },
+        {
+            "Tournament name": "Twenty20. Series. Women",
+            "Left command name": "Australia (Women)",
+            "Right command name": "New Zealand (Women)",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/1812841-Twenty20-Series-Women/",
+            "Coefficients": {
+                "1": "-",
+                "X": "-",
+                "2": "-",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "26.09",
+            "Time of Match": "12:00"
+        }
+    ],
+    "India. Premier League": [
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Kolkata Knight Riders",
+            "Right command name": "Mumbai Indians",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "1.992",
+                "X": "0",
+                "2": "1.656",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "23.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Kings XI Punjab",
+            "Right command name": "Royal Challengers Bangalore",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "2.104",
+                "X": "0",
+                "2": "1.72",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "24.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Chennai Super Kings",
+            "Right command name": "Delhi Capitals",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "1.77",
+                "X": "0",
+                "2": "2.05",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "25.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Kolkata Knight Riders",
+            "Right command name": "Sunrisers Hyderabad",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "2",
+                "X": "0",
+                "2": "1.82",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "26.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Rajasthan Royals",
+            "Right command name": "Kings XI Punjab",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "2.07",
+                "X": "0",
+                "2": "1.77",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "27.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Royal Challengers Bangalore",
+            "Right command name": "Mumbai Indians",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "2.15",
+                "X": "0",
+                "2": "1.72",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "28.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Delhi Capitals",
+            "Right command name": "Sunrisers Hyderabad",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "1.94",
+                "X": "0",
+                "2": "1.88",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "29.09",
+            "Time of Match": "17:00"
+        },
+        {
+            "Tournament name": "India. Premier League",
+            "Left command name": "Rajasthan Royals",
+            "Right command name": "Kolkata Knight Riders",
+            "Match url": "https://1xstavka.ru/en/line/Cricket/988155-India-Premier-League/",
+            "Coefficients": {
+                "1": "2.18",
+                "X": "0",
+                "2": "1.7",
+                "1X": "-",
+                "12": "-",
+                "2X": "-"
+            },
+            "Date of Match": "30.09",
+            "Time of Match": "17:00"
         }
     ]
 }
