@@ -94,7 +94,7 @@ class Miner(Worker):
         result = dict()
 
         driver = self.driver
-        driver.get("https://1xstavka.ru/line/")
+        driver.get("https://www.google.com/")
         print(driver.title)
 
         # scroll to sport name element
