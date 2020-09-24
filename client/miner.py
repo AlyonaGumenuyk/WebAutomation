@@ -94,8 +94,7 @@ class Miner(Worker):
         result = dict()
 
         driver = self.driver
-        driver.get("https://www.google.com/")
-        print(driver.title)
+        driver.get("https://1xstavka.ru/en/")
 
         # scroll to sport name element
         sport_webelement = driver.find_element_by_xpath(
