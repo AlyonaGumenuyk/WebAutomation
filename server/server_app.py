@@ -114,7 +114,6 @@ class MinerGetGames(Resource):
                     current_games = json.load(games)
                     games.seek(0)
                     games.truncate()
-                    print(data)
                     current_games.update(data)
                 else:
                     current_games = data
