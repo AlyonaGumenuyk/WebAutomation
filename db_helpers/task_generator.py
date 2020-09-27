@@ -1,4 +1,13 @@
+import json
+import time
+
 from psycopg2 import connect, extensions, sql, errors, DatabaseError
+
+from task_management.task import Task
+
+TASK_WAITING = 'waiting for execution'
+TASK_EXECUTING = 'executing'
+TASK_COMPLETED = 'execution completed'
 
 
 class TaskGenerator:
@@ -11,7 +20,7 @@ class TaskGenerator:
         self.cur = None
         self.tournaments_delay = 60 * 60 * 24
         self.games_delay = 60 * 60 * 12
-
+        self.task_generation()
 
     def connect(self):
         try:
@@ -32,26 +41,37 @@ class TaskGenerator:
             self.conn.close()
             print('Connection closed')
 
-    def insert_into_tasks(self, skill, arguments, worker_type, created, access_after):
+    def insert_into_tasks(self, skill, arguments, attempts, worker_type, state):
         self.connect()
         if self.conn:
             try:
                 task = f"""
-                INSERT INTO tasks (skill, arguments, attempts, worker_type, created, access_after) 
-                VALUES ('{skill}', '{arguments}', 0, {worker_type}, '{created}',
-                '{access_after}') RETURNING id
+                INSERT INTO tasks (skill, arguments, attempts, worker_type, state) 
+                VALUES ('{skill}', '{arguments}', {attempts}, '{worker_type}', '{state}')
                 """
-                self.cur.execute(postgres_insert_query, record_to_insert)
+                self.cur.execute(task)
                 self.conn.commit()
-            except (Exception, errors) as error:
-                print("Failed to insert record into mobile table", error)
+                print('Task has been inserted')
+            except Exception as error:
+                print("Failed to insert record into tasks table", error)
             finally:
                 self.close_connection()
 
     def task_generation(self):
-        self.connect()
-        if self.conn:
-            while True:
-                tournaments
+        while True:
+            tournaments_task = self.get_tournaments_task('Football')
+            self.insert_into_tasks(skill=tournaments_task.method, arguments=json.dumps(tournaments_task.params),
+                                   attempts=0, worker_type=tournaments_task.worker_type, state=TASK_WAITING)
+            time.sleep(600)
 
+    @classmethod
+    def get_tournaments_task(cls, sport_name):
+        return Task('get_tournaments', [sport_name], 'miner')
 
+    @classmethod
+    def get_games_task(cls, tournament_url):
+        return Task('get_games', [tournament_url], 'miner')
+
+    @classmethod
+    def get_watch_task(cls, game_url):
+        return Task('watch', [game_url], 'better')

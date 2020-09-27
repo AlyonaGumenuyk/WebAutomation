@@ -37,7 +37,9 @@ class DBManager:
             try:
                 autocommit = extensions.ISOLATION_LEVEL_AUTOCOMMIT
                 self.conn.set_isolation_level(autocommit)
-                self.cur.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(self.stavka_db)))
+                self.cur.execute(sql.SQL("""CREATE DATABASE {}
+                                                LOCALE 'en_US.UTF-8'
+                                                TEMPLATE template0""").format(sql.Identifier(self.stavka_db)))
                 print('Created ' + str(self.stavka_db))
 
             except errors.DuplicateDatabase as error:
@@ -54,8 +56,8 @@ class DBManager:
         if self.conn:
             try:
                 create_tasks_query = """
-                CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, 
-                result json, worker_type varchar(30), state varchae(20))
+                CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json,
+                attempts smallint, worker_type varchar(20), state varchar(30))
                 """
                 self.cur.execute(create_tasks_query)
 
