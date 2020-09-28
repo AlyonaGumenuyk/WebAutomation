@@ -1,44 +1,18 @@
 import json
 import os
 import platform
-import time
 
 from flask import Flask, make_response, request
 from flask_restful import Resource, Api
 
-from task_management.better_task_manager import BetterTaskManager
-from task_management.miner_task_manager import MinerTaskManager
+from db_helpers.task_manager import TaskManager
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 app.config['JSON_AS_ASCII'] = False
 api = Api(app)
 
-
-def update_tasks(workers_list):
-    with open('task_report/tasks.json', 'r+', encoding='utf8') as current_tasks:
-        try:
-            data = json.load(current_tasks)
-            for worker in workers_list:
-                data.update({worker: []})
-                current_tasks.seek(0)
-                current_tasks.truncate()
-                json.dump(data, current_tasks, indent=4)
-        except:
-            data = dict({'miner': [], 'better': []})
-            current_tasks.seek(0)
-            current_tasks.truncate()
-            json.dump(data, current_tasks, indent=4)
-
-
-update_tasks(['miner', 'better'])
-
-better_task_manager = BetterTaskManager()
-time.sleep(1)
-miner_task_manager = MinerTaskManager()
-
-# miner_starter = MinerStarter()
-# better_starter = BetterStarter()
+task_manager = TaskManager()
 
 
 class IndexPage(Resource):
@@ -50,49 +24,40 @@ class IndexPage(Resource):
 class GetTasks(Resource):
     @staticmethod
     def get():
-        with open('task_report/tasks.json', encoding='utf8') as current_tasks:
-            try:
-                return make_response(json.load(current_tasks))
-            except json.decoder.JSONDecodeError:
-                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
+        try:
+            tasks = task_manager.get_all_tasks()
+            return make_response(json.loads(tasks))
+        except Exception as error:
+            return make_response(json.loads(json.dumps(dict({'error': str(error).strip()}))))
 
     @staticmethod
     def post():
-        if request.is_json:
-            request_data = request.get_json()
-            with open('task_report/tasks.json', encoding='utf8') as current_tasks:
-                data = json.load(current_tasks)
-            if request_data['worker_type'] == 'miner':
-                tasks = json.loads(json.dumps(data['miner']))
-                update_tasks(['miner'])
-                return tasks
-            elif request_data['worker_type'] == 'better':
-                tasks = json.loads(json.dumps(data['better']))
-                update_tasks(['better'])
-                return tasks
+        try:
+            if request.is_json:
+                request_data = request.get_json()
+                tasks = task_manager.get_task_for_execution(worker_type=request_data['worker_type'])
+                return json.loads(tasks)
+        except Exception as error:
+            return json.loads(json.dumps(dict({'error': str(error).strip()})))
 
 
 class MinerGetTournaments(Resource):
     @staticmethod
     def get():
-        with open('task_report/tournaments.json', 'r', encoding='utf8') as tournaments:
-            try:
-                return make_response(json.load(tournaments))
-            except json.decoder.JSONDecodeError:
-                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
+        try:
+            tournaments = task_manager.get_tournaments()
+            return make_response(json.loads(tournaments))
+        except Exception as error:
+            return make_response(json.loads(json.dumps(dict({'error': str(error).strip()}))))
 
     @staticmethod
     def post():
-        if request.is_json:
-            data = request.get_json()
-            with open('task_report/tournaments.json', 'w', encoding='utf8') as tournaments:
-                tournaments.seek(0)
-                tournaments.truncate()
-                json.dump(data, tournaments, indent=4, ensure_ascii=False)
-                with open('task_report/games.json', 'r+', encoding='utf8') as games:
-                    if os.path.getsize('task_report/games.json') > 0:
-                        games.seek(0)
-                        games.truncate()
+        try:
+            if request.is_json:
+                result = request.get_json()
+                task_manager.add_result(result)
+        except Exception as error:
+            return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
 class MinerGetGames(Resource):

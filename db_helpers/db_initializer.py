@@ -16,7 +16,7 @@ class DBInitializer(DBHelper):
                                                 TEMPLATE template0""").format(sql.Identifier(self.stavka_db)))
                 print('Created ' + str(self.stavka_db))
 
-            except errors.DuplicateDatabase as error:
+            except errors.DuplicateDatabase:
                 print('1xStavkaDB is already exists')
 
             except Exception as error:
@@ -36,7 +36,8 @@ class DBInitializer(DBHelper):
                 self.cur.execute(create_tasks_query)
 
                 create_results_query = """
-                CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result text)
+                CREATE TABLE results (id SERIAL, task_id int, skill varchar(20),
+                result text, executed_state varchar(20))
                 """
                 self.cur.execute(create_results_query)
 

@@ -1,19 +1,22 @@
 {
-    "miner": [],
+    "miner": [
+        {
+            "method": "get_tournaments",
+            "params": [
+                "Cricket"
+            ],
+            "worker_type": "miner",
+            "birth_timestamp": "09/28/2020, 13:38:41:765556"
+        }
+    ],
     "better": [
         {
             "method": "watch",
             "params": [
                 "https://1xstavka.ru/en/live/Football/225733-Russia-Premier-League/257066226-Ural-Zenit-Saint-Petersburg/"
             ],
-            "birth_timestamp": "09/23/2020, 14:58:02:062582"
-        },
-        {
-            "method": "watch",
-            "params": [
-                "https://1xstavka.ru/en/live/Football/225733-Russia-Premier-League/257066226-Ural-Zenit-Saint-Petersburg/"
-            ],
-            "birth_timestamp": "09/23/2020, 15:58:02:064904"
+            "worker_type": "better",
+            "birth_timestamp": "09/28/2020, 13:38:40:758643"
         }
     ]
 }
