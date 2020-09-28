@@ -35,59 +35,41 @@ class Miner(Worker):
         if self.task_queue.empty():
             self.get_new_tasks()
         task = self.task_queue.get()
-        return self.do_task(task)
+        server_adress, result = self.do_task(task)
+        return server_adress, result
 
     def do_task(self, task):
-        if task.method == 'get_tournaments':
+        if task.skill == 'get_tournaments':
+            server_adress = self.server_address + "/tournaments"
             try:
                 report = self.get_tournaments(task.params[0])
-                result = dict(
-                    {"server_adress": self.server_address + "/tournaments", "report": report})
+                return server_adress, dict({"result": report, "task_id": task.task_id,
+                                            "skill": task.skill, "executed_state": 'success'})
             except Exception as er:
-                result = dict(
-                    {"server_adress": self.server_address + "/report", "report": "error",
-                     "error_description": str(er).strip(),
-                     "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f"), "task": task.method})
-        elif task.method == 'get_games':
+                return server_adress, dict({"result": str(er).strip(), "task_id": task.task_id,
+                                            "skill": task.skill, "executed_state": 'error'})
+        elif task.skill == 'get_games':
+            server_adress = self.server_address + "/games"
             try:
                 report = self.get_games(task.params[0])
-                result = dict({"server_adress": self.server_address + "/games", "report": report})
+                return server_adress, dict({"result": report, "task_id": task.task_id,
+                                            "skill": task.skill, "executed_state": 'success'})
             except Exception as er:
-                result = dict(
-                    {"server_adress": self.server_address + "/report", "report": "error",
-                     "error_description": str(er).strip(),
-                     "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f"), "task": task.method})
-        else:
-            result = dict({"server_adress": self.server_address + "/report", "report": "unknown task name",
-                           "task": task.method, "time": datetime.now().strftime("%m/%d/%Y, %H:%M:%S:%f")})
-        return result
+                return server_adress, dict({"result": str(er).strip(), "task_id": task.task_id,
+                                            "skill": task.skill, "executed_state": 'error'})
 
     def do_work(self):
         while True:
             try:
-                result = self.work()
-                if result["report"] == 'error':
-                    try:
-                        report = json.loads(json.dumps({"Error in " + result["task"]: result["error_description"],
-                                                        "Time": result["time"]}))
-                        requests.post(result["server_adress"], json=report)
-                    except Exception as er:
-                        print(er, "in 'error' handling")
-                elif result["report"] == 'unknown task name':
-                    try:
-                        report = json.loads(json.dumps({"Error": "Unknown task name",
-                                                        "Time": result["time"]}))
-                        requests.post(result["server_adress"], json=report)
-                    except Exception as er:
-                        print(er, "in 'unknown task name' handling")
-                else:
-                    try:
-                        report = json.loads(json.dumps(result["report"]))
-                        requests.post(result["server_adress"], json=report)
-                    except Exception as er:
-                        print(er, "in normal work")
-            except:
-                print("Sleeping")
+                server_adress, result = self.work()
+                try:
+                    report = json.loads(json.dumps(result))
+                    requests.post(server_adress, json=report)
+                except Exception as error:
+                    print("Error during posting result to server: " + str(error).strip())
+                    time.sleep(5)
+            except Exception as error:
+                print("Sleeping for 10 sec, cause: " + str(error).strip())
                 time.sleep(10)
 
     def get_tournaments(self, sport_name: str):

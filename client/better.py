@@ -38,7 +38,7 @@ class Better(Worker):
         return self.do_task(task)
 
     def do_task(self, task):
-        if task.method == 'watch':
+        if task.skill == 'watch':
             result = self.watch_match(task.params[0])
         else:
             result = 'unknown task name'
