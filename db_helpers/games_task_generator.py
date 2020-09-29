@@ -2,6 +2,7 @@ import json
 import time
 
 from db_helpers.db_helper import DBHelper
+from db_helpers.task_manager import TaskManager
 from task_management.task import Task
 
 
@@ -12,29 +13,27 @@ class GamesTaskGenerator(DBHelper):
         self.task_init_state = 'waiting for execution'
         self.task_generation()
 
-    def insert_into_tasks(self, skill, arguments, attempts, worker_type, state):
-        self.connect(self.stavka_db)
-        if self.conn:
-            try:
-                task = f"""
-                INSERT INTO tasks (skill, arguments, attempts, worker_type, state) 
-                VALUES ('{skill}', '{arguments}', {attempts}, '{worker_type}', '{state}')
-                """
-                self.cur.execute(task)
-                self.conn.commit()
-                print('Task has been inserted')
-            except Exception as error:
-                print("Failed to insert record into tasks table", error)
-            finally:
-                self.close_connection()
-
     def task_generation(self):
         while True:
-            tournaments_task = self.get_tournaments_task('Football')
-            self.insert_into_tasks(skill=tournaments_task.skill, arguments=json.dumps(tournaments_task.params),
-                                   attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
-            time.sleep(self.delay)
+            try:
+                self.get_tournaments_and_generate_tasks()
+            except Exception as error:
+                time.sleep(120)
+                self.get_tournaments_and_generate_tasks()
+            finally:
+                time.sleep(self.delay)
+
+    def get_tournaments_and_generate_tasks(self):
+        task_manager = TaskManager()
+        tournaments = json.loads(task_manager.get_tournaments())
+        print(tournaments)
+        if tournaments:
+            for tournament_name, tournament_url in json.loads(tournaments['tournaments'])[0].items():
+                print(tournament_name, tournament_url)
+                games_task = self.get_games_task(tounament_url=tournament_url)
+                self.insert_into_tasks(skill=games_task.skill, arguments=json.dumps(games_task.params),
+                                       attempts=0, worker_type=games_task.worker_type, state=self.task_init_state)
 
     @classmethod
-    def get_tournaments_task(cls, sport_name):
-        return Task('get_tournaments', [sport_name], 'miner')
+    def get_games_task(cls, tounament_url):
+        return Task(skill='get_games', params=[tounament_url], worker_type='miner')

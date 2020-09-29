@@ -14,6 +14,8 @@ class DBHelper:
         self.task_init_state = 'waiting for execution'
         self.task_execution_state = 'currently executing'
         self.task_complete_state = 'execution completed'
+        self.result_relevance_relevant_state = 'relevant'
+        self.result_relevance_outdated_state = 'outdated'
 
     def connect(self, db_to_connect_name):
         try:
@@ -33,3 +35,19 @@ class DBHelper:
             self.cur.close()
             self.conn.close()
             print('Connection closed')
+
+    def insert_into_tasks(self, skill, arguments, attempts, worker_type, state):
+        self.connect(self.stavka_db)
+        if self.conn:
+            try:
+                task = f"""
+                INSERT INTO tasks (skill, arguments, attempts, worker_type, state) 
+                VALUES ('{skill}', '{arguments}', {attempts}, '{worker_type}', '{state}')
+                """
+                self.cur.execute(task)
+                self.conn.commit()
+                print('Task has been inserted')
+            except Exception as error:
+                print("Failed to insert record into tasks table", error)
+            finally:
+                self.close_connection()

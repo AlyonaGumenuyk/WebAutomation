@@ -30,16 +30,22 @@ class DBInitializer(DBHelper):
         if self.conn:
             try:
                 create_tasks_query = """
-                CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json,
-                attempts smallint, worker_type varchar(20), state varchar(30))
-                """
+                                CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json,
+                                attempts smallint, worker_type varchar(20), state varchar(30))
+                                """
                 self.cur.execute(create_tasks_query)
 
                 create_results_query = """
-                CREATE TABLE results (id SERIAL, task_id int, skill varchar(20),
-                result text, executed_state varchar(20))
-                """
+                                CREATE TABLE results (id SERIAL, task_id int, skill varchar(20),
+                                result json, executed_state varchar(20))
+                                """
                 self.cur.execute(create_results_query)
+
+                create_games_query = """
+                                CREATE TABLE games (id SERIAL, datetime timestamp, tournament text,
+                                                    left_command text, right_command text)
+                                """
+                self.cur.execute(create_games_query)
 
                 self.conn.commit()
                 print("Tables created successfully in " + str(self.stavka_db))

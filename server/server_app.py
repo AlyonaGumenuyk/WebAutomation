@@ -63,26 +63,21 @@ class MinerGetTournaments(Resource):
 class MinerGetGames(Resource):
     @staticmethod
     def get():
-        with open('task_report/games.json', 'r', encoding='utf8') as games:
-            try:
-                result = json.load(games)
-                return make_response(result)
-            except json.decoder.JSONDecodeError:
-                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
+        try:
+            games = task_manager.get_games()
+            return make_response(json.loads(games))
+        except Exception as error:
+            return make_response(json.loads(json.dumps(dict({'error': str(error).strip()}))))
 
     @staticmethod
     def post():
-        if request.is_json:
-            data = request.get_json()
-            with open('task_report/games.json', 'r+', encoding='utf8') as games:
-                if os.path.getsize('task_report/games.json') > 0:
-                    current_games = json.load(games)
-                    games.seek(0)
-                    games.truncate()
-                    current_games.update(data)
-                else:
-                    current_games = data
-                json.dump(current_games, games, indent=4, ensure_ascii=False)
+        try:
+            if request.is_json:
+                result = request.get_json()
+                task_manager.add_result(result)
+                task_manager.add_games(result)
+        except Exception as error:
+            return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
 class BetterGetCoefs(Resource):

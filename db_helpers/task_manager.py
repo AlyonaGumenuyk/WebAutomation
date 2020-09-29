@@ -1,4 +1,5 @@
 import json
+import datetime
 
 from db_helpers.db_helper import DBHelper
 
@@ -82,7 +83,8 @@ class TaskManager(DBHelper):
         self.connect(self.stavka_db)
         query = f"""
                 SELECT result from results
-                WHERE executed_state!='error'
+                WHERE executed_state='success'
+                AND skill='get_tournaments'
                 ORDER BY id DESC
                 LIMIT 1
                 """
@@ -91,7 +93,21 @@ class TaskManager(DBHelper):
         self.close_connection()
         if tournaments is None:
             tournaments = []
-        return json.dumps({'tournaments': tournaments})
+        return json.dumps({'tournaments': json.dumps(tournaments)})
+
+    def get_games(self):
+        self.connect(self.stavka_db)
+        query = f"""
+                SELECT result from results
+                WHERE executed_state='success'
+                AND skill='get_games'
+                """
+        self.cur.execute(query)
+        games = self.cur.fetchall()
+        self.close_connection()
+        if games is None:
+            tournaments = []
+        return json.dumps({'games': games})
 
     def change_task_state(self, state, task_id, inc_attempts=True):
         task = json.loads(self.get_task_by_task_id(task_id))
@@ -100,7 +116,7 @@ class TaskManager(DBHelper):
             attempts = task["attempts"] + 1
         query = f"""
             UPDATE tasks
-            Set state='{state}',
+            SET state='{state}',
                 attempts='{attempts}'
             WHERE id={task_id}
             """
@@ -115,14 +131,15 @@ class TaskManager(DBHelper):
 
     def add_result(self, result):
         self.connect(self.stavka_db)
-        print(result["task_id"], result["skill"], result["executed_state"])
         query = f"""
             INSERT INTO results (task_id, skill, result, executed_state) 
             VALUES ({result["task_id"]}, '{result["skill"]}', 
                     '{json.dumps(result["result"])}', '{result["executed_state"]}') 
             """
-        print('inserted')
-        self.cur.execute(query)
+        try:
+            self.cur.execute(query)
+        except Exception as error:
+            print(error)
         self.conn.commit()
         task = json.loads(self.get_task_by_task_id(result['task_id']))
         attempts = task["attempts"]
@@ -130,4 +147,32 @@ class TaskManager(DBHelper):
             self.change_task_state(state=self.task_init_state, task_id=result['task_id'])
         else:
             self.change_task_state(state=self.task_complete_state, task_id=result['task_id'])
+        self.close_connection()
+
+    def add_games(self, result):
+        self.connect(self.stavka_db)
+        games = json.loads(result['result'])
+        for game in games:
+            try:
+                game_date_and_time = game['Date of Match'] + '.' + str(datetime.datetime.now().year)[2:] + ' ' + game['Time of Match']
+                game_datetime = datetime.datetime.strptime(game_date_and_time, '%d.%m.%y %H:%M')
+                game_tournament = game['Tournament name']
+                game_left_command = game['Left command name']
+                game_right_command = game['Right command name']
+
+                query = f"""
+                        INSERT INTO games (datetime, tournament, left_command, right_command) 
+                        SELECT to_timestamp('{game_datetime}', 'yyyy-mm-dd hh24:mi:ss'), 
+                                '{game_tournament}', '{game_left_command}', '{game_right_command}'
+                        WHERE NOT EXISTS (SELECT 1 FROM games
+                                          WHERE datetime='{game_datetime}'
+                                          AND tournament='{game_tournament}'
+                                          AND left_command='{game_left_command}'
+                                          AND right_command='{game_right_command}')
+                        """
+                self.cur.execute(query)
+            except Exception as error:
+                print(error)
+            self.conn.commit()
+
         self.close_connection()

@@ -22,5 +22,7 @@ class Worker:
             print('Initialized virtual display..')
             self.driver = webdriver.Firefox()
             self.server_address = 'http://0.0.0.0:8080/'
-        self.driver.set_window_size(1920, 1080)
+        self.window_length = 1920
+        self.window_height = 1080
+        self.driver.set_window_size(self.window_length, self.window_height)
         self.time_to_sleep = 10

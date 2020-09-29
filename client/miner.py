@@ -46,7 +46,7 @@ class Miner(Worker):
                 return server_adress, dict({"result": report, "task_id": task.task_id,
                                             "skill": task.skill, "executed_state": 'success'})
             except Exception as er:
-                return server_adress, dict({"result": str(er).strip(), "task_id": task.task_id,
+                return server_adress, dict({"result": str(er).strip().replace('\'', '\"'), "task_id": task.task_id,
                                             "skill": task.skill, "executed_state": 'error'})
         elif task.skill == 'get_games':
             server_adress = self.server_address + "/games"
@@ -55,7 +55,7 @@ class Miner(Worker):
                 return server_adress, dict({"result": report, "task_id": task.task_id,
                                             "skill": task.skill, "executed_state": 'success'})
             except Exception as er:
-                return server_adress, dict({"result": str(er).strip(), "task_id": task.task_id,
+                return server_adress, dict({"result": str(er).strip().replace('\'', '\"'), "task_id": task.task_id,
                                             "skill": task.skill, "executed_state": 'error'})
 
     def do_work(self):
@@ -66,10 +66,10 @@ class Miner(Worker):
                     report = json.loads(json.dumps(result))
                     requests.post(server_adress, json=report)
                 except Exception as error:
-                    print("Error during posting result to server: " + str(error).strip())
+                    print(json.dumps("Error during posting result to server: " + str(error).strip().replace('\'', '\"')))
                     time.sleep(5)
             except Exception as error:
-                print("Sleeping for 10 sec, cause: " + str(error).strip())
+                print(json.dumps("Sleeping for 10 sec, cause: " + str(error).strip().replace('\'', '\"')))
                 time.sleep(10)
 
     def get_tournaments(self, sport_name: str):
@@ -79,17 +79,17 @@ class Miner(Worker):
         driver.get("https://1xstavka.ru/en/")
 
         # scroll to sport name element
-        sport_webelement = driver.find_element_by_xpath(
-            "//span[contains(text(), '{}')]".format(sport_name))
+        sport_webelement = driver.find_elements_by_xpath(
+            "//span[contains(text(), '{}')]".format(sport_name))[0]
 
-        actions = ActionChains(self.driver)
-        scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
-        scrolling_number = (1.1 * scroll_bar.size['height']) * (
-                sport_webelement.location['y'] - scroll_bar.location['y']) / (
-                                   1000 - scroll_bar.location['y']) - scroll_bar.size['height']
-        actions.move_to_element(scroll_bar).click_and_hold() \
-            .move_by_offset(0, scrolling_number).perform()
-
+        if sport_webelement.location['y'] > self.window_height:
+            actions = ActionChains(self.driver)
+            scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
+            scrolling_number = (1.1 * scroll_bar.size['height']) * (
+                    sport_webelement.location['y'] - scroll_bar.location['y']) / (
+                                       1000 - scroll_bar.location['y']) - scroll_bar.size['height']
+            actions.move_to_element(scroll_bar).click_and_hold() \
+                .move_by_offset(0, scrolling_number).perform()
         sport_webelement.click()
 
         wait = WebDriverWait(driver, 10, poll_frequency=1).until(
@@ -115,7 +115,6 @@ class Miner(Worker):
         dash_board = driver.find_elements_by_css_selector(
             '[data-name="dashboard-champ-content"] [class="c-events__item c-events__item_col"] [class="c-events__item c-events__item_game"]')
 
-        result = dict()
         game_desctiptions_list = []
         # get each game values
         for game in dash_board:
@@ -166,5 +165,5 @@ class Miner(Worker):
                                        tournament_url, game_coefs_dict, game_date, game_time]
             game_desctiption = dict(zip(game_desctiption_keys, game_desctiption_values))
             game_desctiptions_list.append(game_desctiption)
-        result.update({tournament_name: game_desctiptions_list})
+        result = json.dumps(game_desctiptions_list)
         return result

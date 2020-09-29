@@ -5,7 +5,7 @@ from db_helpers.db_helper import DBHelper
 from task_management.task import Task
 
 
-class TournamentsTaskGenerator(DBHelper):
+class WatchTaskGenerator(DBHelper):
     def __init__(self):
         super().__init__()
         self.delay = 60 * 60 * 24
@@ -13,7 +13,7 @@ class TournamentsTaskGenerator(DBHelper):
 
     def task_generation(self):
         while True:
-            tournaments_task = self.get_tournaments_task('Basketball')
+            tournaments_task = self.get_tournaments_task('Floorball')
             self.insert_into_tasks(skill=tournaments_task.skill, arguments=json.dumps(tournaments_task.params),
                                    attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
             time.sleep(self.delay)

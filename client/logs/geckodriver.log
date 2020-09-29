@@ -10222,3 +10222,856 @@ JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30
 JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601376571131	geckodriver	INFO	Listening on 127.0.0.1:62285
+1601376574154	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileA5QjPw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601376575648	Marionette	INFO	Listening on port 62299
+1601376575663	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601379132217	geckodriver	INFO	Listening on 127.0.0.1:53480
+1601379135233	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilemGLE6i"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601379136708	Marionette	INFO	Listening on port 53495
+1601379136739	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601379810195	geckodriver	INFO	Listening on 127.0.0.1:55800
+1601379813215	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileCCTm3S"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601379814764	Marionette	INFO	Listening on port 55813
+1601379815222	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601390142720	geckodriver	INFO	Listening on 127.0.0.1:61436
+1601390145748	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile6DQZP5"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601390147384	Marionette	INFO	Listening on port 61451
+1601390147753	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601390689767	geckodriver	INFO	Listening on 127.0.0.1:62138
+1601390692789	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileKfExMQ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601390694330	Marionette	INFO	Listening on port 62146
+1601390694795	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601390835703	geckodriver	INFO	Listening on 127.0.0.1:62243
+1601390838726	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileubQzDq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601390840465	Marionette	INFO	Listening on port 62256
+1601390840733	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+1601390906733	geckodriver	INFO	Listening on 127.0.0.1:62395
+1601390909756	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilezdjbXq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601390911379	Marionette	INFO	Listening on port 62407
+1601390911768	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601391263629	geckodriver	INFO	Listening on 127.0.0.1:63137
+1601391266650	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileSBlkhS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391268183	Marionette	INFO	Listening on port 63149
+1601391268656	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601391353674	geckodriver	INFO	Listening on 127.0.0.1:63323
+1601391356696	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilel5Ycci"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391358203	Marionette	INFO	Listening on port 63332
+1601391358701	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601391490481	geckodriver	INFO	Listening on 127.0.0.1:63446
+1601391493504	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilep6zWQS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391495000	Marionette	INFO	Listening on port 63455
+1601391495016	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601391615913	geckodriver	INFO	Listening on 127.0.0.1:63568
+1601391618933	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilej1HvgR"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391620413	Marionette	INFO	Listening on port 63578
+1601391620440	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601391703842	geckodriver	INFO	Listening on 127.0.0.1:63659
+1601391706866	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilemz0UGX"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391708364	Marionette	INFO	Listening on port 63669
+1601391708371	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601391800194	geckodriver	INFO	Listening on 127.0.0.1:63765
+1601391803219	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiler7LD1C"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391804773	Marionette	INFO	Listening on port 63774
+1601391805225	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601391936169	geckodriver	INFO	Listening on 127.0.0.1:63893
+1601391939193	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileFKXfDP"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601391940772	Marionette	INFO	Listening on port 63901
+1601391941199	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392114559	geckodriver	INFO	Listening on 127.0.0.1:64032
+1601392117584	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilecSKzAX"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392119087	Marionette	INFO	Listening on port 64040
+1601392119094	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601392333241	geckodriver	INFO	Listening on 127.0.0.1:64163
+1601392336264	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilevWhbHg"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392337818	Marionette	INFO	Listening on port 64172
+1601392338269	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601392444481	geckodriver	INFO	Listening on 127.0.0.1:64293
+1601392447505	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilezmdZ8O"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392449162	Marionette	INFO	Listening on port 64302
+1601392449512	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392491413	geckodriver	INFO	Listening on 127.0.0.1:64467
+1601392494435	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilelpe2jY"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392496092	Marionette	INFO	Listening on port 64478
+1601392496452	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392596634	geckodriver	INFO	Listening on 127.0.0.1:64666
+1601392599658	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileLL7NrP"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392601076	Marionette	INFO	Listening on port 64678
+1601392601165	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601392627559	geckodriver	INFO	Listening on 127.0.0.1:64798
+1601392630581	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileUS4Ate"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392632309	Marionette	INFO	Listening on port 64810
+1601392632593	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601392674527	geckodriver	INFO	Listening on 127.0.0.1:64956
+1601392677548	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile8bNU6x"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392679194	Marionette	INFO	Listening on port 64968
+1601392679557	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392771030	geckodriver	INFO	Listening on 127.0.0.1:65178
+1601392774054	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilefhRJ81"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392775601	Marionette	INFO	Listening on port 65186
+1601392776060	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392881131	geckodriver	INFO	Listening on 127.0.0.1:65274
+1601392884159	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilesXCi13"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392885722	Marionette	INFO	Listening on port 65282
+1601392886166	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601392921887	geckodriver	INFO	Listening on 127.0.0.1:65354
+1601392924913	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilefVpuqJ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601392926547	Marionette	INFO	Listening on port 65362
+1601392926928	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601393372969	geckodriver	INFO	Listening on 127.0.0.1:65501
+1601393375992	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilezpQLRJ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393377585	Marionette	INFO	Listening on port 65510
+1601393377999	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601393574109	geckodriver	INFO	Listening on 127.0.0.1:49471
+1601393577136	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileO01hTv"
+*** You are running in headless mode.
+1601393584675	geckodriver	INFO	Listening on 127.0.0.1:49497
+1601393587703	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileukaeKr"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393589425	Marionette	INFO	Listening on port 49508
+1601393589717	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601393713653	geckodriver	INFO	Listening on 127.0.0.1:49752
+1601393716683	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileykpbZL"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393718207	Marionette	INFO	Listening on port 49764
+1601393718691	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 697))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601393751972	geckodriver	INFO	Listening on 127.0.0.1:49887
+1601393755003	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileekctQn"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393756601	Marionette	INFO	Listening on port 49899
+1601393757010	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601393792586	geckodriver	INFO	Listening on 127.0.0.1:50043
+1601393795614	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileTrcgpU"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393797297	Marionette	INFO	Listening on port 50056
+1601393797623	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601393925332	geckodriver	INFO	Listening on 127.0.0.1:50315
+1601393928360	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilekcg416"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601393930041	Marionette	INFO	Listening on port 50324
+1601393930369	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601394053076	geckodriver	INFO	Listening on 127.0.0.1:50633
+1601394056100	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileXMiNUz"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601394057747	Marionette	INFO	Listening on port 50644
+1601394058106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601394145340	geckodriver	INFO	Listening on 127.0.0.1:50842
+1601394148365	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilevVJDfu"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601394150068	Marionette	INFO	Listening on port 50854
+1601394150374	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601394410217	geckodriver	INFO	Listening on 127.0.0.1:50969
+1601394413240	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilevv18mU"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601394414813	Marionette	INFO	Listening on port 50977
+1601394415251	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601394423528	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601394430136	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601394478186	geckodriver	INFO	Listening on 127.0.0.1:51121
+1601394481209	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileBxFEBS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601394482830	Marionette	INFO	Listening on port 51132
+1601394483217	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601394939458	geckodriver	INFO	Listening on 127.0.0.1:51862
+1601394942484	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile5NWb6A"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601394944097	Marionette	INFO	Listening on port 51871
+1601394944493	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601395135951	geckodriver	INFO	Listening on 127.0.0.1:52073
+1601395138978	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile53JFdr"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395140623	Marionette	INFO	Listening on port 52083
+1601395140984	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601395360548	geckodriver	INFO	Listening on 127.0.0.1:52226
+1601395363571	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiler6vo5u"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395365156	Marionette	INFO	Listening on port 52235
+1601395365581	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601395489757	geckodriver	INFO	Listening on 127.0.0.1:52456
+1601395492780	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilerF2LeC"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395494384	Marionette	INFO	Listening on port 52465
+1601395494792	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601395634555	geckodriver	INFO	Listening on 127.0.0.1:52604
+1601395637579	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileiRTlCF"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395639106	Marionette	INFO	Listening on port 52614
+1601395639589	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601395700902	geckodriver	INFO	Listening on 127.0.0.1:52765
+1601395703929	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile5eP6Q9"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395705595	Marionette	INFO	Listening on port 52776
+1601395705938	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601395825880	geckodriver	INFO	Listening on 127.0.0.1:52990
+1601395828907	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileewwdjg"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395830417	Marionette	INFO	Listening on port 53001
+1601395830915	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601395898349	geckodriver	INFO	Listening on 127.0.0.1:53136
+1601395901378	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilejgSTjq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395903026	Marionette	INFO	Listening on port 53144
+1601395903387	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601395994575	geckodriver	INFO	Listening on 127.0.0.1:53240
+1601395997598	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileseZYnA"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601395999373	Marionette	INFO	Listening on port 53249
+1601395999612	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396066730	geckodriver	INFO	Listening on 127.0.0.1:53354
+1601396069755	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilefQvuFE"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396071416	Marionette	INFO	Listening on port 53362
+1601396071763	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396198837	geckodriver	INFO	Listening on 127.0.0.1:53552
+1601396201863	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileXMn75Y"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396203426	Marionette	INFO	Listening on port 53564
+1601396203876	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396298523	geckodriver	INFO	Listening on 127.0.0.1:53702
+1601396301549	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilePNxnf9"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396303158	Marionette	INFO	Listening on port 53710
+1601396303558	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396383988	geckodriver	INFO	Listening on 127.0.0.1:53793
+1601396387011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileW5fygz"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396388552	Marionette	INFO	Listening on port 53803
+1601396389020	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396734415	geckodriver	INFO	Listening on 127.0.0.1:53931
+1601396737439	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileHvtuXJ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396738984	Marionette	INFO	Listening on port 53939
+1601396739449	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+1601396740169	geckodriver	INFO	Listening on 127.0.0.1:53973
+1601396743193	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileNXZxpA"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396744663	Marionette	INFO	Listening on port 53981
+1601396744702	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601396982989	geckodriver	INFO	Listening on 127.0.0.1:54119
+1601396986017	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileO5s1XN"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601396987623	Marionette	INFO	Listening on port 54128
+1601396988032	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397033900	geckodriver	INFO	Listening on 127.0.0.1:54219
+1601397036924	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileUcPf4Q"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397038554	Marionette	INFO	Listening on port 54227
+1601397038933	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397135464	geckodriver	INFO	Listening on 127.0.0.1:54314
+1601397138500	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilepIBqR7"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397139992	Marionette	INFO	Listening on port 54323
+1601397140010	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397238076	geckodriver	INFO	Listening on 127.0.0.1:54424
+1601397241101	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileA5Mr4K"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397242614	Marionette	INFO	Listening on port 54432
+1601397243109	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397284909	geckodriver	INFO	Listening on 127.0.0.1:54513
+1601397287934	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileM6u8tK"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397289547	Marionette	INFO	Listening on port 54524
+1601397289953	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397363072	geckodriver	INFO	Listening on 127.0.0.1:54637
+1601397366097	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileoGKhWC"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397367722	Marionette	INFO	Listening on port 54645
+1601397368107	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1601397903551	geckodriver	INFO	Listening on 127.0.0.1:55446
+1601397906575	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileTCqOSF"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601397908182	Marionette	INFO	Listening on port 55460
+1601397908585	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601398122797	geckodriver	INFO	Listening on 127.0.0.1:56137
+1601398125820	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile2XKv3w"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601398127464	Marionette	INFO	Listening on port 56147
+1601398127846	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1601403709728	geckodriver	INFO	Listening on 127.0.0.1:60078
+1601403712742	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileteqcmw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601403714392	Marionette	INFO	Listening on port 60090
+1601403714753	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601403896195	geckodriver	INFO	Listening on 127.0.0.1:60282
+1601403899224	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileoX9Pcq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601403900876	Marionette	INFO	Listening on port 60291
+1601403901237	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601403969747	geckodriver	INFO	Listening on 127.0.0.1:60503
+1601403972774	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiledNIV20"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601403974402	Marionette	INFO	Listening on port 60516
+1601403974785	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601404098840	geckodriver	INFO	Listening on 127.0.0.1:60746
+1601404101866	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiledGU131"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601404103419	Marionette	INFO	Listening on port 60755
+1601404103876	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601404354731	geckodriver	INFO	Listening on 127.0.0.1:60984
+1601404357763	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileE1xypq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601404359472	Marionette	INFO	Listening on port 60993
+1601404359773	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601404467174	geckodriver	INFO	Listening on 127.0.0.1:61281
+1601404470200	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiletKXLTZ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601404471810	Marionette	INFO	Listening on port 61294
+1601404472210	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601404560172	geckodriver	INFO	Listening on 127.0.0.1:61563
+1601404563198	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileCt3klh"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601404564952	Marionette	INFO	Listening on port 61576
+1601404565210	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601404701745	geckodriver	INFO	Listening on 127.0.0.1:61864
+1601404704773	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile49fBjm"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601404706433	Marionette	INFO	Listening on port 61875
+1601404706783	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 403: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
