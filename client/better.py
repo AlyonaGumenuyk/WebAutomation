@@ -16,7 +16,7 @@ class Better(Worker):
     def __init__(self):
         super().__init__()
         self.skills = {"make_bet": self.make_bet,
-                       "get_coefs": self.get_coefs}
+                       "watch": self.watch}
         self.worker_type = json.loads(json.dumps({'worker_type': 'better'}))
 
     def get_new_tasks(self):
@@ -52,20 +52,20 @@ class Better(Worker):
                 if result == 'error':
                     try:
                         report = json.loads(json.dumps({"Error": "Can not find the website"}))
-                        requests.post(self.server_address + "/get_coefs", json=report)
+                        requests.post(self.server_address + "/watch", json=report)
                     except:
                         pass
 
                 elif result == 'finished':
                     try:
                         report = json.loads(json.dumps({"Info": "Match is finished"}))
-                        requests.post(self.server_address + "/get_coefs", json=report)
+                        requests.post(self.server_address + "/watch", json=report)
                     except:
                         pass
                 elif result == 'unknown task name':
                     try:
                         report = json.loads(json.dumps({"Error": "Unknown task name"}))
-                        requests.post(self.server_address + "/get_coefs", json=report)
+                        requests.post(self.server_address + "/watch", json=report)
                     except:
                         pass
             except:
@@ -104,7 +104,7 @@ class Better(Worker):
 
         prev_game_stat = dict()
         while not match_page.match_is_finished():
-            game_stat = json.dumps(self.get_coefs(match_page))
+            game_stat = json.dumps(self.watch(match_page))
             if game_stat == 'error':
                 return game_stat
             try:
@@ -114,10 +114,10 @@ class Better(Worker):
                     status_changes = changes['current_status']
                     if len(changes) > 1 or list(status_changes.keys()) != ['time']:
                         print('sending')
-                        requests.post(self.server_address + "/get_coefs", json=changes)
+                        requests.post(self.server_address + "/watch", json=changes)
                     prev_game_stat = game_stat
                 else:
-                    requests.post(self.server_address + "/get_coefs", json=json.loads(game_stat))
+                    requests.post(self.server_address + "/watch", json=json.loads(game_stat))
                     prev_game_stat = game_stat
                 print("refreashing stats")
                 time.sleep(3)
@@ -127,7 +127,7 @@ class Better(Worker):
         return 'finished'
 
     @staticmethod
-    def get_coefs(match_page: MatchPage):
+    def watch(match_page: MatchPage):
 
         command_names = match_page.get_command_names()
         score = match_page.get_score()

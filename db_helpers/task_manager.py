@@ -18,6 +18,11 @@ class TaskManager(DBHelper):
         task_keys = ['task_id', 'skill', 'params', 'worker_type']
         return dict((zip(task_keys, task_record)))
 
+    @staticmethod
+    def game_record_to_dict(game_record):
+        game_keys = ['id', 'datetime', 'tournament', 'left_command', 'right_command']
+        return dict((zip(game_keys, game_record)))
+
     def get_task_by_task_id(self, task_id):
         query = f"""
             SELECT * from tasks
@@ -52,31 +57,53 @@ class TaskManager(DBHelper):
         self.close_connection()
         return json.dumps({'tasks': records_list})
 
-    def get_task_for_execution(self, worker_type):
+    def get_tasks_for_execution(self, worker_type, skill='all', change_task_state=False):
         self.connect(self.stavka_db)
-        if worker_type == 'miner':
-            query = f"""
-                SELECT * from tasks
-                WHERE worker_type='{worker_type}'
-                AND state='{self.task_init_state}'
-                """
-        elif worker_type == 'better':
-            query = f"""
-                SELECT * from tasks
-                WHERE worker_type='{worker_type}'
-                AND state='{self.task_init_state}'
-                LIMIT 1
-                """
+        if skill == 'all':
+            if worker_type == 'miner':
+                query = f"""
+                    SELECT * from tasks
+                    WHERE worker_type='{worker_type}'
+                    AND state='{self.task_init_state}'
+                    """
+            elif worker_type == 'better':
+                query = f"""
+                    SELECT * from tasks
+                    WHERE worker_type='{worker_type}'
+                    AND state='{self.task_init_state}'
+                    LIMIT 1
+                    """
+            else:
+                self.close_connection()
+                raise Exception('no such worker type')
         else:
-            self.close_connection()
-            raise Exception('no such worker type')
+            if worker_type == 'miner':
+                query = f"""
+                    SELECT * from tasks
+                    WHERE worker_type='{worker_type}'
+                    AND state='{self.task_init_state}'
+                    AND skill='{skill}'
+                    """
+            elif worker_type == 'better':
+                query = f"""
+                    SELECT * from tasks
+                    WHERE worker_type='{worker_type}'
+                    AND state='{self.task_init_state}'
+                    AND skill='{skill}'
+                    LIMIT 1
+                    """
+            else:
+                self.close_connection()
+                raise Exception('no such worker type')
         self.cur.execute(query)
         records = self.cur.fetchall()
         records_list = []
-        for row in records:
-            records_list.append(self.task_record_to_task_dict([row[0], row[1], row[2], row[4]]))
-            self.change_task_state(state=self.task_execution_state, task_id=row[0], inc_attempts=False)
-        self.close_connection()
+        if records:
+            for row in records:
+                records_list.append(self.task_record_to_task_dict([row[0], row[1], row[2], row[4]]))
+                if change_task_state:
+                    self.change_task_state(state=self.task_execution_state, task_id=row[0], inc_attempts=False)
+            self.close_connection()
         return json.dumps(records_list)
 
     def get_tournaments(self):
@@ -143,18 +170,22 @@ class TaskManager(DBHelper):
         self.conn.commit()
         task = json.loads(self.get_task_by_task_id(result['task_id']))
         attempts = task["attempts"]
+        state = False
         if result['executed_state'] == 'error' and attempts < 4:
             self.change_task_state(state=self.task_init_state, task_id=result['task_id'])
         else:
             self.change_task_state(state=self.task_complete_state, task_id=result['task_id'])
+            state = True
         self.close_connection()
+        return state
 
     def add_games(self, result):
         self.connect(self.stavka_db)
         games = json.loads(result['result'])
         for game in games:
             try:
-                game_date_and_time = game['Date of Match'] + '.' + str(datetime.datetime.now().year)[2:] + ' ' + game['Time of Match']
+                game_date_and_time = game['Date of Match'] + '.' + str(datetime.datetime.now().year)[2:] + ' ' + game[
+                    'Time of Match']
                 game_datetime = datetime.datetime.strptime(game_date_and_time, '%d.%m.%y %H:%M')
                 game_tournament = game['Tournament name']
                 game_left_command = game['Left command name']
@@ -174,5 +205,32 @@ class TaskManager(DBHelper):
             except Exception as error:
                 print(error)
             self.conn.commit()
-
         self.close_connection()
+
+    def get_games_to_create_tasks(self):
+        self.connect(self.stavka_db)
+        try:
+            task_datetime_minus_minute = datetime.datetime.now() - datetime.timedelta(minutes=1)
+            time_to_create_task = task_datetime_minus_minute.strftime('%y-%m-%d %H:%M')
+            #print(time_to_create_task)
+
+            query = f"""
+                    SELECT * FROM games
+                    WHERE datetime = to_timestamp('{time_to_create_task}', 'yy-mm-dd hh24:mi:ss')
+                    """
+            test_query = f"""
+                    SELECT * FROM games
+                    WHERE datetime = to_timestamp('2020-10-04 13:00:00', 'yy-mm-dd hh24:mi:ss')
+                    """
+            self.cur.execute(test_query)
+            games = self.cur.fetchall()
+            if not games:
+                raise Exception
+            games_list = []
+            for game in games:
+                games_list.append(self.game_record_to_dict(game))
+            return games_list
+        except:
+            return None
+        finally:
+            self.close_connection()

@@ -2,22 +2,40 @@ import json
 import time
 
 from db_helpers.db_helper import DBHelper
+from db_helpers.task_manager import TaskManager
 from task_management.task import Task
 
 
 class WatchTaskGenerator(DBHelper):
     def __init__(self):
         super().__init__()
-        self.delay = 60 * 60 * 24
+        self.delay = 10
         self.task_generation()
 
     def task_generation(self):
         while True:
-            tournaments_task = self.get_tournaments_task('Floorball')
-            self.insert_into_tasks(skill=tournaments_task.skill, arguments=json.dumps(tournaments_task.params),
-                                   attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
-            time.sleep(self.delay)
+            task_manager = TaskManager()
+            games = task_manager.get_games_to_create_tasks()
+            if games:
+                for game in games:
+                    watch_task = self.watch_task(str(game['datetime']), game['tournament'],
+                                                 game['left_command'], game['right_command'])
+                    existing_watch_tasks = json.loads(task_manager.get_tasks_for_execution(worker_type='better',
+                                                                                           skill='watch'))
+                    if existing_watch_tasks:
+                        for existing_watch_task in existing_watch_tasks:
+                            if watch_task.params != existing_watch_task['params']:
+                                self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
+                                                       attempts=0, worker_type=watch_task.worker_type,
+                                                       state=self.task_init_state)
+                    else:
+                        self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
+                                               attempts=0, worker_type=watch_task.worker_type,
+                                               state=self.task_init_state)
+                time.sleep(self.delay)
+            else:
+                time.sleep(self.delay)
 
     @classmethod
-    def get_tournaments_task(cls, sport_name):
-        return Task(skill='get_tournaments', params=[sport_name], worker_type='miner')
+    def watch_task(cls, datetime, tournament, left_command, right_command):
+        return Task(skill='watch', params=[datetime, tournament, left_command, right_command], worker_type='better')

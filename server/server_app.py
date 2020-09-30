@@ -35,7 +35,8 @@ class GetTasks(Resource):
         try:
             if request.is_json:
                 request_data = request.get_json()
-                tasks = task_manager.get_task_for_execution(worker_type=request_data['worker_type'])
+                tasks = task_manager.get_tasks_for_execution(worker_type=request_data['worker_type'],
+                                                             change_task_state=True)
                 return json.loads(tasks)
         except Exception as error:
             return json.loads(json.dumps(dict({'error': str(error).strip()})))
@@ -74,13 +75,14 @@ class MinerGetGames(Resource):
         try:
             if request.is_json:
                 result = request.get_json()
-                task_manager.add_result(result)
-                task_manager.add_games(result)
+                task_state = task_manager.add_result(result)
+                if task_state:
+                    task_manager.add_games(result)
         except Exception as error:
             return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
-class BetterGetCoefs(Resource):
+class BetterWatch(Resource):
     @staticmethod
     def get():
         with open('task_report/gamestat.json', 'r', encoding='utf8') as gamestat:
@@ -127,7 +129,7 @@ api.add_resource(IndexPage, '/')
 api.add_resource(GetTasks, '/tasks')
 api.add_resource(MinerGetTournaments, '/tournaments')
 api.add_resource(MinerGetGames, '/games')
-api.add_resource(BetterGetCoefs, '/get_coefs')
+api.add_resource(BetterWatch, '/watch')
 api.add_resource(Report, '/report')
 
 if __name__ == '__main__':
