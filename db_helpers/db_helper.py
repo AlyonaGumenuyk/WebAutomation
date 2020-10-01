@@ -1,3 +1,5 @@
+import json
+
 from psycopg2 import connect, extensions, sql, errors, DatabaseError
 
 
@@ -42,7 +44,7 @@ class DBHelper:
             try:
                 task = f"""
                 INSERT INTO tasks (skill, arguments, attempts, worker_type, state) 
-                VALUES ('{skill}', '{arguments}', {attempts}, '{worker_type}', '{state}')
+                VALUES ('{skill}', '{json.dumps(arguments, ensure_ascii=False)}', {attempts}, '{worker_type}', '{state}')
                 """
                 self.cur.execute(task)
                 self.conn.commit()

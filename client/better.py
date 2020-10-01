@@ -25,6 +25,7 @@ class Better(Worker):
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
                 for task in tasks:
+                    task['params'] = json.loads(task['params'])
                     print(task)
                     self.task_queue.put(Task.to_task(task))
             else:
@@ -35,41 +36,19 @@ class Better(Worker):
         if self.task_queue.empty():
             self.get_new_tasks()
         task = self.task_queue.get()
-        return self.do_task(task)
+        self.do_task(task)
 
     def do_task(self, task):
         if task.skill == 'watch':
-            result = self.watch_match(task.params[0])
-        else:
-            result = 'unknown task name'
-        return result
+            self.watch_match(task)
 
     def do_work(self):
         while True:
-            print('better started')
             try:
-                result = self.work()
-                if result == 'error':
-                    try:
-                        report = json.loads(json.dumps({"Error": "Can not find the website"}))
-                        requests.post(self.server_address + "/watch", json=report)
-                    except:
-                        pass
-
-                elif result == 'finished':
-                    try:
-                        report = json.loads(json.dumps({"Info": "Match is finished"}))
-                        requests.post(self.server_address + "/watch", json=report)
-                    except:
-                        pass
-                elif result == 'unknown task name':
-                    try:
-                        report = json.loads(json.dumps({"Error": "Unknown task name"}))
-                        requests.post(self.server_address + "/watch", json=report)
-                    except:
-                        pass
-            except:
+                self.work()
+            except Exception as error:
                 print("Sleeping")
+                print(error)
                 time.sleep(10)
 
     def login(self, name: str, password: str):
@@ -91,40 +70,51 @@ class Better(Worker):
         except:
             print("Login failed")
 
-    def watch_match(self, game_link: str):
-        match_page = MatchPage(self.driver)
-
+    def watch_match(self, task: Task):
+        match_page = MatchPage(driver=self.driver, better=self)
+        server_adress = self.server_address + "/watch"
         try:
-            match_page.go_to_site(game_link)
+            match_page.go_to_match(params=task.params)
             if match_page.match_is_finished():
-                return 'finished'
-            match_page.sort_table()
-        except:
-            return 'error'
+                report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
+                                                     "skill": task.skill, "executed_state": 'success'}),
+                                               ensure_ascii=False))
+                requests.post(self.server_address + "/watch", json=report)
+            else:
+                match_page.sort_table()
+                prev_game_stat = dict()
+                while not match_page.match_is_finished():
+                    game_stat = json.dumps(self.watch(match_page))
+                    if prev_game_stat:
+                        changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
+                        if changes and 'current_status' in changes.keys():
+                            status_changes = changes['current_status']
+                            print(list(status_changes.keys()))
+                            if len(list(changes.keys())) > 1 or list(status_changes.keys()) != ['time']:
+                                report = json.loads(json.dumps(dict({"result": changes, "task_id": task.task_id,
+                                                                     "skill": task.skill, "executed_state": 'success'}),
+                                                               ensure_ascii=False))
+                                requests.post(self.server_address + "/watch", json=report)
+                            prev_game_stat = game_stat
+                    else:
+                        report = json.loads(json.dumps(dict({"result": game_stat, "task_id": task.task_id,
+                                                             "skill": task.skill, "executed_state": 'success'}),
+                                                       ensure_ascii=False))
+                        requests.post(self.server_address + "/watch", json=report)
+                        prev_game_stat = game_stat
+                    print("refreashing stats")
+                    time.sleep(3)
+                report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
+                                                     "skill": task.skill, "executed_state": 'success'}),
+                                               ensure_ascii=False))
+                requests.post(self.server_address + "/watch", json=report)
 
-        prev_game_stat = dict()
-        while not match_page.match_is_finished():
-            game_stat = json.dumps(self.watch(match_page))
-            if game_stat == 'error':
-                return game_stat
-            try:
-                if prev_game_stat:
-                    changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
-                    print(changes)
-                    status_changes = changes['current_status']
-                    if len(changes) > 1 or list(status_changes.keys()) != ['time']:
-                        print('sending')
-                        requests.post(self.server_address + "/watch", json=changes)
-                    prev_game_stat = game_stat
-                else:
-                    requests.post(self.server_address + "/watch", json=json.loads(game_stat))
-                    prev_game_stat = game_stat
-                print("refreashing stats")
-                time.sleep(3)
-            except FileNotFoundError:
-                print("file not found")
-
-        return 'finished'
+        except Exception as error:
+            report = json.loads(json.dumps(dict({"result": str(error).strip().replace('\'', '\"'),
+                                                 "task_id": task.task_id, "skill": task.skill,
+                                                 "executed_state": 'error'}), ensure_ascii=False))
+            requests.post(server_adress, json=report)
+            print(error)
 
     @staticmethod
     def watch(match_page: MatchPage):

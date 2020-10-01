@@ -1,7 +1,7 @@
 import re
 
-from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup as bs
+from selenium.webdriver.common.by import By
 
 from client.pages.base_page import BasePage
 

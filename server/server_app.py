@@ -93,12 +93,20 @@ class BetterWatch(Resource):
 
     @staticmethod
     def post():
-        if request.is_json:
-            data = request.get_json()
-            with open('task_report/gamestat.json', 'w', encoding='utf8') as current_stat:
-                current_stat.seek(0)
-                current_stat.truncate()
-                json.dump(data, current_stat, indent=4)
+        try:
+            if request.is_json:
+                result = request.get_json()
+                if result['result'] != 'finished':
+                    if result['executed_state'] == 'success':
+                        print('success')
+                        task_manager.add_result(result, change_task_state=False)
+                    else:
+                        print('error')
+                        task_manager.add_result(result)
+                else:
+                    task_manager.add_result(result)
+        except Exception as error:
+            return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
 class Report(Resource):

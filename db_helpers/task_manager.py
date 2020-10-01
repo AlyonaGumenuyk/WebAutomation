@@ -156,12 +156,12 @@ class TaskManager(DBHelper):
             self.cur.execute(query)
             self.conn.commit()
 
-    def add_result(self, result):
+    def add_result(self, result, change_task_state=True):
         self.connect(self.stavka_db)
         query = f"""
             INSERT INTO results (task_id, skill, result, executed_state) 
             VALUES ({result["task_id"]}, '{result["skill"]}', 
-                    '{json.dumps(result["result"])}', '{result["executed_state"]}') 
+                    '{json.dumps(result["result"], ensure_ascii=False)}', '{result["executed_state"]}') 
             """
         try:
             self.cur.execute(query)
@@ -171,11 +171,12 @@ class TaskManager(DBHelper):
         task = json.loads(self.get_task_by_task_id(result['task_id']))
         attempts = task["attempts"]
         state = False
-        if result['executed_state'] == 'error' and attempts < 4:
-            self.change_task_state(state=self.task_init_state, task_id=result['task_id'])
-        else:
-            self.change_task_state(state=self.task_complete_state, task_id=result['task_id'])
-            state = True
+        if change_task_state:
+            if result['executed_state'] == 'error' and attempts < 4:
+                self.change_task_state(state=self.task_init_state, task_id=result['task_id'])
+            else:
+                self.change_task_state(state=self.task_complete_state, task_id=result['task_id'])
+                state = True
         self.close_connection()
         return state
 
