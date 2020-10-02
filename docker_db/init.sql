@@ -1,3 +1,6 @@
+CREATE DATABASE 1xStavkaDB;
+CREATE USER docker WITH PASSWORD 'docker';
+GRANT ALL PRIVILEGES ON DATABASE "1xStavkaDB" to docker;
 CREATE TABLE tasks (
     id SERIAL, skill varchar(20),
     arguments json,
