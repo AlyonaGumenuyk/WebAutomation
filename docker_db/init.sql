@@ -1,4 +1,4 @@
---CREATE USER docker WITH SUPERUSER PASSWORD 'docker';
+--CREATE USER docker;
 --CREATE DATABASE 1xStavkaDB;
 --GRANT ALL PRIVILEGES ON DATABASE 1xStavkaDB TO docker;
 CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));
