@@ -4,11 +4,6 @@
 
 FROM ubuntu:16.04
 
-ENV POSTGRES_USER docker
-ENV POSTGRES_PASSWORD docker
-ENV POSTGRES_DB 1xStavkaDB
-COPY init.sql /docker-entrypoint-initdb.d/
-
 # Add the PostgreSQL PGP key to verify their Debian packages.
 # It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
@@ -35,6 +30,10 @@ USER postgres
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
     createdb -O docker 1xStavkaDB
+    psql -c "\c 1xStavkaDB"
+    psql -c "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));"
+    psql -c "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));"
+    psql -c "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
@@ -42,12 +41,6 @@ RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.co
 
 # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
-
-#RUN service postgresql start &&\
-#    psql -c "\c 1xStavkaDB"
-#    psql -c "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));"
-#    psql -c "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));"
-#    psql -c "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Expose the PostgreSQL port
 EXPOSE 5432
