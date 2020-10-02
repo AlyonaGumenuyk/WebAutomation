@@ -31,7 +31,7 @@ ENV PYTHONPATH=/usr/src/app
 COPY ./client /usr/src/app/client
 COPY ./task_management /usr/src/app/task_management
 
-EXPOSE 8080
+EXPOSE 8000
 
 # install dependencies
 RUN pip install --upgrade pip

@@ -8,7 +8,7 @@ ENV PYTHONPATH=/usr/src/app
 COPY ./server /usr/src/app/server
 COPY ./db_helpers /usr/src/app/db_helpers
 
-EXPOSE 8080
+EXPOSE 8000
 
 # install dependencies
 RUN pip install --upgrade pip
