@@ -53,6 +53,8 @@ services:
       - STARTER=tournaments_task_generator
     network_mode: host
     container_name: tournaments_generator
+    depends_on:
+      - server
 
   games_generator:
     build:
