@@ -41,7 +41,7 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 ENV POSTGRES_USER docker
 ENV POSTGRES_PASSWORD docker
 ENV POSTGRES_DB 1xStavkaDB
-ADD init.sql /docker-entrypoint-initdb.d/
+COPY init.sql /docker-entrypoint-initdb.d/10-init.sql
 
 #RUN service postgresql start &&\
 #    psql -c "\c 1xStavkaDB"
