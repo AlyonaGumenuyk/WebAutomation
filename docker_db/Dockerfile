@@ -29,11 +29,11 @@ USER postgres
 #       allows the RUN command to span multiple lines.
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-    createdb -O docker 1xStavkaDB &&\
-    psql -c "\c 1xStavkaDB postgres" &&\
-    psql -c "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));" &&\
-    psql -c "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));" &&\
-    psql -c "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
+    createdb -O docker 1xStavkaDB
+#    psql -c "\c 1xStavkaDB" &&\
+#    psql -c "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));" &&\
+#    psql -c "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));" &&\
+#    psql -c "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
@@ -50,3 +50,4 @@ VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 # Set the default command to run when starting the container
 CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]
+CMD ["psql", "\c 1xStavka"]
