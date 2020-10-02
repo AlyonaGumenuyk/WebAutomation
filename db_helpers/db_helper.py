@@ -7,7 +7,7 @@ class DBHelper:
 
     def __init__(self):
         self.user = 'docker'
-        self.host = '0.0.0.0'
+        self.host = '172.18.0.1'
         self.password = 'docker'
         self.conn = None
         self.cur = None
