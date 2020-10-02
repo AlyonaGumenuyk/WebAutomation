@@ -29,7 +29,11 @@ USER postgres
 #       allows the RUN command to span multiple lines.
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-    createdb -O docker 1xStavkaDB
+    createdb -O docker 1xStavkaDB &&\
+    psql --command "\c 1xStavkaDB docker" &&\
+    psql --command "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));" &&\
+    psql --command "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));" &&\
+    psql --command "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
@@ -37,12 +41,6 @@ RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.co
 
 # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
-
-RUN    /etc/init.d/postgresql start &&\
-    psql --command "\c 1xStavkaDB docker" &&\
-    psql --command "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));" &&\
-    psql --command "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));" &&\
-    psql --command "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Expose the PostgreSQL port
 EXPOSE 5432
