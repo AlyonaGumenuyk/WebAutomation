@@ -23,11 +23,15 @@ class WatchTaskGenerator(DBHelper):
                     existing_watch_tasks = json.loads(task_manager.get_tasks_for_execution(worker_type='better',
                                                                                            skill='watch'))
                     if existing_watch_tasks:
+                        task_already_created = False
                         for existing_watch_task in existing_watch_tasks:
-                            if watch_task.params != existing_watch_task['params']:
-                                self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
-                                                       attempts=0, worker_type=watch_task.worker_type,
-                                                       state=self.task_init_state)
+                            if watch_task.params == json.loads(existing_watch_task['params']):
+                                task_already_created = True
+
+                        if not task_already_created:
+                            self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
+                                                   attempts=0, worker_type=watch_task.worker_type,
+                                                   state=self.task_init_state)
                     else:
                         self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
                                                attempts=0, worker_type=watch_task.worker_type,

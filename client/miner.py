@@ -26,6 +26,7 @@ class Miner(Worker):
             if tasks:
                 for task in tasks:
                     print(task)
+                    task['params'] = json.loads(task['params'])
                     self.task_queue.put(Task.to_task(task))
             else:
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
@@ -63,10 +64,11 @@ class Miner(Worker):
             try:
                 server_adress, result = self.work()
                 try:
-                    report = json.loads(json.dumps(result))
+                    report = json.loads(json.dumps(result, ensure_ascii=False))
                     requests.post(server_adress, json=report)
                 except Exception as error:
-                    print(json.dumps("Error during posting result to server: " + str(error).strip().replace('\'', '\"')))
+                    print(
+                        json.dumps("Error during posting result to server: " + str(error).strip().replace('\'', '\"')))
                     time.sleep(5)
             except Exception as error:
                 print(json.dumps("Sleeping for 10 sec, cause: " + str(error).strip().replace('\'', '\"')))

@@ -25,8 +25,8 @@ class Better(Worker):
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
                 for task in tasks:
-                    task['params'] = json.loads(task['params'])
                     print(task)
+                    task['params'] = json.loads(task['params'])
                     self.task_queue.put(Task.to_task(task))
             else:
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
@@ -48,7 +48,7 @@ class Better(Worker):
                 self.work()
             except Exception as error:
                 print("Sleeping")
-                print(error)
+                #print(error)
                 time.sleep(10)
 
     def login(self, name: str, password: str):
@@ -77,42 +77,38 @@ class Better(Worker):
             match_page.go_to_match(params=task.params)
             if match_page.match_is_finished():
                 report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
-                                                     "skill": task.skill, "executed_state": 'success'}),
-                                               ensure_ascii=False))
+                                                     "skill": task.skill, "executed_state": 'success'})))
                 requests.post(self.server_address + "/watch", json=report)
             else:
                 match_page.sort_table()
                 prev_game_stat = dict()
                 while not match_page.match_is_finished():
-                    game_stat = json.dumps(self.watch(match_page))
+                    game_stat = json.dumps(self.watch(match_page), ensure_ascii=False)
                     if prev_game_stat:
                         changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
                         if changes and 'current_status' in changes.keys():
                             status_changes = changes['current_status']
-                            print(list(status_changes.keys()))
+                            print(list(changes.keys()))
                             if len(list(changes.keys())) > 1 or list(status_changes.keys()) != ['time']:
                                 report = json.loads(json.dumps(dict({"result": changes, "task_id": task.task_id,
-                                                                     "skill": task.skill, "executed_state": 'success'}),
-                                                               ensure_ascii=False))
+                                                                     "skill": task.skill, "executed_state": 'success'})))
                                 requests.post(self.server_address + "/watch", json=report)
                             prev_game_stat = game_stat
                     else:
                         report = json.loads(json.dumps(dict({"result": game_stat, "task_id": task.task_id,
-                                                             "skill": task.skill, "executed_state": 'success'}),
-                                                       ensure_ascii=False))
+                                                             "skill": task.skill, "executed_state": 'success'})))
                         requests.post(self.server_address + "/watch", json=report)
                         prev_game_stat = game_stat
                     print("refreashing stats")
                     time.sleep(3)
                 report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
-                                                     "skill": task.skill, "executed_state": 'success'}),
-                                               ensure_ascii=False))
+                                                     "skill": task.skill, "executed_state": 'success'})))
                 requests.post(self.server_address + "/watch", json=report)
 
         except Exception as error:
             report = json.loads(json.dumps(dict({"result": str(error).strip().replace('\'', '\"'),
                                                  "task_id": task.task_id, "skill": task.skill,
-                                                 "executed_state": 'error'}), ensure_ascii=False))
+                                                 "executed_state": 'error'})))
             requests.post(server_adress, json=report)
             print(error)
 

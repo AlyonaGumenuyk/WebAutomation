@@ -90,7 +90,6 @@ class TaskManager(DBHelper):
                     WHERE worker_type='{worker_type}'
                     AND state='{self.task_init_state}'
                     AND skill='{skill}'
-                    LIMIT 1
                     """
             else:
                 self.close_connection()
@@ -213,17 +212,11 @@ class TaskManager(DBHelper):
         try:
             task_datetime_minus_minute = datetime.datetime.now() - datetime.timedelta(minutes=1)
             time_to_create_task = task_datetime_minus_minute.strftime('%y-%m-%d %H:%M')
-            #print(time_to_create_task)
-
             query = f"""
                     SELECT * FROM games
                     WHERE datetime = to_timestamp('{time_to_create_task}', 'yy-mm-dd hh24:mi:ss')
                     """
-            test_query = f"""
-                    SELECT * FROM games
-                    WHERE datetime = to_timestamp('2020-10-04 13:00:00', 'yy-mm-dd hh24:mi:ss')
-                    """
-            self.cur.execute(test_query)
+            self.cur.execute(query)
             games = self.cur.fetchall()
             if not games:
                 raise Exception

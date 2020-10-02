@@ -6,7 +6,7 @@ task_manager = TaskManager()
 # records = task_manager.get_all_tasks('miner')
 # records = task_manager.get_task_for_execution('miner')
 task_manager.insert_into_tasks(skill='watch', arguments=json.dumps(['date', 'Kazakhstan. Premier League',
-                                                                    'Astana', 'Caspiy Aktau'],
+                                                                    'Ordabasy', 'Taraz'],
                                                                    ensure_ascii=False),
                                attempts=0, worker_type='better',
                                state='waiting for execution')
