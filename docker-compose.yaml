@@ -3,9 +3,10 @@ version: "3"
 services:
 
   db:
-    build:
-      context: .
-      dockerfile: docker_db/Dockerfile
+    build: ./docker_db
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
     volumes:
       - ./db_data:/var/lib/postgresql/data
     ports:
@@ -33,16 +34,16 @@ services:
       - server
     container_name: miner
 
-#  better:
-#    build:
-#      context: .
-#      dockerfile: client/Dockerfile
-#    environment:
-#      - WORKER=better
-#    network_mode: host
-#    depends_on:
-#      - server
-#    container_name: better
+  better:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    environment:
+      - WORKER=better
+    network_mode: host
+    depends_on:
+      - server
+    container_name: better
 
   tournaments_generator:
     build:
