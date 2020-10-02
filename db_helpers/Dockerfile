@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 RUN cd starters
 
 ENTRYPOINT cd starters
-ENTRYPOINT python start_${STARTER}.py
+#ENTRYPOINT python start_${STARTER}.py
 
 
 
