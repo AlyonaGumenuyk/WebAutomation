@@ -38,7 +38,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install pyvirtualdisplay
 
-
-#ENV worker=$worker_type
-
 ENTRYPOINT python ${WORKER}_start.py

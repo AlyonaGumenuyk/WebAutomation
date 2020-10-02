@@ -17,7 +17,7 @@ class GamesTaskGenerator(DBHelper):
         while True:
             try:
                 self.get_tournaments_and_generate_tasks()
-            except Exception as error:
+            except:
                 time.sleep(120)
                 self.get_tournaments_and_generate_tasks()
             finally:

@@ -6,18 +6,15 @@ from psycopg2 import connect, extensions, sql, errors, DatabaseError
 class DBHelper:
 
     def __init__(self):
-        self.init_db = 'postgres'
-        self.user = 'postgres'
+        self.user = 'docker'
         self.host = 'localhost'
-        self.password = 'boss1234'
+        self.password = 'docker'
         self.conn = None
         self.cur = None
         self.stavka_db = '1xStavkaDB'
         self.task_init_state = 'waiting for execution'
         self.task_execution_state = 'currently executing'
         self.task_complete_state = 'execution completed'
-        self.result_relevance_relevant_state = 'relevant'
-        self.result_relevance_outdated_state = 'outdated'
 
     def connect(self, db_to_connect_name):
         try:

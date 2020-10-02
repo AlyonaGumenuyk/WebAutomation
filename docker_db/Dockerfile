@@ -1,6 +1,8 @@
-FROM ubuntu:16.04
+#
+# example Dockerfile for https://docs.docker.com/engine/examples/postgresql_service/
+#
 
-COPY init.sql /docker-entrypoint-initdb.d/
+FROM ubuntu:16.04
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
 # It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc
@@ -25,10 +27,9 @@ USER postgres
 # then create a database `docker` owned by the ``docker`` role.
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
 #       allows the RUN command to span multiple lines.
-
-#RUN    /etc/init.d/postgresql start &&\
-#    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-#    createdb -O 1xStavkaDB docker
+RUN    /etc/init.d/postgresql start &&\
+    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
+    createdb -O docker docker
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.

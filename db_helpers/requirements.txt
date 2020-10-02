@@ -1,0 +1,4 @@
+DateTime==4.3
+psycopg2==2.8.6
+pytz==2020.1
+zope.interface==5.1.2

@@ -2,13 +2,26 @@ version: "3"
 
 services:
 
+  db:
+    build:
+      context: .
+      dockerfile: docker_db/Dockerfile
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    container_name: db
+
   server:
     build:
       context: .
       dockerfile: server/Dockerfile
     ports:
       - 8080:8080
+    depends_on:
+      - db
     container_name: server
+
   miner:
     build:
       context: .
@@ -19,6 +32,7 @@ services:
     depends_on:
       - server
     container_name: miner
+
 #  better:
 #    build:
 #      context: .
@@ -29,3 +43,30 @@ services:
 #    depends_on:
 #      - server
 #    container_name: better
+
+  tournaments_generator:
+    build:
+      context: .
+      dockerfile: db_helpers/Dockerfile
+    environment:
+      - STARTER=tournaments_task_generator
+    network_mode: host
+    container_name: tournaments_generator
+
+  games_generator:
+    build:
+      context: .
+      dockerfile: db_helpers/Dockerfile
+    environment:
+      - STARTER=games_task_generator
+    network_mode: host
+    container_name: games_generator
+
+  watch_generator:
+    build:
+      context: .
+      dockerfile: db_helpers/Dockerfile
+    environment:
+      - STARTER=watch_task_generator
+    network_mode: host
+    container_name: watch_generator

@@ -1,5 +1,4 @@
 import json
-import os
 import platform
 
 from flask import Flask, make_response, request

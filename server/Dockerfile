@@ -1,15 +1,17 @@
 FROM python:3.8
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/server
 
-COPY ./server /usr/src/app
-COPY ./task_management /usr/src/app/task_management
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/usr/src/app
+
+COPY ./server /usr/src/app/server
+COPY ./db_helpers /usr/src/app/db_helpers
 
 EXPOSE 8080
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./server/requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
 CMD ["python", "server_app.py"]

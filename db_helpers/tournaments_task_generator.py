@@ -9,11 +9,12 @@ class TournamentsTaskGenerator(DBHelper):
     def __init__(self):
         super().__init__()
         self.delay = 60 * 60 * 24
+        self.sport_name = 'Football'
         self.task_generation()
 
     def task_generation(self):
         while True:
-            tournaments_task = self.get_tournaments_task('Football')
+            tournaments_task = self.get_tournaments_task(self.sport_name)
             self.insert_into_tasks(skill=tournaments_task.skill, arguments=json.dumps(tournaments_task.params),
                                    attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
             time.sleep(self.delay)
