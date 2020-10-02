@@ -1,6 +1,6 @@
 from psycopg2 import connect, extensions, sql, errors, DatabaseError
 
-from db_helpers.db_helper import DBHelper
+from db_helper import DBHelper
 
 
 class DBInitializer(DBHelper):

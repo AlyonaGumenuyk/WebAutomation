@@ -1,6 +1,0 @@
-{
-    "result": "Message: Unable to locate element: //ul[@class=\"liga_menu\"] //a[normalize-space(text()) = \"Russian Cup\"]",
-    "task_id": 8,
-    "skill": "watch",
-    "executed_state": "error"
-}
