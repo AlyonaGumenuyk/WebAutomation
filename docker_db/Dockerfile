@@ -23,10 +23,6 @@ RUN apt-get update && apt-get install -y python-software-properties software-pro
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
 USER postgres
 
-# Adjust PostgreSQL configuration so that remote connections to the
-# database are possible.
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
-
 # Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
 # then create a database `docker` owned by the ``docker`` role.
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
@@ -34,14 +30,19 @@ RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.co
 RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
     createdb -O docker 1xStavkaDB &&\
-    psql --command "\c 1xStavkaDB" &&\
-    psql --command "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));" &&\
-    psql --command "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));" &&\
-    psql --command "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
+# Adjust PostgreSQL configuration so that remote connections to the
+# database are possible.
+RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
 
 # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
+
+RUN service postgresql start &&\
+    sudo -u docker psql -c "\c 1xStavkaDB"
+    sudo -u docker psql -c "CREATE TABLE tasks (id SERIAL, skill varchar(20), arguments json, attempts smallint, worker_type varchar(20), state varchar(30));"
+    sudo -u docker psql -c "CREATE TABLE results (id SERIAL, task_id int, skill varchar(20), result json, executed_state varchar(20));"
+    sudo -u docker psql -c "CREATE TABLE games (id SERIAL, datetime timestamp, tournament text, left_command text, right_command text);"
 
 # Expose the PostgreSQL port
 EXPOSE 5432
@@ -51,3 +52,4 @@ VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 # Set the default command to run when starting the container
 CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]
+CMD ["sudo -u postgres psql"]
