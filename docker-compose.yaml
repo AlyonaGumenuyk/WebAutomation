@@ -53,7 +53,7 @@ services:
       - STARTER=tournaments_task_generator
     network_mode: host
     depends_on:
-      - db
+      - miner
     command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
     container_name: tournaments_generator
 
@@ -76,5 +76,5 @@ services:
       - STARTER=watch_task_generator
     network_mode: host
     depends_on:
-      - games_generator
+      - better
     container_name: watch_generator
