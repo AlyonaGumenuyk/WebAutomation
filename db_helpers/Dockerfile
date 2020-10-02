@@ -13,7 +13,9 @@ EXPOSE 8000
 # install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN cd starters
+
+WORKDIR /starters
+
 
 #ENTRYPOINT cd starters
 #ENTRYPOINT python start_${STARTER}.py
