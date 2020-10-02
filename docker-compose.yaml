@@ -52,9 +52,9 @@ services:
     environment:
       - STARTER=tournaments_task_generator
     network_mode: host
-    container_name: tournaments_generator
     depends_on:
       - server
+    container_name: tournaments_generator
 
   games_generator:
     build:
@@ -63,9 +63,10 @@ services:
     environment:
       - STARTER=games_task_generator
     network_mode: host
-    container_name: games_generator
     depends_on:
-      - tournaments_generator
+      - db
+    command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
+    container_name: games_generator
 
   watch_generator:
     build:
@@ -74,6 +75,6 @@ services:
     environment:
       - STARTER=watch_task_generator
     network_mode: host
-    container_name: watch_generator
     depends_on:
       - games_generator
+    container_name: watch_generator
