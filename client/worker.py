@@ -18,7 +18,6 @@ class Worker:
             self.driver = MyDriver(executable_path='drivers/firefoxdriver/geckodriver.exe',
                                    service_log_path='logs/geckodriver_service.log',
                                    log_path='logs/geckodriver.log')
-            # self.driver = webdriver.Firefox(executable_path='drivers/firefoxdriver/geckodriver.exe', log_path='logs/geckodriver_service.log')
             self.server_address = 'http://127.0.0.1:8000/'
         else:
             display = Display(visible=0, size=(1920, 1080))

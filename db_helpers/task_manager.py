@@ -178,7 +178,6 @@ class TaskManager(DBHelper):
             record_to_insert = (result["task_id"], result["skill"], json.dumps(result["result"], ensure_ascii=False),
                                 result["executed_state"])
             self.cur.execute(query, record_to_insert)
-            self.cur.execute(query)
         except Exception as error:
             print(error)
         self.conn.commit()
