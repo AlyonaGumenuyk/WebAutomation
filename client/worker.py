@@ -24,7 +24,7 @@ class Worker:
             display = Display(visible=0, size=(1920, 1080))
             display.start()
             print('Initialized virtual display..')
-            self.driver = webdriver.MyDriver()
+            self.driver = MyDriver()
             self.server_address = 'http://0.0.0.0:8000/'
         self.window_length = 1920
         self.window_height = 1080
