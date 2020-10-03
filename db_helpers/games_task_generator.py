@@ -17,22 +17,20 @@ class GamesTaskGenerator(DBHelper):
         while True:
             try:
                 self.get_tournaments_and_generate_tasks()
-            except:
-                time.sleep(120)
-                self.get_tournaments_and_generate_tasks()
-            finally:
                 time.sleep(self.delay)
+            except:
+                time.sleep(self.conn_retry_delay)
 
     def get_tournaments_and_generate_tasks(self):
         task_manager = TaskManager()
         tournaments = json.loads(task_manager.get_tournaments())
-        print(tournaments)
         if tournaments:
             for tournament_name, tournament_url in json.loads(tournaments['tournaments'])[0].items():
-                print(tournament_name, tournament_url)
                 games_task = self.get_games_task(tounament_url=tournament_url)
                 self.insert_into_tasks(skill=games_task.skill, arguments=json.dumps(games_task.params),
                                        attempts=0, worker_type=games_task.worker_type, state=self.task_init_state)
+        else:
+            raise Exception
 
     @classmethod
     def get_games_task(cls, tounament_url):

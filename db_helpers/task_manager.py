@@ -135,6 +135,19 @@ class TaskManager(DBHelper):
             tournaments = []
         return json.dumps({'games': games})
 
+    def get_result(self):
+        self.connect(self.stavka_db)
+        query = f"""
+                SELECT * from results
+                ORDER BY id DESC
+                """
+        self.cur.execute(query)
+        result = self.cur.fetchall()
+        self.close_connection()
+        if result is None:
+            result = []
+        return json.dumps({'result': json.dumps(result)})
+
     def change_task_state(self, state, task_id, inc_attempts=True):
         task = json.loads(self.get_task_by_task_id(task_id))
         attempts = task["attempts"]
@@ -157,12 +170,14 @@ class TaskManager(DBHelper):
 
     def add_result(self, result, change_task_state=True):
         self.connect(self.stavka_db)
-        query = f"""
+        query = """
             INSERT INTO results (task_id, skill, result, executed_state) 
-            VALUES ({result["task_id"]}, '{result["skill"]}', 
-                    '{json.dumps(result["result"], ensure_ascii=False)}', '{result["executed_state"]}') 
+            VALUES (%s,%s,%s,%s) 
             """
         try:
+            record_to_insert = (result["task_id"], result["skill"], json.dumps(result["result"], ensure_ascii=False),
+                                result["executed_state"])
+            self.cur.execute(query, record_to_insert)
             self.cur.execute(query)
         except Exception as error:
             print(error)
@@ -190,18 +205,19 @@ class TaskManager(DBHelper):
                 game_tournament = game['Tournament name']
                 game_left_command = game['Left command name']
                 game_right_command = game['Right command name']
-
                 query = f"""
-                        INSERT INTO games (datetime, tournament, left_command, right_command) 
-                        SELECT to_timestamp('{game_datetime}', 'yyyy-mm-dd hh24:mi:ss'), 
-                                '{game_tournament}', '{game_left_command}', '{game_right_command}'
+                        INSERT INTO games (datetime, tournament, left_command, right_command)
+                        SELECT %s, %s, %s, %s
                         WHERE NOT EXISTS (SELECT 1 FROM games
-                                          WHERE datetime='{game_datetime}'
-                                          AND tournament='{game_tournament}'
-                                          AND left_command='{game_left_command}'
-                                          AND right_command='{game_right_command}')
+                                          WHERE datetime=%s
+                                          AND tournament=%s
+                                          AND left_command=%s
+                                          AND right_command=%s)
                         """
-                self.cur.execute(query)
+
+                record_to_insert = (game_datetime, game_tournament, game_left_command, game_right_command,
+                                    game_datetime, game_tournament, game_left_command, game_right_command)
+                self.cur.execute(self.cur.mogrify(query, record_to_insert))
             except Exception as error:
                 print(error)
             self.conn.commit()

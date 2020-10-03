@@ -14,31 +14,34 @@ class WatchTaskGenerator(DBHelper):
 
     def task_generation(self):
         while True:
-            task_manager = TaskManager()
-            games = task_manager.get_games_to_create_tasks()
-            if games:
-                for game in games:
-                    watch_task = self.watch_task(str(game['datetime']), game['tournament'],
-                                                 game['left_command'], game['right_command'])
-                    existing_watch_tasks = json.loads(task_manager.get_tasks_for_execution(worker_type='better',
-                                                                                           skill='watch'))
-                    if existing_watch_tasks:
-                        task_already_created = False
-                        for existing_watch_task in existing_watch_tasks:
-                            if watch_task.params == json.loads(existing_watch_task['params']):
-                                task_already_created = True
+            try:
+                task_manager = TaskManager()
+                games = task_manager.get_games_to_create_tasks()
+                if games:
+                    for game in games:
+                        watch_task = self.watch_task(str(game['datetime']), game['tournament'],
+                                                     game['left_command'], game['right_command'])
+                        existing_watch_tasks = json.loads(task_manager.get_tasks_for_execution(worker_type='better',
+                                                                                               skill='watch'))
+                        if existing_watch_tasks:
+                            task_already_created = False
+                            for existing_watch_task in existing_watch_tasks:
+                                if watch_task.params == json.loads(existing_watch_task['params']):
+                                    task_already_created = True
 
-                        if not task_already_created:
+                            if not task_already_created:
+                                self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
+                                                       attempts=0, worker_type=watch_task.worker_type,
+                                                       state=self.task_init_state)
+                        else:
                             self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
                                                    attempts=0, worker_type=watch_task.worker_type,
                                                    state=self.task_init_state)
-                    else:
-                        self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params),
-                                               attempts=0, worker_type=watch_task.worker_type,
-                                               state=self.task_init_state)
-                time.sleep(self.delay)
-            else:
-                time.sleep(self.delay)
+                    time.sleep(self.delay)
+                else:
+                    raise Exception
+            except:
+                time.sleep(self.conn_retry_delay)
 
     @classmethod
     def watch_task(cls, datetime, tournament, left_command, right_command):

@@ -83,15 +83,7 @@ class Miner(Worker):
         # scroll to sport name element
         sport_webelement = driver.find_elements_by_xpath(
             "//span[contains(text(), '{}')]".format(sport_name))[0]
-
-        if sport_webelement.location['y'] > self.window_height:
-            actions = ActionChains(self.driver)
-            scroll_bar = driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
-            scrolling_number = (1.1 * scroll_bar.size['height']) * (
-                    sport_webelement.location['y'] - scroll_bar.location['y']) / (
-                                       1000 - scroll_bar.location['y']) - scroll_bar.size['height']
-            actions.move_to_element(scroll_bar).click_and_hold() \
-                .move_by_offset(0, scrolling_number).perform()
+        self.scroll_to_element(sport_webelement)
         sport_webelement.click()
 
         wait = WebDriverWait(driver, 10, poll_frequency=1).until(

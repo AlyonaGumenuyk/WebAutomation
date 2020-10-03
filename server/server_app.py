@@ -41,7 +41,7 @@ class GetTasks(Resource):
             return json.loads(json.dumps(dict({'error': str(error).strip()})))
 
 
-class MinerGetTournaments(Resource):
+class GetTournaments(Resource):
     @staticmethod
     def get():
         try:
@@ -60,7 +60,7 @@ class MinerGetTournaments(Resource):
             return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
-class MinerGetGames(Resource):
+class GetGames(Resource):
     @staticmethod
     def get():
         try:
@@ -83,24 +83,14 @@ class MinerGetGames(Resource):
 
 class BetterWatch(Resource):
     @staticmethod
-    def get():
-        with open('task_report/gamestat.json', 'r', encoding='utf8') as gamestat:
-            try:
-                return make_response(json.load(gamestat))
-            except json.decoder.JSONDecodeError:
-                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
-
-    @staticmethod
     def post():
         try:
             if request.is_json:
                 result = request.get_json()
                 if result['result'] != 'finished':
                     if result['executed_state'] == 'success':
-                        print('success')
                         task_manager.add_result(result, change_task_state=False)
                     else:
-                        print('error')
                         task_manager.add_result(result)
                 else:
                     task_manager.add_result(result)
@@ -108,36 +98,22 @@ class BetterWatch(Resource):
             return make_response(json.dumps(dict({'error': str(error).strip()})))
 
 
-class Report(Resource):
+class GetResult(Resource):
     @staticmethod
     def get():
-        with open('task_report/report.json', 'r', encoding='utf8') as report:
-            try:
-                return make_response(json.load(report))
-            except json.decoder.JSONDecodeError:
-                return make_response(json.loads(json.dumps(dict({'Error': 'empty file'}))))
-
-    @staticmethod
-    def post():
-        if request.is_json:
-            data = request.get_json()
-            with open('task_report/report.json', 'r+', encoding='utf8') as report:
-                try:
-                    report_dict = json.load(report)
-                    report.seek(0)
-                    report.truncate()
-                    report_dict["report"].insert(0, data)
-                except json.decoder.JSONDecodeError:
-                    report_dict = dict({"report": [data]})
-                json.dump(report_dict, report, indent=4)
+        try:
+            result = task_manager.get_result()
+            return make_response(json.loads(result))
+        except Exception as error:
+            return make_response(json.loads(json.dumps(dict({'error': str(error).strip()}))))
 
 
 api.add_resource(IndexPage, '/')
 api.add_resource(GetTasks, '/tasks')
-api.add_resource(MinerGetTournaments, '/tournaments')
-api.add_resource(MinerGetGames, '/games')
+api.add_resource(GetTournaments, '/tournaments')
+api.add_resource(GetGames, '/games')
 api.add_resource(BetterWatch, '/watch')
-api.add_resource(Report, '/report')
+api.add_resource(GetResult, '/result')
 
 if __name__ == '__main__':
     if platform.system() == "Windows":
