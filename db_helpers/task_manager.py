@@ -203,7 +203,7 @@ class TaskManager(DBHelper):
 
     def add_games(self, result):
         self.connect(self.stavka_db)
-        games = json.loads(result['result'])
+        games = result['result']
         for game in games:
             try:
                 game_date_and_time = game['Date of Match'] + '.' + str(datetime.datetime.now().year)[2:] + ' ' + game[
