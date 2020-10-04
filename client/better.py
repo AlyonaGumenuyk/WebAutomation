@@ -53,8 +53,7 @@ class Better(Worker):
             try:
                 self.work()
             except Exception as error:
-                print("Sleeping")
-                #print(error)
+                print(json.dumps("Sleeping for 10 sec, cause: " + str(error).strip().replace('\'', '\"')))
                 time.sleep(10)
 
     def login(self, name: str, password: str):
