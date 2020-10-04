@@ -12,10 +12,21 @@ task_manager = TaskManager()
 #                                attempts=0, worker_type='better',
 #                                state='waiting for execution')
 
+time = '00:40'
 
-game = json.dumps([{'Date of Match': '04.10', 'Time of Match': '23:36',
-                   'Tournament name': 'Portugal. Primeira Liga',
-                    'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'}])
+game = [{'Date of Match': '05.10', 'Time of Match': time,
+         'Tournament name': 'Portugal. Primeira Liga',
+         'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'},
+        {'Date of Match': '05.10', 'Time of Match': time,
+         'Tournament name': 'Portugal. Primeira Lig',
+         'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'},
+        {'Date of Match': '05.10', 'Time of Match': time,
+         'Tournament name': 'Portugal. Primeira Li',
+         'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'},
+        {'Date of Match': '05.10', 'Time of Match': time,
+         'Tournament name': 'Portugal. Primeira Li',
+         'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'}
+        ]
 
 task_manager.add_games({'result': game})
 # task_manager.insert_into_tasks(skill='watch', arguments=["2020-10-04 22:06:00", "Brazil. Campeonato Brasileiro Série D", "лево", "право"],

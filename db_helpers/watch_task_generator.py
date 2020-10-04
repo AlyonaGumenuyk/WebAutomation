@@ -18,6 +18,7 @@ class WatchTaskGenerator(DBHelper):
                 task_manager = TaskManager()
                 games = task_manager.get_games_to_create_tasks()
                 if games:
+                    print('games ', len(games))
                     for game in games:
                         watch_task = self.watch_task(str(game['datetime']), game['tournament'],
                                                      game['left_command'], game['right_command'])
@@ -27,7 +28,7 @@ class WatchTaskGenerator(DBHelper):
                         if existing_watch_tasks:
                             task_already_created = False
                             for existing_watch_task in existing_watch_tasks:
-                                if watch_task.params == json.loads(existing_watch_task['params']):
+                                if watch_task.params == existing_watch_task['params']:
                                     task_already_created = True
 
                             if not task_already_created:
