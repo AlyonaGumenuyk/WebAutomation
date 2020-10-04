@@ -32,7 +32,12 @@ class BasePage:
         # open tournament
         our_tournament = (BasePageLocators.OUR_TOURNAMENT[0],
                           BasePageLocators.OUR_TOURNAMENT[1].format(params[1]))
-        self.find_element(locator=our_tournament, time=600).click()
+        try:
+            tournament_el = self.find_element(our_tournament, time_to_wait=600)
+            self.better.scroll_to_element(tournament_el)
+            tournament_el.click()
+        except:
+            raise Exception('No tournament with such name')
 
         # find the game
         games_list_el = self.find_elements(BasePageLocators.GAMES)
@@ -52,7 +57,7 @@ class BasePage:
                 if tries_to_find_match >= 59:
                     raise Exception('No match with such command names')
                 time.sleep(10)
-
+        self.better.scroll_to_element(match_link, force_scroll=True)
         match_link.click()
         self.find_element(BasePageLocators.GAME_STAT)
 
@@ -69,12 +74,14 @@ class BasePage:
         self.driver.execute_script(
             "window.jQuery=window.oldjQuery;window.$=window.jQuery;XMLHttpRequest.prototype.send=window.oSend")
 
-    def find_element(self, locator, time=5):
-        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
-                                                      message=json.dumps(
-                                                          {"Error": f"Can't find element by locator {locator}"}))
+    def find_element(self, locator, time_to_wait=5):
+        return WebDriverWait(self.driver, time_to_wait).until(EC.presence_of_element_located(locator),
+                                                              message=json.dumps(
+                                                                  {
+                                                                      "Error": f"Can't find element by locator {locator}"}))
 
-    def find_elements(self, locator, time=5):
-        return WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(locator),
-                                                      message=json.dumps(
-                                                          {"Error": f"Can't find elements by locator {locator}"}))
+    def find_elements(self, locator, time_to_wait=5):
+        return WebDriverWait(self.driver, time_to_wait).until(EC.presence_of_all_elements_located(locator),
+                                                              message=json.dumps(
+                                                                  {
+                                                                      "Error": f"Can't find elements by locator {locator}"}))

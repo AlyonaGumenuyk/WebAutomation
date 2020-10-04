@@ -13,9 +13,10 @@ task_manager = TaskManager()
 #                                state='waiting for execution')
 
 
-game = json.dumps({'task_id': 17, 'skill': 'get_tournaments',
-                   'result': 'ok', 'executed_state': 'success'})
-task_manager.add_result(json.loads(game))
+game = json.dumps([{'Date of Match': '04.10', 'Time of Match': '16:55',
+                   'Tournament name': 'Hungary. NB III', 'Left command name': 'Veszprem', 'Right command name': 'Gardonyi Varosi'}])
+
+task_manager.add_games({'result': game})
 
 # task_manager.change_task_state('completed', 1)
 # print(json.loads(records))

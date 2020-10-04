@@ -39336,3 +39336,623 @@ interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
 webdriverClickElement@chrome://marionette/content/interaction.js:182:31
 JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
 JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601811754592	geckodriver	INFO	Listening on 127.0.0.1:56938
+1601811757642	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilebB6iiM"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601811760395	Marionette	INFO	Listening on port 56954
+1601811760761	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601812456401	geckodriver	INFO	Listening on 127.0.0.1:57709
+1601812459418	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileXbDFrZ"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601812461229	Marionette	INFO	Listening on port 57724
+1601812461427	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601812505096	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601812856998	geckodriver	INFO	Listening on 127.0.0.1:58532
+1601812860013	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileheaTuN"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601812861808	Marionette	INFO	Listening on port 58541
+1601812862023	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601812906399	Marionette	INFO	Stopped listening on port 58541
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1601813053555	geckodriver	INFO	Listening on 127.0.0.1:59046
+1601813056573	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileJoI5s2"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601813058480	Marionette	INFO	Listening on port 59054
+1601813058592	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813098976	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601813100898	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813192361	geckodriver	INFO	Listening on 127.0.0.1:59591
+1601813195376	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilehcLx3S"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601813197681	Marionette	INFO	Listening on port 59610
+1601813197986	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813220873	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601813486623	geckodriver	INFO	Listening on 127.0.0.1:60173
+1601813489636	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile4NSEIA"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601813491610	Marionette	INFO	Listening on port 60185
+1601813491642	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813659730	geckodriver	INFO	Listening on 127.0.0.1:60453
+1601813662747	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileUGOKfh"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601813664609	Marionette	INFO	Listening on port 60464
+1601813664752	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813781098	geckodriver	INFO	Listening on 127.0.0.1:60666
+1601813784114	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileqljSfn"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601813785950	Marionette	INFO	Listening on port 60676
+1601813786121	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601813825426	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814718198	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814735320	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814832934	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 235: Error: Invalid autocomplete selectedIndex
+console.error: "Tried to send a 'frameUpdate' event on an already destroyed actor 'frameTarget'"
+1601814955693	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814973095	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814973848	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601814992579	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1601815005314	Marionette	INFO	Stopped listening on port 60676
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1601815435492	geckodriver	INFO	Listening on 127.0.0.1:63195
+1601815438516	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileBibZzZ"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601815440813	Marionette	INFO	Listening on port 63205
+1601815441129	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601815510966	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601815968760	geckodriver	INFO	Listening on 127.0.0.1:63906
+1601815971778	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileFJu1aE"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601815974077	Marionette	INFO	Listening on port 63920
+1601815974385	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816113737	geckodriver	INFO	Listening on 127.0.0.1:64167
+1601816116754	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiledv45hm"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601816118545	Marionette	INFO	Listening on port 64178
+1601816118763	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816159881	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816180879	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816218167	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816234626	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816257979	geckodriver	INFO	Listening on 127.0.0.1:64505
+1601816260993	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileVWG4Dv"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601816262807	Marionette	INFO	Listening on port 64520
+1601816262999	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816282837	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816306278	geckodriver	INFO	Listening on 127.0.0.1:64653
+1601816309294	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileGMVqLr"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601816311197	Marionette	INFO	Listening on port 64662
+1601816311307	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816438062	geckodriver	INFO	Listening on 127.0.0.1:64854
+1601816441080	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileDRSP0x"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601816442966	Marionette	INFO	Listening on port 64864
+1601816443104	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816462048	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816483757	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816526192	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816527095	geckodriver	INFO	Listening on 127.0.0.1:65032
+1601816530114	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileOp3HoZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601816532034	Marionette	INFO	Listening on port 65042
+1601816532123	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+1601816537609	geckodriver	INFO	Listening on 127.0.0.1:65097
+1601816540626	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilewxygwW"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601816542465	Marionette	INFO	Listening on port 65106
+1601816542634	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816563008	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816708975	geckodriver	INFO	Listening on 127.0.0.1:65337
+1601816711993	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiledcyX6U"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601816713815	Marionette	INFO	Listening on port 65348
+1601816713999	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816762765	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601816863338	geckodriver	INFO	Listening on 127.0.0.1:49309
+1601816866356	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiletx81jQ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601816868275	Marionette	INFO	Listening on port 49327
+1601816868367	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601816980900	geckodriver	INFO	Listening on 127.0.0.1:49820
+1601816983918	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileaJQtdJ"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601816985851	Marionette	INFO	Listening on port 49837
+1601816985950	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817005633	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817158613	geckodriver	INFO	Listening on 127.0.0.1:50472
+1601817161627	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilev3sfah"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601817163578	Marionette	INFO	Listening on port 50493
+1601817163640	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817204048	geckodriver	INFO	Listening on 127.0.0.1:50714
+1601817207066	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile3WXeyv"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817208924	Marionette	INFO	Listening on port 50730
+1601817209074	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817263739	geckodriver	INFO	Listening on 127.0.0.1:50995
+1601817266755	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileBJu1YE"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601817268630	Marionette	INFO	Listening on port 51012
+1601817268766	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817353529	geckodriver	INFO	Listening on 127.0.0.1:51395
+1601817356544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileC7BUKK"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601817358447	Marionette	INFO	Listening on port 51411
+1601817358557	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601817371551	geckodriver	INFO	Listening on 127.0.0.1:51490
+1601817374567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilebKOUsA"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817376593	Marionette	INFO	Listening on port 51506
+1601817376703	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817672704	geckodriver	INFO	Listening on 127.0.0.1:52483
+1601817675723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileOIzrQj"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817677579	Marionette	INFO	Listening on port 52503
+1601817677734	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817717115	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601817757806	geckodriver	INFO	Listening on 127.0.0.1:52838
+1601817760821	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileSLDgcp"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817762666	Marionette	INFO	Listening on port 52853
+1601817762829	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817800407	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601817803150	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601817815636	geckodriver	INFO	Listening on 127.0.0.1:53115
+1601817818651	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileSf2zVr"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817820461	Marionette	INFO	Listening on port 53133
+1601817820658	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817857851	geckodriver	INFO	Listening on 127.0.0.1:53335
+1601817860868	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileFjfmpg"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817862861	Marionette	INFO	Listening on port 53350
+1601817862878	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817912717	geckodriver	INFO	Listening on 127.0.0.1:53614
+1601817915734	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofilebiy4Lq"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601817917522	Marionette	INFO	Listening on port 53630
+1601817917740	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601817935381	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601818183621	geckodriver	INFO	Listening on 127.0.0.1:54465
+1601818186640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileevWilw"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601818188551	Marionette	INFO	Listening on port 54480
+1601818188651	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601818206952	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601818308225	geckodriver	INFO	Listening on 127.0.0.1:54918
+1601818311243	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileuSabIs"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601818313036	Marionette	INFO	Listening on port 54936
+1601818313253	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601818333311	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601818481996	geckodriver	INFO	Listening on 127.0.0.1:55476
+1601818485013	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile9g4sV4"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601818487197	Marionette	INFO	Listening on port 55492
+1601818487627	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819154283	geckodriver	INFO	Listening on 127.0.0.1:56826
+1601819157297	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileDVVVgV"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601819159181	Marionette	INFO	Listening on port 56845
+1601819159307	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819179837	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601819298251	geckodriver	INFO	Listening on 127.0.0.1:57330
+1601819301270	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofiledPz2UU"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601819303161	Marionette	INFO	Listening on port 57348
+1601819303276	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819390849	geckodriver	INFO	Listening on 127.0.0.1:57720
+1601819393864	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofile2xOj6Z"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601819395999	Marionette	INFO	Listening on port 57737
+1601819396474	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819434231	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601819516605	geckodriver	INFO	Listening on 127.0.0.1:58239
+1601819519624	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileqrgvpk"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601819521741	Marionette	INFO	Listening on port 58257
+1601819522234	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819542072	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1601819577271	geckodriver	INFO	Listening on 127.0.0.1:58520
+1601819580289	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileCRn8uT"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601819582390	Marionette	INFO	Listening on port 58539
+1601819582408	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+1601819661511	geckodriver	INFO	Listening on 127.0.0.1:58889
+1601819664528	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Lukya\\AppData\\Local\\Temp\\rust_mozprofileGUdmcZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601819666429	Marionette	INFO	Listening on port 58906
+1601819666537	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://cdn.1xstavka.ru/default/min_js/connect.588dddb587a30af1b2f8320daba9348d.js, line 1: unreachable code after return statement

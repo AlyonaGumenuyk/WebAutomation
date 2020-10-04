@@ -91,7 +91,11 @@ class BetterWatch(Resource):
                     if result['executed_state'] == 'success':
                         task_manager.add_result(result, change_task_state=False)
                     else:
-                        task_manager.add_result(result)
+                        if result['result'] == 'No tournament with such name' \
+                                or result['result'] == 'No match with such command names':
+                            task_manager.add_result(result, change_task_state=False, complete_execution=True)
+                        else:
+                            task_manager.add_result(result)
                 else:
                     task_manager.add_result(result)
         except Exception as error:

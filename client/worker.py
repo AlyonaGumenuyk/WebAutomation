@@ -30,8 +30,8 @@ class Worker:
         self.driver.set_window_size(self.window_length, self.window_height)
         self.time_to_sleep = 10
 
-    def scroll_to_element(self, element):
-        if element.location['y'] > self.window_height:
+    def scroll_to_element(self, element, force_scroll=False):
+        if element.location['y'] > self.window_height or force_scroll:
             actions = ActionChains(self.driver)
             scroll_bar = self.driver.find_element_by_css_selector('[class="iScrollIndicator"]:nth-child(1)')
             scrolling_number = (1.1 * scroll_bar.size['height']) * (
@@ -39,3 +39,5 @@ class Worker:
                                        1000 - scroll_bar.location['y']) - scroll_bar.size['height']
             actions.move_to_element(scroll_bar).click_and_hold() \
                 .move_by_offset(0, scrolling_number).perform()
+            actions.reset_actions()
+

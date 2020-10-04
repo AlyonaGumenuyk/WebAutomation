@@ -168,15 +168,22 @@ class TaskManager(DBHelper):
             self.cur.execute(query)
             self.conn.commit()
 
-    def add_result(self, result, change_task_state=True):
+    def add_result(self, result, change_task_state=True, complete_execution=False):
         self.connect(self.stavka_db)
         query = """
             INSERT INTO results (task_id, skill, result, executed_state) 
             VALUES (%s,%s,%s,%s) 
             """
         try:
-            record_to_insert = (result["task_id"], result["skill"], json.dumps(result["result"], ensure_ascii=False),
-                                result["executed_state"])
+            if complete_execution:
+                record_to_insert = (
+                    result["task_id"], result["skill"], json.dumps(result["result"], ensure_ascii=False),
+                    result["executed_state"])
+                self.change_task_state(state=self.task_complete_state, task_id=result['task_id'])
+            else:
+                record_to_insert = (
+                    result["task_id"], result["skill"], json.dumps(result["result"], ensure_ascii=False),
+                    result["executed_state"])
             self.cur.execute(query, record_to_insert)
         except Exception as error:
             print(error)
@@ -201,22 +208,24 @@ class TaskManager(DBHelper):
                 game_date_and_time = game['Date of Match'] + '.' + str(datetime.datetime.now().year)[2:] + ' ' + game[
                     'Time of Match']
                 game_datetime = datetime.datetime.strptime(game_date_and_time, '%d.%m.%y %H:%M')
-                game_tournament = game['Tournament name']
-                game_left_command = game['Left command name']
-                game_right_command = game['Right command name']
-                query = f"""
-                        INSERT INTO games (datetime, tournament, left_command, right_command)
-                        SELECT %s, %s, %s, %s
-                        WHERE NOT EXISTS (SELECT 1 FROM games
-                                          WHERE datetime=%s
-                                          AND tournament=%s
-                                          AND left_command=%s
-                                          AND right_command=%s)
-                        """
+                curr_time_minus_10_mins = datetime.datetime.now() - datetime.timedelta(minutes=10)
+                if game_datetime > curr_time_minus_10_mins:
+                    game_tournament = game['Tournament name']
+                    game_left_command = game['Left command name']
+                    game_right_command = game['Right command name']
+                    query = f"""
+                            INSERT INTO games (datetime, tournament, left_command, right_command)
+                            SELECT %s, %s, %s, %s
+                            WHERE NOT EXISTS (SELECT 1 FROM games
+                                              WHERE datetime=%s
+                                              AND tournament=%s
+                                              AND left_command=%s
+                                              AND right_command=%s)
+                            """
 
-                record_to_insert = (game_datetime, game_tournament, game_left_command, game_right_command,
-                                    game_datetime, game_tournament, game_left_command, game_right_command)
-                self.cur.execute(self.cur.mogrify(query, record_to_insert))
+                    record_to_insert = (game_datetime, game_tournament, game_left_command, game_right_command,
+                                        game_datetime, game_tournament, game_left_command, game_right_command)
+                    self.cur.execute(self.cur.mogrify(query, record_to_insert))
             except Exception as error:
                 print(error)
             self.conn.commit()
@@ -225,8 +234,8 @@ class TaskManager(DBHelper):
     def get_games_to_create_tasks(self):
         self.connect(self.stavka_db)
         try:
-            task_datetime_minus_minute = datetime.datetime.now() - datetime.timedelta(minutes=1)
-            time_to_create_task = task_datetime_minus_minute.strftime('%y-%m-%d %H:%M')
+            task_datetime_plus_minute = datetime.datetime.now() + datetime.timedelta(minutes=1)
+            time_to_create_task = task_datetime_plus_minute.strftime('%y-%m-%d %H:%M')
             query = f"""
                     SELECT * FROM games
                     WHERE datetime = to_timestamp('{time_to_create_task}', 'yy-mm-dd hh24:mi:ss')

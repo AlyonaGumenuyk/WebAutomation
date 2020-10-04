@@ -4,6 +4,7 @@ services:
 
   db:
     build: ./docker_db
+    restart: always
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
@@ -17,38 +18,78 @@ services:
     build:
       context: .
       dockerfile: server/Dockerfile
+    restart: always
     ports:
       - 8000:8000
     depends_on:
       - db
     container_name: server
 
-  miner:
+  miner1:
     build:
       context: .
       dockerfile: client/Dockerfile
+    restart: always
     environment:
       - WORKER=miner
     network_mode: host
     depends_on:
       - server
-    container_name: miner
+    container_name: miner1
 
-  better:
+  miner2:
     build:
       context: .
       dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=miner
+    network_mode: host
+    depends_on:
+      - server
+    container_name: miner2
+
+  better1:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
     environment:
       - WORKER=better
     network_mode: host
     depends_on:
       - server
-    container_name: better
+    container_name: better1
+
+  better2:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=better
+    network_mode: host
+    depends_on:
+      - server
+    container_name: better2
+
+  better3:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=better
+    network_mode: host
+    depends_on:
+      - server
+    container_name: better3
 
   tournaments_generator:
     build:
       context: .
       dockerfile: db_helpers/Dockerfile
+    restart: always
     environment:
       - STARTER=tournaments_task_generator
     network_mode: host
@@ -61,6 +102,7 @@ services:
     build:
       context: .
       dockerfile: db_helpers/Dockerfile
+    restart: always
     environment:
       - STARTER=games_task_generator
     network_mode: host
@@ -72,6 +114,7 @@ services:
     build:
       context: .
       dockerfile: db_helpers/Dockerfile
+    restart: always
     environment:
       - STARTER=watch_task_generator
     network_mode: host

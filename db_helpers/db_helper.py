@@ -19,6 +19,7 @@ class DBHelper:
         self.task_execution_state = 'currently executing'
         self.task_complete_state = 'execution completed'
         self.conn_retry_delay = 10
+        self.task_max_attempts = 5
 
     def connect(self, db_to_connect_name):
         try:
