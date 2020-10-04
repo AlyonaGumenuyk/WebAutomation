@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
-      - TZ=Europe/Moscow
+      TZ: Europe/Moscow
     volumes:
       - ./postgres-data:/var/lib/postgresql
     ports:
