@@ -21,7 +21,7 @@ services:
       dockerfile: server/Dockerfile
     restart: always
     environment:
-      TZ: "Europe/Moscow"
+      - TZ=Europe/Moscow
     ports:
       - 8000:8000
     depends_on:
