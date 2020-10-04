@@ -17,7 +17,7 @@ class Better(Worker):
         super().__init__()
         self.skills = {"make_bet": self.make_bet,
                        "watch": self.watch}
-        self.worker_type = json.loads(json.dumps({'worker_type': 'better'}))
+        self.worker_type = json.loads(json.dumps({'worker_type': 'better', 'tasks_number': 1}))
 
     def get_new_tasks(self):
         tasks = None
