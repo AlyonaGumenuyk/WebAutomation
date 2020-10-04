@@ -17,7 +17,7 @@ class Miner(Worker):
         super().__init__()
         self.skills = {"get_tournaments": self.get_tournaments,
                        "get_games": self.get_games}
-        self.worker_type = json.loads(json.dumps({'worker_type': 'miner'}))
+        self.worker_type = json.loads(json.dumps({'worker_type': 'miner', 'tasks_number': self.task_queue.maxsize}))
 
     def get_new_tasks(self):
         tasks = None

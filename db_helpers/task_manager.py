@@ -57,7 +57,7 @@ class TaskManager(DBHelper):
         self.close_connection()
         return json.dumps({'tasks': records_list})
 
-    def get_tasks_for_execution(self, worker_type, skill='all', change_task_state=False):
+    def get_tasks_for_execution(self, worker_type, tasks_number, skill='all', change_task_state=False):
         self.connect(self.stavka_db)
         if skill == 'all':
             if worker_type == 'miner':
@@ -65,6 +65,7 @@ class TaskManager(DBHelper):
                     SELECT * from tasks
                     WHERE worker_type='{worker_type}'
                     AND state='{self.task_init_state}'
+                    LIMIT '{tasks_number}'
                     """
             elif worker_type == 'better':
                 query = f"""

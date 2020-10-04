@@ -35,6 +35,7 @@ class GetTasks(Resource):
             if request.is_json:
                 request_data = request.get_json()
                 tasks = task_manager.get_tasks_for_execution(worker_type=request_data['worker_type'],
+                                                             tasks_number=request_data['tasks_number'],
                                                              change_task_state=True)
                 return json.loads(tasks)
         except Exception as error:
