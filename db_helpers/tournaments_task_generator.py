@@ -16,7 +16,7 @@ class TournamentsTaskGenerator(DBHelper):
         while True:
             try:
                 tournaments_task = self.get_tournaments_task(self.sport_name)
-                self.insert_into_tasks(skill=tournaments_task.skill, arguments=json.dumps(tournaments_task.params, ensure_ascii=False),
+                self.insert_into_tasks(skill=tournaments_task.skill, arguments=tournaments_task.params,
                                        attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
                 time.sleep(self.delay)
             except:

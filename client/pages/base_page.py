@@ -34,10 +34,14 @@ class BasePage:
                           BasePageLocators.OUR_TOURNAMENT[1].format(params[1]))
         try:
             tournament_el = self.find_element(our_tournament, time_to_wait=600)
-            self.better.scroll_to_element(tournament_el)
-            tournament_el.click()
         except:
             raise Exception('No tournament with such name')
+
+        try:
+            tournament_el.click()
+        except:
+            self.better.scroll_to_element(tournament_el)
+            tournament_el.click()
 
         # find the game
         games_list_el = self.find_elements(BasePageLocators.GAMES)
@@ -57,8 +61,13 @@ class BasePage:
                 if tries_to_find_match >= 59:
                     raise Exception('No match with such command names')
                 time.sleep(10)
-        self.better.scroll_to_element(match_link, force_scroll=True)
-        match_link.click()
+
+        try:
+            match_link.click()
+        except:
+            self.better.scroll_to_element(match_link, force_scroll=True)
+            match_link.click()
+
         self.find_element(BasePageLocators.GAME_STAT)
 
     def close_page(self):

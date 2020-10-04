@@ -89,7 +89,7 @@ class TaskManager(DBHelper):
                 query = f"""
                     SELECT * from tasks
                     WHERE worker_type='{worker_type}'
-                    AND state='{self.task_init_state}'
+                    AND (state='{self.task_init_state}' OR state='{self.task_execution_state}')
                     AND skill='{skill}'
                     """
             else:

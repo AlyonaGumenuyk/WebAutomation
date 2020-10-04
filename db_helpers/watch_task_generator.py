@@ -31,11 +31,11 @@ class WatchTaskGenerator(DBHelper):
                                     task_already_created = True
 
                             if not task_already_created:
-                                self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params, ensure_ascii=False),
+                                self.insert_into_tasks(skill=watch_task.skill, arguments=watch_task.params,
                                                        attempts=0, worker_type=watch_task.worker_type,
                                                        state=self.task_init_state)
                         else:
-                            self.insert_into_tasks(skill=watch_task.skill, arguments=json.dumps(watch_task.params, ensure_ascii=False),
+                            self.insert_into_tasks(skill=watch_task.skill, arguments=watch_task.params,
                                                    attempts=0, worker_type=watch_task.worker_type,
                                                    state=self.task_init_state)
                     time.sleep(self.delay)

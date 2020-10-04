@@ -13,13 +13,14 @@ task_manager = TaskManager()
 #                                state='waiting for execution')
 
 
-game = json.dumps([{'Date of Match': '04.10', 'Time of Match': '22:10',
-                   'Tournament name': 'турнир', 'Left command name': 'лево', 'Right command name': 'право'}])
+game = json.dumps([{'Date of Match': '04.10', 'Time of Match': '23:36',
+                   'Tournament name': 'Portugal. Primeira Liga',
+                    'Left command name': 'Portimonense', 'Right command name': 'Sporting Lisbon'}])
 
-#task_manager.add_games({'result': game})
-task_manager.insert_into_tasks(skill='watch', arguments=json.dumps(["2020-10-04 22:06:00", "Brazil. Campeonato Brasileiro Série D", "лево", "право"], ensure_ascii=False),
-                                                       attempts=0, worker_type='better',
-                                                       state=task_manager.task_init_state)
+task_manager.add_games({'result': game})
+# task_manager.insert_into_tasks(skill='watch', arguments=["2020-10-04 22:06:00", "Brazil. Campeonato Brasileiro Série D", "лево", "право"],
+#                                attempts=0, worker_type='better',
+#                                state=task_manager.task_init_state)
 
 # task_manager.change_task_state('completed', 1)
 # print(json.loads(records))

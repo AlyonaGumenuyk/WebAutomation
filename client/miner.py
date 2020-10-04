@@ -26,7 +26,7 @@ class Miner(Worker):
             if tasks:
                 for task in tasks:
                     print(task)
-                    task['params'] = json.loads(task['params'])
+                    #task['params'] = json.loads(task['params'])
                     self.task_queue.put(Task.to_task(task))
             else:
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
@@ -64,7 +64,8 @@ class Miner(Worker):
             try:
                 server_adress, result = self.work()
                 try:
-                    report = json.loads(json.dumps(result, ensure_ascii=False))
+                    #report = json.loads(json.dumps(result, ensure_ascii=False))
+                    report = result
                     requests.post(server_adress, json=report)
                 except Exception as error:
                     print(
@@ -159,5 +160,6 @@ class Miner(Worker):
                                        tournament_url, game_coefs_dict, game_date, game_time]
             game_desctiption = dict(zip(game_desctiption_keys, game_desctiption_values))
             game_desctiptions_list.append(game_desctiption)
-        result = json.dumps(game_desctiptions_list)
+        #result = json.dumps(game_desctiptions_list)
+        result = game_desctiptions_list
         return result

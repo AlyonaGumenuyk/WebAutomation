@@ -26,7 +26,8 @@ class Better(Worker):
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
                 for task in tasks:
-                    task['params'] = json.loads(task['params'])
+                    print(task)
+                    #task['params'] = json.loads(task['params'])
                     dt = datetime.datetime.strptime(task['params'][0], '%Y-%m-%d %H:%M:%S')
                     if datetime.datetime.now() - dt < datetime.timedelta(minutes=5):
                         self.task_queue.put(Task.to_task(task))
@@ -83,8 +84,7 @@ class Better(Worker):
                 raise Exception('No sense to start watching match after 5 minutes')
             match_page.go_to_match(params=task.params)
             if match_page.match_is_finished():
-                report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
-                                                     "skill": task.skill, "executed_state": 'success'})))
+                report = dict({"result": 'finished', "task_id": task.task_id, "skill": task.skill, "executed_state": 'success'})
                 requests.post(self.server_address + "/watch", json=report)
             else:
                 match_page.sort_table()
@@ -95,27 +95,26 @@ class Better(Worker):
                         changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
                         if changes and 'current_status' in changes.keys():
                             status_changes = changes['current_status']
-                            print(list(changes.keys()))
+                            #print(list(changes.keys()))
                             if len(list(changes.keys())) > 1 or list(status_changes.keys()) != ['time']:
-                                report = json.loads(json.dumps(dict({"result": changes, "task_id": task.task_id,
-                                                                     "skill": task.skill, "executed_state": 'success'})))
+                                report = dict({"result": changes, "task_id": task.task_id,
+                                               "skill": task.skill, "executed_state": 'success'})
                                 requests.post(self.server_address + "/watch", json=report)
                             prev_game_stat = game_stat
                     else:
-                        report = json.loads(json.dumps(dict({"result": game_stat, "task_id": task.task_id,
-                                                             "skill": task.skill, "executed_state": 'success'})))
+                        report = dict({"result": json.loads(game_stat), "task_id": task.task_id,
+                                       "skill": task.skill, "executed_state": 'success'})
                         requests.post(self.server_address + "/watch", json=report)
                         prev_game_stat = game_stat
                     print("refreashing stats")
                     time.sleep(3)
-                report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,
-                                                     "skill": task.skill, "executed_state": 'success'})))
+                report = dict({"result": 'finished', "task_id": task.task_id,
+                               "skill": task.skill, "executed_state": 'success'})
                 requests.post(self.server_address + "/watch", json=report)
 
         except Exception as error:
-            report = json.loads(json.dumps(dict({"result": str(error).strip().replace('\'', '\"'),
-                                                 "task_id": task.task_id, "skill": task.skill,
-                                                 "executed_state": 'error'})))
+            report = dict({"result": str(error).strip().replace('\'', '\"'), "task_id": task.task_id,
+                           "skill": task.skill, "executed_state": 'error'})
             requests.post(server_adress, json=report)
             print(error)
 
