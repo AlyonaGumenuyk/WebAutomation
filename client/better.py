@@ -1,3 +1,4 @@
+import datetime
 import json
 import time
 
@@ -27,7 +28,12 @@ class Better(Worker):
                 for task in tasks:
                     print(task)
                     task['params'] = json.loads(task['params'])
-                    self.task_queue.put(Task.to_task(task))
+                    dt = datetime.datetime.strptime(task['params'][0], '%Y-%m-%d %H:%M')
+                    if datetime.datetime.now() - dt < datetime.timedelta(minutes=5):
+                        self.task_queue.put(Task.to_task(task))
+                    else:
+                        task['params'] = []
+                        self.task_queue.put(Task.to_task(task))
             else:
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
                 time.sleep(self.time_to_sleep)
@@ -74,6 +80,8 @@ class Better(Worker):
         match_page = MatchPage(driver=self.driver, better=self)
         server_adress = self.server_address + "/watch"
         try:
+            if not task.params:
+                raise Exception('No sense to start watching match after 5 minutes')
             match_page.go_to_match(params=task.params)
             if match_page.match_is_finished():
                 report = json.loads(json.dumps(dict({"result": json.dumps('finished'), "task_id": task.task_id,

@@ -1,11 +1,14 @@
 import json
-from jsondiff import diff
+import datetime
 
-json1 = json.dumps('"Asian Handicap": "Handiсap авы Ordabasy"', ensure_ascii=False)
-json2 = json.dumps('"Asian Handicap": "Handicap Ordabasy"')
 
-changes = json.loads(diff(json2, json1, load=True, dump=True))
-# print(time_to_create_task.strftime('%y-%m-%d %H:%M'))
+params = json.loads('["2020-10-04 16:15:00", "Belgium. Jupiler League", "R. Charleroi", "Standard Liege"]')
+print(params[0])
+
+dt = datetime.datetime.strptime('2020-10-04 19:00', '%Y-%m-%d %H:%M')
+
+if datetime.datetime.now() - dt < datetime.timedelta(minutes=90):
+    print('yes')
+else:
+    print('no')
 #print(changes)
-print(json.loads(json1))
-print(json.loads(json2))
