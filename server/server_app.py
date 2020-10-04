@@ -93,7 +93,8 @@ class BetterWatch(Resource):
                         task_manager.add_result(result, change_task_state=False)
                     else:
                         if result['result'] == 'No tournament with such name' \
-                                or result['result'] == 'No match with such command names':
+                                or result['result'] == 'No match with such command names' \
+                                or result['result'] == 'No sense to start watching match after 5 minutes':
                             task_manager.add_result(result, change_task_state=False, complete_execution=True)
                         else:
                             task_manager.add_result(result)

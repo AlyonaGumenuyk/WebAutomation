@@ -27,7 +27,7 @@ class GamesTaskGenerator(DBHelper):
         if tournaments:
             for tournament_name, tournament_url in json.loads(tournaments['tournaments'])[0].items():
                 games_task = self.get_games_task(tounament_url=tournament_url)
-                self.insert_into_tasks(skill=games_task.skill, arguments=json.dumps(games_task.params),
+                self.insert_into_tasks(skill=games_task.skill, arguments=json.dumps(games_task.params, ensure_ascii=False),
                                        attempts=0, worker_type=games_task.worker_type, state=self.task_init_state)
         else:
             raise Exception

@@ -26,9 +26,8 @@ class Better(Worker):
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
                 for task in tasks:
-                    print(task)
                     task['params'] = json.loads(task['params'])
-                    dt = datetime.datetime.strptime(task['params'][0], '%Y-%m-%d %H:%M')
+                    dt = datetime.datetime.strptime(task['params'][0], '%Y-%m-%d %H:%M:%S')
                     if datetime.datetime.now() - dt < datetime.timedelta(minutes=5):
                         self.task_queue.put(Task.to_task(task))
                     else:
