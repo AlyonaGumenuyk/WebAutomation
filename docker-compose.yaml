@@ -2,32 +2,6 @@ version: "3"
 
 services:
 
-  db:
-    build: ./docker_db
-    restart: always
-    environment:
-      POSTGRES_USER: docker
-      POSTGRES_PASSWORD: docker
-      TZ: Europe/Moscow
-    volumes:
-      - ./postgres-data:/var/lib/postgresql
-    ports:
-      - 5432:5432
-    container_name: db
-
-  server:
-    build:
-      context: .
-      dockerfile: server/Dockerfile
-    restart: always
-    environment:
-      - TZ=Europe/Moscow
-    ports:
-      - 8000:8000
-    depends_on:
-      - db
-    container_name: server
-
   miner1:
     build:
       context: .
@@ -36,9 +10,6 @@ services:
     environment:
       - WORKER=miner
       - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - server
     container_name: miner1
 
   miner2:
@@ -49,9 +20,6 @@ services:
     environment:
       - WORKER=miner
       - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - server
     container_name: miner2
 
   better1:
@@ -62,9 +30,6 @@ services:
     environment:
       - WORKER=better
       - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - server
     container_name: better1
 
   better2:
@@ -75,9 +40,6 @@ services:
     environment:
       - WORKER=better
       - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - server
     container_name: better2
 
   better3:
@@ -88,47 +50,4 @@ services:
     environment:
       - WORKER=better
       - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - server
     container_name: better3
-
-  tournaments_generator:
-    build:
-      context: .
-      dockerfile: db_helpers/Dockerfile
-    restart: always
-    environment:
-      - STARTER=tournaments_task_generator
-      - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - miner1
-    command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
-    container_name: tournaments_generator
-
-  games_generator:
-    build:
-      context: .
-      dockerfile: db_helpers/Dockerfile
-    restart: always
-    environment:
-      - STARTER=games_task_generator
-      - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - tournaments_generator
-    container_name: games_generator
-
-  watch_generator:
-    build:
-      context: .
-      dockerfile: db_helpers/Dockerfile
-    restart: always
-    environment:
-      - STARTER=watch_task_generator
-      - TZ=Europe/Moscow
-    network_mode: host
-    depends_on:
-      - better1
-    container_name: watch_generator
