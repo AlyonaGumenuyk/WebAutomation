@@ -38,7 +38,7 @@ services:
       - TZ=Europe/Moscow
     network_mode: host
     depends_on:
-      - miner1
+      - db
     command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
     container_name: tournaments_generator
 
@@ -65,5 +65,5 @@ services:
       - TZ=Europe/Moscow
     network_mode: host
     depends_on:
-      - better1
+      - tournaments_generator
     container_name: watch_generator
