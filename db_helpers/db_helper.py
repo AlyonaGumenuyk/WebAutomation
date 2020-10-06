@@ -7,11 +7,8 @@ class DBHelper:
 
     def __init__(self):
         self.user = 'docker'
-        self.host = '172.18.0.1'
+        self.host = '172.17.0.1'
         self.password = 'docker'
-        # self.user = 'postgres'
-        # self.host = 'localhost'
-        # self.password = 'boss1234'
         self.conn = None
         self.cur = None
         self.stavka_db = '1xStavkaDB'
