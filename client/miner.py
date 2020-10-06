@@ -24,13 +24,15 @@ class Miner(Worker):
         while not tasks:
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
+                self.reset_driver()
                 for task in tasks:
                     print(task)
                     #task['params'] = json.loads(task['params'])
                     self.task_queue.put(Task.to_task(task))
             else:
-                self.reset_driver()
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
+                if self.driver:
+                    self.driver.quit()
                 time.sleep(self.time_to_sleep)
 
     def work(self):
@@ -41,7 +43,6 @@ class Miner(Worker):
         return server_adress, result
 
     def do_task(self, task):
-        self.reset_driver()
         if task.skill == 'get_tournaments':
             server_adress = self.server_address + "/tournaments"
             try:

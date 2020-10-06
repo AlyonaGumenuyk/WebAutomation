@@ -1,5 +1,7 @@
 import datetime
 import json
+import os
+import signal
 import time
 
 import requests
@@ -25,6 +27,7 @@ class Better(Worker):
         while not tasks:
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
+                self.reset_driver()
                 for task in tasks:
                     print(task)
                     #task['params'] = json.loads(task['params'])
@@ -35,8 +38,9 @@ class Better(Worker):
                         task['params'] = []
                         self.task_queue.put(Task.to_task(task))
             else:
-                self.reset_driver()
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
+                if self.driver:
+                    self.driver.quit()
                 time.sleep(self.time_to_sleep)
 
     def work(self):
@@ -46,7 +50,6 @@ class Better(Worker):
         self.do_task(task)
 
     def do_task(self, task):
-        self.reset_driver()
         if task.skill == 'watch':
             self.watch_match(task)
 

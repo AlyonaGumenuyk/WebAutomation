@@ -1,7 +1,6 @@
 import platform
 
 from pyvirtualdisplay import Display
-from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.firefox.options import Options
 
@@ -39,6 +38,7 @@ class Worker:
                                    log_path='logs/geckodriver.log')
         else:
             self.driver = self.driver = MyDriver()
+        self.driver.set_window_size(self.window_length, self.window_height)
 
     def scroll_to_element(self, element, force_scroll=False):
         if element.location['y'] > self.window_height or force_scroll:
@@ -50,4 +50,3 @@ class Worker:
             actions.move_to_element(scroll_bar).click_and_hold() \
                 .move_by_offset(0, scrolling_number).perform()
             actions.reset_actions()
-
