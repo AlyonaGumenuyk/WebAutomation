@@ -24,7 +24,8 @@ class Miner(Worker):
         while not tasks:
             tasks = requests.post(self.server_address + '/tasks', json=self.worker_type).json()
             if tasks:
-                self.reset_driver()
+                if self.driver:
+                    self.reset_driver()
                 for task in tasks:
                     print(task)
                     #task['params'] = json.loads(task['params'])
