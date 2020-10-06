@@ -12,7 +12,8 @@ from task_management.task_queue import TaskQueue
 class Worker:
     def __init__(self):
         self.task_queue = TaskQueue()
-        if platform.system() == "Windows":
+        self.system_name = platform.system()
+        if self.system_name == "Windows":
             options = Options()
             options.headless = True
             self.driver = MyDriver(executable_path='drivers/firefoxdriver/geckodriver.exe',
@@ -29,6 +30,15 @@ class Worker:
         self.window_height = 1080
         self.driver.set_window_size(self.window_length, self.window_height)
         self.time_to_sleep = 10
+
+    def reset_driver(self):
+        self.driver.quit()
+        if self.system_name == "Windows":
+            self.driver = MyDriver(executable_path='drivers/firefoxdriver/geckodriver.exe',
+                                   service_log_path='logs/geckodriver_service.log',
+                                   log_path='logs/geckodriver.log')
+        else:
+            self.driver = self.driver = MyDriver()
 
     def scroll_to_element(self, element, force_scroll=False):
         if element.location['y'] > self.window_height or force_scroll:

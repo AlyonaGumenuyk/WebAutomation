@@ -29,6 +29,7 @@ class Miner(Worker):
                     #task['params'] = json.loads(task['params'])
                     self.task_queue.put(Task.to_task(task))
             else:
+                self.reset_driver()
                 print("sleeping for {} seconds while waiting for tasks".format(self.time_to_sleep))
                 time.sleep(self.time_to_sleep)
 
@@ -40,6 +41,7 @@ class Miner(Worker):
         return server_adress, result
 
     def do_task(self, task):
+        self.reset_driver()
         if task.skill == 'get_tournaments':
             server_adress = self.server_address + "/tournaments"
             try:
