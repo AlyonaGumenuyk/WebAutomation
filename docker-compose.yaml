@@ -51,3 +51,34 @@ services:
       - WORKER=better
       - TZ=Europe/Moscow
     container_name: better3
+
+  better4:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=better
+      - TZ=Europe/Moscow
+    container_name: better4
+
+  better5:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=better
+      - TZ=Europe/Moscow
+    container_name: better5
+
+  better6:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    restart: always
+    environment:
+      - WORKER=better
+      - TZ=Europe/Moscow
+    container_name: better6
+
