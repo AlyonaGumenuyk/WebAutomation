@@ -17,6 +17,7 @@ class MatchPageLocators:
     BOX_FRAME = (By.CSS_SELECTOR, '#allBetsTable')
     AFTER_GAME_MSG = (By.CSS_SELECTOR, '[class="after-game-info__text"]')
     STATUS_AND_TIMER = (By.CSS_SELECTOR, 'ul[class*="o-tablo-info-list"] [class="c-tablo__text"]')
+    CARDS_AND_PENALTIES = (By.CSS_SELECTOR, '[class*="c-tablo__event-info"]')
 
 
 class MatchPage(BasePage):
@@ -60,10 +61,10 @@ class MatchPage(BasePage):
         except:
             return None
 
-    def get_dashboard_coefs(self, commands_names):
+    def get_dashboard_coefs(self):
         try:
             tablo_rows = self.find_elements(MatchPageLocators.TABLO_COEFS)
-            tablo_coefs = {"command_left": dict(), "command_right": dict()}
+            tablo_coefs = {}
             for row in tablo_rows:
                 name_coef = row.find_element_by_css_selector(
                     "[class='c-chart-stat__title']").text
@@ -71,10 +72,30 @@ class MatchPage(BasePage):
                     "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(1)").text
                 right_coef = row.find_element_by_css_selector(
                     "[class='c-chart-stat c-tablo__chart'] div:nth-child(2) div:nth-child(3)").text
-                tablo_coefs["command_left"].update({name_coef: left_coef})
-                tablo_coefs["command_right"].update({name_coef: right_coef})
+                tablo_coefs.update({name_coef: {'command_left': left_coef, 'command_right': right_coef}})
             return tablo_coefs
         except:
+            return None
+
+    def get_cards_and_penalties(self):
+        try:
+            cards_and_penalties_by_command = self.find_elements(MatchPageLocators.CARDS_AND_PENALTIES)
+            result_dict = {'command_left': {}, 'command_right': {}}
+            for index, command in enumerate(cards_and_penalties_by_command):
+                items = command.find_elements_by_css_selector('[class="o-tablo-info-list__item"]')
+                for item in items:
+                    name = item.find_element_by_css_selector(
+                        '[class*="c-tablo-event"]:not([class*="c-tablo-event__item"]):nth-child(1)'
+                    ).get_attribute("title")
+
+                    value = item.find_element_by_css_selector('[class="c-tablo-event__item"]:nth-child(2)').text
+                    if index == 0:
+                        result_dict['command_left'].update({name: value})
+                    elif index == 1:
+                        result_dict['command_right'].update({name: value})
+            return result_dict
+        except Exception as err:
+            print(repr(err))
             return None
 
     def get_table_coefs(self):

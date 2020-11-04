@@ -1,7 +1,5 @@
 import datetime
 import json
-import os
-import signal
 import time
 
 import requests
@@ -10,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+from client.diff_stat import DiffStat
 from client.pages.match_page import MatchPage
 from client.worker import Worker
 from task_management.task import Task
@@ -31,7 +30,7 @@ class Better(Worker):
                     self.reset_driver()
                 for task in tasks:
                     print(task)
-                    #task['params'] = json.loads(task['params'])
+                    # task['params'] = json.loads(task['params'])
                     dt = datetime.datetime.strptime(task['params'][0], '%Y-%m-%d %H:%M:%S')
                     if datetime.datetime.now() - dt < datetime.timedelta(minutes=5):
                         self.task_queue.put(Task.to_task(task))
@@ -84,30 +83,29 @@ class Better(Worker):
     def watch_match(self, task: Task):
         match_page = MatchPage(driver=self.driver, better=self)
         server_adress = self.server_address + "/watch"
+        differ = DiffStat()
         try:
             if not task.params:
                 raise Exception('No sense to start watching match after 5 minutes')
             match_page.go_to_match(params=task.params)
             if match_page.match_is_finished():
-                report = dict({"result": 'finished', "task_id": task.task_id, "skill": task.skill, "executed_state": 'success'})
+                report = dict(
+                    {"result": 'finished', "task_id": task.task_id, "skill": task.skill, "executed_state": 'success'})
                 requests.post(self.server_address + "/watch", json=report)
             else:
                 match_page.sort_table()
                 prev_game_stat = dict()
                 while not match_page.match_is_finished():
-                    game_stat = json.dumps(self.watch(match_page), ensure_ascii=False)
+                    game_stat = self.watch(match_page)
                     if prev_game_stat:
-                        changes = json.loads(diff(prev_game_stat, game_stat, load=True, dump=True))
-                        if changes and 'current_status' in changes.keys():
-                            status_changes = changes['current_status']
-                            #print(list(changes.keys()))
-                            if len(list(changes.keys())) > 1 or list(status_changes.keys()) != ['time']:
-                                report = dict({"result": changes, "task_id": task.task_id,
-                                               "skill": task.skill, "executed_state": 'success'})
-                                requests.post(self.server_address + "/watch", json=report)
-                            prev_game_stat = game_stat
+                        changes = differ.diff(prev_stats=prev_game_stat, cur_stats=game_stat)
+                        if changes:
+                            report = dict({"result": changes, "task_id": task.task_id,
+                                           "skill": task.skill, "executed_state": 'success'})
+                            requests.post(self.server_address + "/watch", json=report)
+                        prev_game_stat = game_stat
                     else:
-                        report = dict({"result": json.loads(game_stat), "task_id": task.task_id,
+                        report = dict({"result": game_stat, "task_id": task.task_id,
                                        "skill": task.skill, "executed_state": 'success'})
                         requests.post(self.server_address + "/watch", json=report)
                         prev_game_stat = game_stat
@@ -129,7 +127,8 @@ class Better(Worker):
         command_names = match_page.get_command_names()
         score = match_page.get_score()
         current_status = match_page.get_time()
-        dashboard_coefs = match_page.get_dashboard_coefs(command_names)
+        dashboard_coefs = match_page.get_dashboard_coefs()
+        cards_and_penalties = match_page.get_cards_and_penalties()
         table_coefs = match_page.get_table_coefs()
 
         game_stat = dict()
@@ -137,9 +136,21 @@ class Better(Worker):
         game_stat.update({"score": {"command_left_score": score[0], "command_right_score": score[1]}})
         game_stat.update({"current_status": current_status})
         game_stat.update({"dashboard_coefs": dashboard_coefs})
+        game_stat.update({'cards_and_penalties': cards_and_penalties})
         game_stat.update({"table_coefs": table_coefs})
 
         return game_stat
+
+    @staticmethod
+    def diff_stat(prev_stat: dict, cur_stat: dict):
+        prev_stat_keys = prev_stat.keys()
+        cur_stat_keys = cur_stat.keys()
+
+        result = {'inserted coef groups': [], 'deleted coef groups': [],
+                  'inserted coefs': [], 'deleted coefs': [], 'changed coefs': []}
+
+        inserted_groups = cur_stat_keys - prev_stat_keys
+        deleted_groups = prev_stat_keys - cur_stat_keys
 
     def make_bet(self):
         return 0
