@@ -50,3 +50,13 @@ class Worker:
             actions.move_to_element(scroll_bar).click_and_hold() \
                 .move_by_offset(0, scrolling_number).perform()
             actions.reset_actions()
+
+    @staticmethod
+    def clean_logs():
+        with open('logs/geckodriver.log', 'w') as file:
+            file.seek(0)
+            file.truncate()
+        with open('logs/geckodriver_service.log', 'w') as file:
+            file.seek(0)
+            file.truncate()
+

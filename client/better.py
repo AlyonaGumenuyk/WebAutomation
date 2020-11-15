@@ -60,6 +60,8 @@ class Better(Worker):
             except Exception as error:
                 print(json.dumps("Sleeping for 10 sec, cause: " + str(error).strip().replace('\'', '\"')))
                 time.sleep(10)
+            finally:
+                self.clean_logs()
 
     def login(self, name: str, password: str):
         driver = self.driver

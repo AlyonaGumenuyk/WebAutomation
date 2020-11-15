@@ -68,7 +68,7 @@ class Miner(Worker):
             try:
                 server_adress, result = self.work()
                 try:
-                    #report = json.loads(json.dumps(result, ensure_ascii=False))
+                    # report = json.loads(json.dumps(result, ensure_ascii=False))
                     report = result
                     requests.post(server_adress, json=report)
                 except Exception as error:
@@ -78,6 +78,8 @@ class Miner(Worker):
             except Exception as error:
                 print(json.dumps("Sleeping for 10 sec, cause: " + str(error).strip().replace('\'', '\"')))
                 time.sleep(10)
+            finally:
+                self.clean_logs()
 
     def get_tournaments(self, sport_name: str):
         result = dict()
