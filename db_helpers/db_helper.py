@@ -6,12 +6,12 @@ from psycopg2 import connect, extensions, sql, errors, DatabaseError
 class DBHelper:
 
     def __init__(self):
-        # self.user = 'docker'
-        self.user = 'postgres'
-        # self.host = '172.17.0.1'
-        self.host = 'localhost'
-        # self.password = 'docker'
-        self.password = 'boss1234'
+        self.user = 'docker'
+        # self.user = 'postgres'
+        self.host = '172.17.0.1'
+        # self.host = 'localhost'
+        self.password = 'docker'
+        # self.password = 'boss1234'
         self.conn = None
         self.cur = None
         self.stavka_db = '1xStavkaDB'
