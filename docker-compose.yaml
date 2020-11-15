@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: docker
       TZ: Europe/Moscow
     volumes:
-      - ./postgres-data-new:/var/lib/postgresql
+      - postgres-data:/var/lib/postgresql
     ports:
       - 5432:5432
     container_name: db
@@ -80,3 +80,6 @@ services:
     depends_on:
       - tournaments_generator
     container_name: not_executed_tasks_updater
+
+volumes:
+  postgres-data:
