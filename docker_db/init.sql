@@ -33,6 +33,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER set_timestamp
-BEFORE UPDATE ON todos
+BEFORE UPDATE ON tasks
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
