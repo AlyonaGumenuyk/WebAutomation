@@ -6,9 +6,12 @@ from psycopg2 import connect, extensions, sql, errors, DatabaseError
 class DBHelper:
 
     def __init__(self):
-        self.user = 'docker'
-        self.host = '172.17.0.1'
-        self.password = 'docker'
+        # self.user = 'docker'
+        self.user = 'postgres'
+        # self.host = '172.17.0.1'
+        self.host = 'localhost'
+        # self.password = 'docker'
+        self.password = 'boss1234'
         self.conn = None
         self.cur = None
         self.stavka_db = '1xStavkaDB'
@@ -29,7 +32,7 @@ class DBHelper:
             )
             self.cur = self.conn.cursor()
         except Exception as error:
-            pass
+            print(repr(error))
 
     def close_connection(self):
         if self.conn:
@@ -50,7 +53,8 @@ class DBHelper:
                 record_to_insert = (skill, json.dumps(arguments, ensure_ascii=False), attempts, worker_type, state)
                 self.cur.execute(query, record_to_insert)
                 self.conn.commit()
-            except Exception as error:
+            except Exception as err:
+                print(repr(err))
                 pass
             finally:
                 self.close_connection()
@@ -64,7 +68,9 @@ class DBHelper:
                 query = f"""
                     UPDATE tasks
                     SET state='{self.task_timeout_state}'
-                    WHERE created_at + (2 ||' hours')::interval < now()
+                    WHERE created_at + (3 ||' hours')::interval < now()
+                    AND state='waiting for execution'
+                    OR state='currently executing'
                     """
                 self.cur.execute(query)
                 self.conn.commit()

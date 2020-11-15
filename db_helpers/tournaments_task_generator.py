@@ -19,7 +19,7 @@ class TournamentsTaskGenerator(DBHelper):
                 self.insert_into_tasks(skill=tournaments_task.skill, arguments=tournaments_task.params,
                                        attempts=0, worker_type=tournaments_task.worker_type, state=self.task_init_state)
                 time.sleep(self.delay)
-            except:
+            except Exception:
                 time.sleep(self.conn_retry_delay)
 
     @classmethod
