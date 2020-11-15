@@ -15,6 +15,7 @@ class DBHelper:
         self.task_init_state = 'waiting for execution'
         self.task_execution_state = 'currently executing'
         self.task_complete_state = 'execution completed'
+        self.task_timeout_state = 'timeout exceeded'
         self.conn_retry_delay = 10
         self.task_max_attempts = 5
 
@@ -27,9 +28,8 @@ class DBHelper:
                 password=self.password
             )
             self.cur = self.conn.cursor()
-            print('Connected to ' + str(db_to_connect_name))
         except Exception as error:
-            print('Error while connecting to PostgreSQL: ', str(error).strip())
+            pass
 
     def close_connection(self):
         if self.conn:
@@ -50,8 +50,25 @@ class DBHelper:
                 record_to_insert = (skill, json.dumps(arguments, ensure_ascii=False), attempts, worker_type, state)
                 self.cur.execute(query, record_to_insert)
                 self.conn.commit()
-                print('Task has been inserted')
             except Exception as error:
-                print("Failed to insert record into tasks table", error)
+                pass
+            finally:
+                self.close_connection()
+
+    def update_timeout(self):
+        self.connect(self.stavka_db)
+        if not self.conn:
+            raise Exception
+        if self.conn:
+            try:
+                query = f"""
+                    UPDATE tasks
+                    SET state='{self.task_timeout_state}'
+                    WHERE created_at + (2 ||' hours')::interval < now()
+                    """
+                self.cur.execute(query)
+                self.conn.commit()
+            except Exception as error:
+                pass
             finally:
                 self.close_connection()

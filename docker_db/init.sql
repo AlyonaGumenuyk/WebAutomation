@@ -6,6 +6,8 @@ CREATE TABLE tasks (
     arguments json,
     attempts smallint,
     worker_type varchar(20),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     state varchar(30)
 );
 CREATE TABLE results (
@@ -21,3 +23,16 @@ CREATE TABLE games (
     left_command text,
     right_command text
 );
+
+CREATE OR REPLACE FUNCTION trigger_set_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_timestamp
+BEFORE UPDATE ON todos
+FOR EACH ROW
+EXECUTE PROCEDURE trigger_set_timestamp();

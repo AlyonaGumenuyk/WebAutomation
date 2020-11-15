@@ -25,7 +25,7 @@ class TaskManager(DBHelper):
 
     def get_task_by_task_id(self, task_id):
         query = f"""
-            SELECT * from tasks
+            SELECT id, skill, arguments, attempts, worker_type, state from tasks
             WHERE id={task_id}
             """
         if not self.conn:
@@ -42,11 +42,11 @@ class TaskManager(DBHelper):
         self.connect(self.stavka_db)
         if worker_type == 'all':
             query = f"""
-                SELECT * from tasks
+                SELECT id, skill, arguments, attempts, worker_type, state from tasks
                 """
         else:
             query = f"""
-                SELECT * from tasks
+                SELECT id, skill, arguments, attempts, worker_type, state from tasks
                 WHERE worker_type='{worker_type}'
                 """
         self.cur.execute(query)
@@ -62,14 +62,14 @@ class TaskManager(DBHelper):
         if skill == 'all':
             if worker_type == 'miner':
                 query = f"""
-                    SELECT * from tasks
+                    SELECT id, skill, arguments, attempts, worker_type, state from tasks
                     WHERE worker_type='{worker_type}'
                     AND state='{self.task_init_state}'
                     LIMIT '{tasks_number}'
                     """
             elif worker_type == 'better':
                 query = f"""
-                    SELECT * from tasks
+                    SELECT id, skill, arguments, attempts, worker_type, state from tasks
                     WHERE worker_type='{worker_type}'
                     AND state='{self.task_init_state}'
                     LIMIT 1
@@ -80,14 +80,14 @@ class TaskManager(DBHelper):
         else:
             if worker_type == 'miner':
                 query = f"""
-                    SELECT * from tasks
+                    SELECT id, skill, arguments, attempts, worker_type, state from tasks
                     WHERE worker_type='{worker_type}'
                     AND state='{self.task_init_state}'
                     AND skill='{skill}'
                     """
             elif worker_type == 'better':
                 query = f"""
-                    SELECT * from tasks
+                    SELECT id, skill, arguments, attempts, worker_type, state from tasks
                     WHERE worker_type='{worker_type}'
                     AND (state='{self.task_init_state}' OR state='{self.task_execution_state}')
                     AND skill='{skill}'
