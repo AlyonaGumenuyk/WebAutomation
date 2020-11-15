@@ -69,8 +69,7 @@ class DBHelper:
                     UPDATE tasks
                     SET state='{self.task_timeout_state}'
                     WHERE created_at + (3 ||' hours')::interval < now()
-                    AND state='waiting for execution'
-                    OR state='currently executing'
+                    AND (state='waiting for execution' OR state='timeout exceeded')
                     """
                 self.cur.execute(query)
                 self.conn.commit()
