@@ -67,3 +67,16 @@ services:
     depends_on:
       - tournaments_generator
     container_name: watch_generator
+
+  not_executed_tasks_updater:
+    build:
+      context: .
+      dockerfile: db_helpers/Dockerfile
+    restart: always
+    environment:
+      - STARTER=not_executed_tasks_updater
+      - TZ=Europe/Moscow
+    network_mode: host
+    depends_on:
+      - tournaments_generator
+    container_name: not_executed_tasks_updater
